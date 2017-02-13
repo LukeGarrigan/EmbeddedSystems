@@ -99,6 +99,10 @@ void print_list(void) {
     while(ptr != NULL) {
         printf("\n [%d] \n",ptr->pipeNum);
         printf("\n [%d] \n",ptr->pipe->width);
+        printf("\n [%d] \n",ptr->pipe->bottom);
+        printf("\n [%d] \n",ptr->pipe->speed);
+        printf("\n [%d] \n",ptr->pipe->top);
+        printf("\n [%d] \n",ptr->pipe->x);
         ptr = ptr->next;
     }
     printf("\nEnd\n");
