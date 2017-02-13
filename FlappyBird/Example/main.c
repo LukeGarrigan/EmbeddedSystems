@@ -48,6 +48,7 @@ Purpose     : Main program Template
 #include "GUI.h"
 #include "Board_Touch.h"                // ::Board Support:Touchscreen
 #include <stdlib.h>
+extern const GUI_BITMAP bmBlueBird;
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
 
@@ -74,6 +75,8 @@ typedef struct Birdy{
 	int lift;
 	
 }Birdy;
+
+
 void up(Birdy *bird);
 void updateBird(Birdy *bird, TOUCH_STATE *tsc_state);
 void initPipes(Pipe *pipe);
@@ -128,10 +131,8 @@ static void SystemClock_Config (void) {
   * CPU L1-Cache enable
   */
 static void CPU_CACHE_Enable (void) {
-
   /* Enable I-Cache */
   SCB_EnableICache();
-
   /* Enable D-Cache */
   SCB_EnableDCache();
 }
@@ -142,12 +143,12 @@ static void CPU_CACHE_Enable (void) {
 */
 void MainTask(void) {
 	Pipe pipe;
+ // GUI_BITMAP bmbirdy;
 	TOUCH_STATE tsc_state;
   int xPos, yPos, xSize, ySize;
 	int randTop, randBot;
   int i = 0;
 	GUI_RECT rect;
-	GUI_RECT pipeRect;
 	Birdy bird;
   CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
   HAL_Init();                               /* Initialize the HAL Library     */
@@ -163,14 +164,13 @@ void MainTask(void) {
 	
 	// Initialising the pipe
   initPipes(&pipe);
-	
-
-
+	// getting the bitmap of the bird
+		
   while (1) {
 		Touch_GetState(&tsc_state);
 		updatePipes(&pipe);
 		updateBird(&bird, &tsc_state);
-		GUI_DrawRect(bird.xPos, bird.yPos, bird.xPos+20, bird.yPos+20);
+		GUI_DrawBitmap(&bmBlueBird, bird.xPos,bird.yPos);
 		GUI_DrawRect(pipe.x, 0, pipe.x+50, pipe.top);
 	  GUI_DrawRect(pipe.x, pipe.bottom, pipe.x+50, LCD_GetYSize());
 		for(i = 0; i< 3000000; i++){};
@@ -178,6 +178,8 @@ void MainTask(void) {
 		GUI_ClearRect(pipe.x, 0, pipe.x+50, pipe.top);	
 	  GUI_ClearRect(bird.xPos, bird.yPos, bird.xPos+20, bird.yPos+20);
   } 
+	
+	
 }
 
 /*********************************************************************
@@ -189,7 +191,7 @@ int main (void) {
   for (;;);
 }
 void up(Birdy *bird){
-	bird->velocity += - bird->gravity*10;
+	bird->velocity += - bird->gravity*4;
 }
 
 void updatePipes(Pipe *pipe){
@@ -201,8 +203,8 @@ void updateBird(Birdy *bird, TOUCH_STATE *tsc_state){
 	if(tsc_state->pressed){
 		up(bird);
 	}else{
-	bird->velocity += bird->gravity;
-	bird->yPos += bird->velocity;
+		bird->velocity += bird->gravity;
+		bird->yPos += bird->velocity;
 	}
 
 	// ensures the bird doesn't go off the screen

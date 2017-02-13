@@ -1,5 +1,5 @@
 .\objects\gui_x_rte.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Sample\GUI_X\GUI_X_RTE.c
-.\objects\gui_x_rte.o: C:\Users\Luke\Documents\EmbeddedSystems\MDK\Boards\ST\STM32F746G_Discovery\emWin\Example\RTE\_STM32F746_Flash\RTE_Components.h
+.\objects\gui_x_rte.o: C:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash\RTE_Components.h
 .\objects\gui_x_rte.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC\cmsis_os.h
 .\objects\gui_x_rte.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\gui_x_rte.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
