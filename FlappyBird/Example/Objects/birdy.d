@@ -1,5 +1,7 @@
-.\objects\birdy.o: birdy.c
-.\objects\birdy.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\birdy.o: Birdy.c
+.\objects\birdy.o: Birdy.h
+.\objects\birdy.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board\Board_Touch.h
+.\objects\birdy.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\birdy.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI.h
 .\objects\birdy.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_ConfDefaults.h
 .\objects\birdy.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUIConf.h

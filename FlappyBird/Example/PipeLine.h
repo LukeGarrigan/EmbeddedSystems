@@ -15,6 +15,7 @@ typedef struct queue {
      Pipe *tail;
 }queue ;
 
+Pipe* initPipes();
 void deq(queue *q);
 void updatePipes(queue *q);
 void erasePipes(queue *q); 

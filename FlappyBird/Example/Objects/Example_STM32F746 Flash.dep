@@ -1,5 +1,5 @@
 Dependencies for Project 'Example', Target 'STM32F746 Flash': (DO NOT MODIFY !)
-F (.\main.c)(0x58A25D5B)(-c --cpu Cortex-M7.fp.sp -D__RTX -g -O0 --apcs=interwork --split_sections-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\Device\STM32F746NGHx-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F746xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x58A2DF11)(-c --cpu Cortex-M7.fp.sp -D__RTX -g -O0 --apcs=interwork --split_sections-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\Device\STM32F746NGHx-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F746xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h)(0x5866AB72)
 I (C:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h)(0x58870AF6)
 I (C:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash\RTE_Components.h)(0x58A0CB5C)
@@ -42,8 +42,9 @@ I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\Global.h)(0x580F2
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Version.h)(0x580F2256)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board\Board_Touch.h)(0x53BB92D2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F67738)
-I (PipeLine.h)(0x58A25C71)
+I (PipeLine.h)(0x58A2D42F)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F67738)
+I (Birdy.h)(0x58A2D998)
 F (.\BlueBird.c)(0x58A21196)(-c --cpu Cortex-M7.fp.sp -D__RTX -g -O0 --apcs=interwork --split_sections-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\Device\STM32F746NGHx-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F746xx-o .\objects\bluebird.o --omf_browse .\objects\bluebird.crf --depend .\objects\bluebird.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F67738)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI.h)(0x580F2256)
@@ -53,11 +54,11 @@ I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Type.h)(0x580
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\LCD.h)(0x580F2256)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\Global.h)(0x580F2256)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Version.h)(0x580F2256)
-F (.\PipeLine.c)(0x58A25C77)(-c --cpu Cortex-M7.fp.sp -D__RTX -g -O0 --apcs=interwork --split_sections-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\Device\STM32F746NGHx-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F746xx-o .\objects\pipeline.o --omf_browse .\objects\pipeline.crf --depend .\objects\pipeline.d)
+F (.\PipeLine.c)(0x58A2D8AF)(-c --cpu Cortex-M7.fp.sp -D__RTX -g -O0 --apcs=interwork --split_sections-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\Device\STM32F746NGHx-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F746xx-o .\objects\pipeline.o --omf_browse .\objects\pipeline.crf --depend .\objects\pipeline.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F67738)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F67738)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F67738)
-I (PipeLine.h)(0x58A25C71)
+I (PipeLine.h)(0x58A2D42F)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI.h)(0x580F2256)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_ConfDefaults.h)(0x580F2256)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUIConf.h)(0x580F2256)
@@ -66,7 +67,28 @@ I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\LCD.h)(0x580F2256
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\Global.h)(0x580F2256)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Version.h)(0x580F2256)
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x57F67736)
-F (.\PipeLine.h)(0x58A25C71)()
+F (.\PipeLine.h)(0x58A2D42F)()
+F (.\Birdy.c)(0x58A2D9FF)(-c --cpu Cortex-M7.fp.sp -D__RTX -g -O0 --apcs=interwork --split_sections-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\Device\STM32F746NGHx-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F746xx-o .\objects\birdy.o --omf_browse .\objects\birdy.crf --depend .\objects\birdy.d)
+I (Birdy.h)(0x58A2D998)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board\Board_Touch.h)(0x53BB92D2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F67738)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_ConfDefaults.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUIConf.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Type.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\LCD.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\Global.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Version.h)(0x580F2256)
+F (.\Birdy.h)(0x58A2D998)()
+F (.\background.c)(0x58A2DC54)(-c --cpu Cortex-M7.fp.sp -D__RTX -g -O0 --apcs=interwork --split_sections-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\Device\STM32F746NGHx-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F746xx-o .\objects\background.o --omf_browse .\objects\background.crf --depend .\objects\background.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F67738)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_ConfDefaults.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUIConf.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Type.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\LCD.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\Global.h)(0x580F2256)
+I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Version.h)(0x580F2256)
 F (.\Abstract.txt)(0x559165FE)()
 F (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\Components\ft5336\ft5336.c)(0x5866ABAC)(-c --cpu Cortex-M7.fp.sp -D__RTX -g -O0 --apcs=interwork --split_sections-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\Device\STM32F746NGHx-IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\_STM32F746_Flash-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F746xx-o .\objects\ft5336.o --omf_browse .\objects\ft5336.crf --depend .\objects\ft5336.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\Components\ft5336\ft5336.h)(0x5866ABAC)

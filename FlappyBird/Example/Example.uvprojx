@@ -399,6 +399,21 @@
               <FileType>5</FileType>
               <FilePath>.\PipeLine.h</FilePath>
             </File>
+            <File>
+              <FileName>Birdy.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Birdy.c</FilePath>
+            </File>
+            <File>
+              <FileName>Birdy.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Birdy.h</FilePath>
+            </File>
+            <File>
+              <FileName>background.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\background.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

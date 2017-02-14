@@ -4,9 +4,7 @@
 #include "PipeLine.h"
 #include "GUI.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include <assert.h>
-#include <stdbool.h>
 //Two glboal variables to store address of front and rear nodes. 
 
 
@@ -53,7 +51,7 @@ int queueEmpty(const struct queue *q)
 }
 
 bool isOffScreen(queue *q){
-	if(q->head->x < 0){
+	if(q->head->x < -50){
 		return true;
 	}else{
 		return false;
@@ -108,4 +106,19 @@ void updatePipes(queue *q){
 			e->x -= e->speed;
 		}
 }
+
+Pipe* initPipes(){
+	int ySize = 100;
+	int randTop= rand() % ySize;
+	int randBot = rand() % ySize+100;
+	Pipe *pipe;
+	pipe = malloc(sizeof(Pipe));
+	pipe->top =randTop;
+	pipe->bottom = randBot;
+	pipe->x = 600;
+	pipe->speed = 5;
+	return pipe;
+}
+
+
 

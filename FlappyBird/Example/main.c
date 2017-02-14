@@ -49,9 +49,10 @@ Purpose     : Main program Template
 #include "Board_Touch.h"                // ::Board Support:Touchscreen
 #include <stdlib.h>
 #include "PipeLine.h"
+#include "Birdy.h"
 
 static int count = 0;
-
+extern GUI_CONST_STORAGE GUI_BITMAP bmbackground;
 extern const GUI_BITMAP bmBlueBird;
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
@@ -64,21 +65,8 @@ uint32_t HAL_GetTick(void) {
 #endif
 
 
-typedef struct Birdy{
-	int xPos;
-  int yPos;	
-	int gravity; 
-	int velocity;
-	int lift;
-	
-}Birdy;
 
 
-void up(Birdy *bird);
-void updateBird(Birdy *bird, TOUCH_STATE *tsc_state);
-Pipe* initPipes();
-void initBird(Birdy *bird);
-Pipe* addPipes();
 void drawPipes();
 /**
   * System Clock Configuration
@@ -140,15 +128,14 @@ static void CPU_CACHE_Enable (void) {
 *       MainTask
 */
 void MainTask(void) {
-	Pipe *p;
+	int frameCount=0;
+	//Pipe *p;
 	Pipe *pipe;	
-	Pipe *secondPipe;
-	Pipe *thirdPipe;
+	//Pipe *secondPipe;
+	//Pipe *thirdPipe;
 	queue * pipeQueue;
  // GUI_BITMAP bmbirdy;
 	TOUCH_STATE tsc_state;
-  int xPos, yPos, xSize, ySize;
-	int randTop, randBot;
   int i = 0;
 	int numPipes;
 	GUI_RECT rect;
@@ -161,68 +148,41 @@ void MainTask(void) {
   GUI_Init();
   Touch_Initialize();
   GUI_SetBkColor(GUI_BLACK);
-	
+ // GUI_DrawBitmap(&bmbackground,10, 10);
 	initBird(&bird);
-	
-	// Initialising the pipe
-	
-    pipe = initPipes();
-	  secondPipe = addPipes(150);
-		thirdPipe = addPipes(300);
-		
-		
-		
-		pipeQueue = queueCreate();
-	  enq(pipeQueue,pipe);
-		enq(pipeQueue,secondPipe);
-		enq(pipeQueue,thirdPipe);
-		
 
 	
-	//thirdPipe = addPipes(&secondPipe);
-	//add_to_list(&thirdPipe);
-	
-	// getting the bitmap of the bird
-		
-		/*		
-		GUI_DrawRect(pipe->x, 0, pipe->x+50, pipe->top);
-	  GUI_DrawRect(pipe->x, pipe->bottom, pipe->x+50, LCD_GetYSize());
-		
-		GUI_DrawRect(secondPipe->x, 0, secondPipe->x+50, secondPipe->top);
-	  GUI_DrawRect(secondPipe->x, secondPipe->bottom, secondPipe->x+50, LCD_GetYSize());
-		
-		GUI_DrawRect(thirdPipe->x, 0, thirdPipe->x+50, thirdPipe->top);
-	  GUI_DrawRect(thirdPipe->x, thirdPipe->bottom, thirdPipe->x+50, LCD_GetYSize());
-		*/
+	 // Initialising the pipe and the pipe queue
+    pipe = initPipes();
+		pipeQueue = queueCreate();
+	  enq(pipeQueue,pipe);
 		
   while (1) {
+		// checks whether the screen has been touched
 		Touch_GetState(&tsc_state);
-		if(isOffScreen(pipeQueue)){
-			Pipe* newest = addPipes();
-			deq(pipeQueue);
-			enq(pipeQueue, newest);
-		}
-		///updateBird(&bird, &tsc_state);
+		frameCount++;
+		updatePipes(pipeQueue);
+	  updateBird(&bird, &tsc_state);
 		
-		//updatePipes(secondPipe);
-		//updatePipes(thirdPipe);
+		if(frameCount % 50 == 0){
+				Pipe* newest = initPipes();
+			  enq(pipeQueue, newest);
+		}
+		if(isOffScreen(pipeQueue)){
+			deq(pipeQueue);
+		}
+	
 		
 
 		
 		// draw the bird
 		GUI_DrawBitmap(&bmBlueBird, bird.xPos,bird.yPos);
-	
+		
 		// draw the pipes
 		drawPipes(pipeQueue);
 		for(i = 0; i< 3000000; i++){};
-		erasePipes(pipeQueue); 	
-
-		
-
 			
-			
-		updatePipes(pipeQueue);
-			
+		erasePipes(pipeQueue);
 		GUI_ClearRect(bird.xPos, bird.yPos, bird.xPos+20, bird.yPos+20);
   } 
 	
@@ -237,79 +197,14 @@ int main (void) {
   MainTask();
   for (;;);
 }
-void up(Birdy *bird){
-	bird->velocity += - bird->gravity*4;
-}
 
 
 
-void updateBird(Birdy *bird, TOUCH_STATE *tsc_state){
-	int screenHeight = LCD_GetYSize();
-	if(tsc_state->pressed){
-		up(bird);
-	}else{
-		bird->velocity += bird->gravity;
-		bird->yPos += bird->velocity;
-	}
-
-	// ensures the bird doesn't go off the screen
-	// also it's 21 as we want to see the bottom of the bird
-	if(bird->yPos > screenHeight-21){
-		bird->yPos = screenHeight-21;
-		bird->velocity = 0;
-	}
-	if(bird->yPos < 21){
-		bird->yPos = 21;
-		bird->velocity = 0;
-	}
-}
-
-void initBird(Birdy *bird){
-	// Initialising the bird
-	
-  int xSize = LCD_GetXSize();
-  int ySize = LCD_GetYSize();
-
-  int xPos = xSize / 15;
-  int yPos = ySize / 5;
-	
-	bird->xPos = xPos;
-	bird->yPos = yPos;
-	bird->gravity = 1;
-	bird->velocity = 0;
-	bird->lift = -10;
-
-}
 
 
 
-Pipe* initPipes(){
-	int ySize = 100;
-	int randTop= rand() % ySize;
-	int randBot = rand() % ySize+100;
-	Pipe *pipe;
-	pipe = malloc(sizeof(Pipe));
-	pipe->top =randTop;
-	pipe->bottom = randBot;
-	count = 100;
-	pipe->x = 100;
-	pipe->speed = 5;
-	return pipe;
-}
 
-Pipe* addPipes(){
-	 int ySize = 100;
-	int randTop= rand() % ySize;
-	int randBot = rand() % ySize+100; 
-	Pipe *newPipe;
-	 newPipe = malloc(sizeof(Pipe));
-	newPipe->top =randTop;
-	newPipe->bottom = randBot;
-	count = count + 100;
-	newPipe->x = count;
-	newPipe->speed = 5;
-	return newPipe;
-}
+
 
 
 

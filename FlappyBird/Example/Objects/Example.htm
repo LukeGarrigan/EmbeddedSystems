@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Example.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Example.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Tue Feb 14 01:29:02 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Tue Feb 14 10:42:28 2017
 <BR><P>
 <H3>Maximum Stack Usage =        448 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -308,8 +308,8 @@ Function Pointers
 Global Symbols
 </H3>
 <P><STRONG><a name="[117]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<BR><BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
 <P><STRONG><a name="[11a]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
@@ -320,15 +320,15 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
-<P><STRONG><a name="[2e6]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[2e7]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[2e7]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[2e8]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[2e8]"></a>__decompress</STRONG> (Thumb, 90 bytes, Stack size unknown bytes, __dczerorl2.o(!!dczerorl2), UNUSED)
+<P><STRONG><a name="[2e9]"></a>__decompress</STRONG> (Thumb, 90 bytes, Stack size unknown bytes, __dczerorl2.o(!!dczerorl2), UNUSED)
 
-<P><STRONG><a name="[2e9]"></a>__decompress1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(!!dczerorl2), UNUSED)
+<P><STRONG><a name="[2ea]"></a>__decompress1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(!!dczerorl2), UNUSED)
 
-<P><STRONG><a name="[2ea]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
+<P><STRONG><a name="[2eb]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
 <P><STRONG><a name="[126]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
@@ -345,9 +345,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
 </UL>
 
-<P><STRONG><a name="[2eb]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
+<P><STRONG><a name="[2ec]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
 
-<P><STRONG><a name="[2ec]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000A))
+<P><STRONG><a name="[2ed]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000A))
 
 <P><STRONG><a name="[121]"></a>__rt_lib_init_rand_2</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000D))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -356,67 +356,67 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_rand_init
 </UL>
 
-<P><STRONG><a name="[2ed]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
+<P><STRONG><a name="[2ee]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
 
-<P><STRONG><a name="[2ee]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
+<P><STRONG><a name="[2ef]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
 
-<P><STRONG><a name="[2ef]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002C))
+<P><STRONG><a name="[2f0]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002C))
 
-<P><STRONG><a name="[2f0]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
+<P><STRONG><a name="[2f1]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
 
-<P><STRONG><a name="[2f1]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
+<P><STRONG><a name="[2f2]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
 
-<P><STRONG><a name="[2f2]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
+<P><STRONG><a name="[2f3]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
 
-<P><STRONG><a name="[2f3]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
+<P><STRONG><a name="[2f4]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
 
-<P><STRONG><a name="[2f4]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
+<P><STRONG><a name="[2f5]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
 
-<P><STRONG><a name="[2f5]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
+<P><STRONG><a name="[2f6]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
 
-<P><STRONG><a name="[2f6]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000011))
+<P><STRONG><a name="[2f7]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000011))
 
-<P><STRONG><a name="[2f7]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
+<P><STRONG><a name="[2f8]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
 
-<P><STRONG><a name="[2f8]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
+<P><STRONG><a name="[2f9]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
 
-<P><STRONG><a name="[2f9]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
+<P><STRONG><a name="[2fa]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
 
-<P><STRONG><a name="[2fa]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
+<P><STRONG><a name="[2fb]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
 
-<P><STRONG><a name="[2fb]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
+<P><STRONG><a name="[2fc]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
 
-<P><STRONG><a name="[2fc]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000033))
+<P><STRONG><a name="[2fd]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000033))
 
-<P><STRONG><a name="[2fd]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
+<P><STRONG><a name="[2fe]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
 
-<P><STRONG><a name="[2fe]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
+<P><STRONG><a name="[2ff]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
 
 <P><STRONG><a name="[12c]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
+<BR><BR>[Called By]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
 </UL>
 
-<P><STRONG><a name="[2ff]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
+<P><STRONG><a name="[300]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
 
-<P><STRONG><a name="[300]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
+<P><STRONG><a name="[301]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
 
-<P><STRONG><a name="[301]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
+<P><STRONG><a name="[302]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
 
-<P><STRONG><a name="[302]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
+<P><STRONG><a name="[303]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
 
-<P><STRONG><a name="[303]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
+<P><STRONG><a name="[304]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
 
-<P><STRONG><a name="[304]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
+<P><STRONG><a name="[305]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
 
-<P><STRONG><a name="[305]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
+<P><STRONG><a name="[306]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[11b]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<BR><BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[306]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
+<P><STRONG><a name="[307]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
 <P><STRONG><a name="[123]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -429,7 +429,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
-<P><STRONG><a name="[307]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
+<P><STRONG><a name="[308]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[127]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000B))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
@@ -454,7 +454,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
-<P><STRONG><a name="[308]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
+<P><STRONG><a name="[309]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
 <P><STRONG><a name="[12d]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
@@ -472,17 +472,17 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_postli_1
 </UL>
 
-<P><STRONG><a name="[309]"></a>rt_set_PSP</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text), UNUSED)
+<P><STRONG><a name="[30a]"></a>rt_set_PSP</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text), UNUSED)
 
 <P><STRONG><a name="[2d8]"></a>rt_get_PSP</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text))
 <BR><BR>[Called By]<UL><LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_tsk_delete
 </UL>
 
-<P><STRONG><a name="[30a]"></a>os_set_env</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text), UNUSED)
+<P><STRONG><a name="[30b]"></a>os_set_env</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text), UNUSED)
 
-<P><STRONG><a name="[30b]"></a>_alloc_box</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text), UNUSED)
+<P><STRONG><a name="[30c]"></a>_alloc_box</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text), UNUSED)
 
-<P><STRONG><a name="[30c]"></a>_free_box</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text), UNUSED)
+<P><STRONG><a name="[30d]"></a>_free_box</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text), UNUSED)
 
 <P><STRONG><a name="[1d]"></a>SVC_Handler</STRONG> (Thumb, 168 bytes, Stack size 0 bytes, hal_cm4.o(.emb_text))
 <BR><BR>[Calls]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_stk_check
@@ -509,15 +509,14 @@ Global Symbols
 <LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_systick
 </UL>
 
-<P><STRONG><a name="[2a8]"></a>rand</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, rand.o(.emb_text))
+<P><STRONG><a name="[2ac]"></a>rand</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, rand.o(.emb_text))
 <BR><BR>[Called By]<UL><LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPipes
-<LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;addPipes
 </UL>
 
 <P><STRONG><a name="[17]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f746xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
-<P><STRONG><a name="[30d]"></a>_maybe_terminate_alloc</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, maybetermalloc1.o(.emb_text), UNUSED)
+<P><STRONG><a name="[30e]"></a>_maybe_terminate_alloc</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, maybetermalloc1.o(.emb_text), UNUSED)
 
 <P><STRONG><a name="[18]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_stm32f746xx.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
@@ -854,11 +853,11 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[30e]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[30f]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[148]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<BR><BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 </UL>
 
 <P><STRONG><a name="[137]"></a>_malloc_internal</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, h1_alloc_mt.o(.text))
@@ -866,8 +865,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_release
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_acquire
-<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
 <LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Heap1_SizeAdjust
+<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 </UL>
@@ -875,12 +874,11 @@ Global Symbols
 <P><STRONG><a name="[13a]"></a>malloc</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, h1_alloc_mt.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = malloc &rArr; _malloc_internal &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; _free_internal
 </UL>
-<BR>[Calls]<UL><LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
-<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_malloc_internal
+<BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_malloc_internal
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queueCreate
+<BR>[Called By]<UL><LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queueCreate
 <LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPipes
-<LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;addPipes
 </UL>
 
 <P><STRONG><a name="[13c]"></a>_free_internal</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, h1_free_mt.o(.text))
@@ -896,10 +894,10 @@ Global Symbols
 <P><STRONG><a name="[13d]"></a>free</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, h1_free_mt.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = free &rArr; _free_internal
 </UL>
-<BR>[Calls]<UL><LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
-<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_free_internal
+<BR>[Calls]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_free_internal
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deq
+<BR>[Called By]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deq
 </UL>
 
 <P><STRONG><a name="[2e3]"></a>__aeabi_uldivmod</STRONG> (Thumb, 0 bytes, Stack size 48 bytes, lludivv7m.o(.text))
@@ -908,7 +906,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcTimerStart
 </UL>
 
-<P><STRONG><a name="[30f]"></a>_ll_udiv</STRONG> (Thumb, 238 bytes, Stack size 48 bytes, lludivv7m.o(.text), UNUSED)
+<P><STRONG><a name="[310]"></a>_ll_udiv</STRONG> (Thumb, 238 bytes, Stack size 48 bytes, lludivv7m.o(.text), UNUSED)
 
 <P><STRONG><a name="[13e]"></a>srand</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, rand.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = srand
@@ -941,11 +939,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__assert_puts
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
 </UL>
-<BR>[Called By]<UL><LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enq
-<LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deq
+<BR>[Called By]<UL><LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enq
+<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deq
 </UL>
 
-<P><STRONG><a name="[310]"></a>__assert</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, assert.o(.text), UNUSED)
+<P><STRONG><a name="[311]"></a>__assert</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, assert.o(.text), UNUSED)
 
 <P><STRONG><a name="[146]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_CopyBuffer
@@ -957,7 +955,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 
-<P><STRONG><a name="[311]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
+<P><STRONG><a name="[312]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
 
 <P><STRONG><a name="[2a5]"></a>__aeabi_memmove</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memmove_v6.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_RemoveHoles
@@ -968,7 +966,7 @@ Global Symbols
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 
-<P><STRONG><a name="[312]"></a>__memmove_lastfew</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memmove_v6.o(.text), UNUSED)
+<P><STRONG><a name="[313]"></a>__memmove_lastfew</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memmove_v6.o(.text), UNUSED)
 
 <P><STRONG><a name="[144]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_memcpy4
@@ -981,11 +979,11 @@ Global Symbols
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
 </UL>
 
-<P><STRONG><a name="[313]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[314]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[314]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[315]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[315]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[316]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[2a6]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_memclr4
@@ -993,13 +991,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPos
 </UL>
 
-<P><STRONG><a name="[316]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[317]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[317]"></a>__rt_memclr_w</STRONG> (Thumb, 78 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[318]"></a>__rt_memclr_w</STRONG> (Thumb, 78 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[318]"></a>_memset_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[319]"></a>_memset_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[319]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[31a]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
 <P><STRONG><a name="[2]"></a>__rt_heap_escrow</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
@@ -1010,14 +1008,14 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
 </UL>
-<BR>[Called By]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
-<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
+<BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
 </UL>
 
-<P><STRONG><a name="[31a]"></a>__use_no_heap</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, hguard.o(.text), UNUSED)
+<P><STRONG><a name="[31b]"></a>__use_no_heap</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, hguard.o(.text), UNUSED)
 
-<P><STRONG><a name="[31b]"></a>__heap$guard</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, hguard.o(.text), UNUSED)
+<P><STRONG><a name="[31c]"></a>__heap$guard</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, hguard.o(.text), UNUSED)
 
 <P><STRONG><a name="[7]"></a>_terminate_user_alloc</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, init_alloc.o(.text), UNUSED)
 
@@ -1038,10 +1036,10 @@ Global Symbols
 <P><STRONG><a name="[120]"></a>_init_alloc</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, init_alloc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = _init_alloc &rArr; __rt_SIGRTMEM &rArr; __rt_SIGRTMEM_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
-<BR>[Calls]<UL><LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Initialize
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
-<LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
+<BR>[Calls]<UL><LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Initialize
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_heap_2
 </UL>
@@ -1075,9 +1073,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
 </UL>
 
-<P><STRONG><a name="[31c]"></a>__aeabi_memmove4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memmove_w.o(.text), UNUSED)
+<P><STRONG><a name="[31d]"></a>__aeabi_memmove4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memmove_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[31d]"></a>__aeabi_memmove8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memmove_w.o(.text), UNUSED)
+<P><STRONG><a name="[31e]"></a>__aeabi_memmove8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memmove_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[150]"></a>__rt_memmove_w</STRONG> (Thumb, 122 bytes, Stack size 8 bytes, rt_memmove_w.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
@@ -1087,19 +1085,19 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memmove
 </UL>
 
-<P><STRONG><a name="[31e]"></a>__memmove_lastfew_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memmove_w.o(.text), UNUSED)
+<P><STRONG><a name="[31f]"></a>__memmove_lastfew_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memmove_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[14f]"></a>_ttywrch</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, sys_wrch.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _ttywrch
 </UL>
-<BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__assert_puts
-<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__default_signal_display
+<BR>[Called By]<UL><LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__default_signal_display
+<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__assert_puts
 </UL>
 
 <P><STRONG><a name="[12e]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
-<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
+<BR><BR>[Called By]<UL><LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
 <LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
 </UL>
 
 <P><STRONG><a name="[149]"></a>__Heap_ProvideMemory</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, h1_extend_mt.o(.text))
@@ -1130,11 +1128,11 @@ Global Symbols
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Broken
 </UL>
 
-<P><STRONG><a name="[31f]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[320]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[320]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[321]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[321]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, indicate_semi.o(.text), UNUSED)
+<P><STRONG><a name="[322]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, indicate_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[124]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -1216,7 +1214,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_TS_GetTouchInfo
 <LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_TS_Get_GestureId
 </UL>
-<BR>[Called By]<UL><LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_GetState
+<BR>[Called By]<UL><LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_GetState
 </UL>
 
 <P><STRONG><a name="[164]"></a>BSP_TS_Get_GestureId</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, stm32746g_discovery_ts.o(i.BSP_TS_Get_GestureId))
@@ -1318,8 +1316,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
 <LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__RegisterExit
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
-<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetTaskNo
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_InitOS
+<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetTaskNo
 </UL>
 <BR>[Called By]<UL><LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__Config
 </UL>
@@ -1360,8 +1358,8 @@ Global Symbols
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Lock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_EnlargeBlocks
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 <LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Delete
+<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 </UL>
 
 <P><STRONG><a name="[18e]"></a>GUI_ALLOC_FreeFixedBlock</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gui_alloc.o(i.GUI_ALLOC_FreeFixedBlock))
@@ -1390,7 +1388,6 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_h2p
 </UL>
 <BR>[Called By]<UL><LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__InitIVRSearch
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 <LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__GetClientRectEx
 <LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_BringToBottom
 <LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Delete
@@ -1418,11 +1415,11 @@ Global Symbols
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_WriteToActiveAlpha
 <LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_GetDataPtr
+<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 </UL>
 
 <P><STRONG><a name="[17d]"></a>GUI_ALLOC_UnlockH</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, gui_alloc.o(i.GUI_ALLOC_UnlockH))
 <BR><BR>[Called By]<UL><LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__InitIVRSearch
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 <LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__GetClientRectEx
 <LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_BringToBottom
 <LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Delete
@@ -1450,6 +1447,7 @@ Global Symbols
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_WriteToActiveAlpha
 <LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_GetDataPtr
+<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 </UL>
 
 <P><STRONG><a name="[184]"></a>GUI_ALLOC_h2p</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, gui_alloc.o(i.GUI_ALLOC_h2p))
@@ -1497,7 +1495,7 @@ Global Symbols
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Lock
 <LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
 </UL>
-<BR>[Called By]<UL><LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erasePipes
+<BR>[Called By]<UL><LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erasePipes
 <LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
@@ -1587,7 +1585,7 @@ Global Symbols
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Lock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawPipes
+<BR>[Called By]<UL><LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawPipes
 </UL>
 
 <P><STRONG><a name="[1cf]"></a>GUI_GetBitsPerPixelEx</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lcd_getex.o(i.GUI_GetBitsPerPixelEx))
@@ -1669,9 +1667,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_UnlinkTaskDevices
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_LinkDevices
-<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetTaskNo
 <LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_Lock
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_GetTaskId
+<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetTaskNo
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLCD
 <LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
@@ -1689,7 +1687,6 @@ Global Symbols
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ClearRect
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetLayerPosEx
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetDrawMode
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 <LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_SendToParent
 <LI><a href="#[25f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_GetFirstChild
 <LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_BringToBottom
@@ -1700,6 +1697,7 @@ Global Symbols
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_CreateWindowAsChild
 <LI><a href="#[255]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_GetParent
 <LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_GetDataPtr
+<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 </UL>
 
 <P><STRONG><a name="[1aa]"></a>GUI_MEMDEV_Delete</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, guidev.o(i.GUI_MEMDEV_Delete))
@@ -1909,7 +1907,6 @@ Global Symbols
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ClearRect
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetLayerPosEx
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetDrawMode
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 <LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_SendToParent
 <LI><a href="#[25f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_GetFirstChild
 <LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_BringToBottom
@@ -1920,6 +1917,7 @@ Global Symbols
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_CreateWindowAsChild
 <LI><a href="#[255]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_GetParent
 <LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_GetDataPtr
+<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_DecUseCnt
 </UL>
 
 <P><STRONG><a name="[1bf]"></a>GUI_X_Config</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, guiconf.o(i.GUI_X_Config))
@@ -2655,9 +2653,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetDevProp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erasePipes
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawPipes
+<BR>[Called By]<UL><LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateBird
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initBird
+<LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erasePipes
+<LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawPipes
 </UL>
 
 <P><STRONG><a name="[1a1]"></a>LCD_GetYSizeDisplay</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, lcd_getex.o(i.LCD_GetYSizeDisplay))
@@ -2715,9 +2714,9 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> gui__alpha.o(i.GUI__DoAlphaBlending)
 </UL>
 <P><STRONG><a name="[88]"></a>LCD_Index2Color_8888</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, guicc_8888_index2color.o(i.LCD_Index2Color_8888))
-<BR>[Address Reference Count : 4]<UL><LI> gui__alpha.o(i.GUI__DoAlphaBlending)
-<LI> gui_drawbitmap_8888.o(i._DrawBitmap_8888)
+<BR>[Address Reference Count : 4]<UL><LI> gui_drawbitmap_8888.o(i._DrawBitmap_8888)
 <LI> gui_drawbitmap_8888.o(.constdata)
+<LI> gui__alpha.o(i.GUI__DoAlphaBlending)
 <LI> guidev_writetoactivealpha.o(i._WriteToActiveAlpha)
 </UL>
 <P><STRONG><a name="[e5]"></a>LCD_Index2Color_M565</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, guicc_m565.o(i.LCD_Index2Color_M565))
@@ -2963,28 +2962,28 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
-<P><STRONG><a name="[240]"></a>MainTask</STRONG> (Thumb, 198 bytes, Stack size 32 bytes, main.o(i.MainTask))
+<P><STRONG><a name="[240]"></a>MainTask</STRONG> (Thumb, 188 bytes, Stack size 32 bytes, main.o(i.MainTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 400 + Unknown Stack Size
 <LI>Call Chain = MainTask &rArr; Touch_GetState &rArr; BSP_TS_GetState &rArr; ft5336_TS_GetTouchInfo &rArr; TS_IO_Read &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updatePipes
-<LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queueCreate
-<LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isOffScreen
-<LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erasePipes
-<LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enq
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawPipes
-<LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deq
+<BR>[Calls]<UL><LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updatePipes
+<LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateBird
+<LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queueCreate
+<LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isOffScreen
+<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPipes
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initBird
+<LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erasePipes
+<LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enq
+<LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawPipes
+<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deq
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_Initialize
-<LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_GetState
+<LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_GetState
 <LI><a href="#[1e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Init
 <LI><a href="#[190]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DrawBitmap
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ClearRect
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SDRAM_Init
-<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPipes
-<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initBird
-<LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;addPipes
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_CACHE_Enable
 </UL>
@@ -3007,7 +3006,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_I2C_InitializeIfRequired
+<BR>[Called By]<UL><LI><a href="#[2a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_I2C_InitializeIfRequired
 </UL>
 
 <P><STRONG><a name="[250]"></a>TS_IO_Read</STRONG> (Thumb, 36 bytes, Stack size 24 bytes, stm32746g_discovery.o(i.TS_IO_Read))
@@ -3031,7 +3030,7 @@ Global Symbols
 <LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_TS_DisableIT
 </UL>
 
-<P><STRONG><a name="[248]"></a>Touch_GetState</STRONG> (Thumb, 60 bytes, Stack size 56 bytes, touch_746g_discovery.o(i.Touch_GetState))
+<P><STRONG><a name="[247]"></a>Touch_GetState</STRONG> (Thumb, 60 bytes, Stack size 56 bytes, touch_746g_discovery.o(i.Touch_GetState))
 <BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = Touch_GetState &rArr; BSP_TS_GetState &rArr; ft5336_TS_GetTouchInfo &rArr; TS_IO_Read &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_TS_GetState
@@ -3423,15 +3422,6 @@ Global Symbols
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_malloc_internal
 </UL>
 
-<P><STRONG><a name="[245]"></a>addPipes</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, main.o(i.addPipes))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = addPipes &rArr; malloc &rArr; _malloc_internal &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; _free_internal
-</UL>
-<BR>[Calls]<UL><LI><a href="#[2a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
-</UL>
-<BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
-</UL>
-
 <P><STRONG><a name="[2cf]"></a>dbg_init</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, hal_cm.o(i.dbg_init))
 <BR><BR>[Called By]<UL><LI><a href="#[2ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_sys_init
 </UL>
@@ -3445,27 +3435,27 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[2b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_switch_req
 </UL>
 
-<P><STRONG><a name="[24a]"></a>deq</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, pipeline.o(i.deq))
+<P><STRONG><a name="[24b]"></a>deq</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, pipeline.o(i.deq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = deq &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queueEmpty
-<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
+<BR>[Calls]<UL><LI><a href="#[2a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queueEmpty
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
 </UL>
 <BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[24b]"></a>drawPipes</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, pipeline.o(i.drawPipes))
+<P><STRONG><a name="[24c]"></a>drawPipes</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, pipeline.o(i.drawPipes))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = drawPipes &rArr; GUI_DrawRect &rArr; WM__InitIVRSearch &rArr; WM__GetNextIVR &rArr; WM__ActivateClipRect &rArr; _SetClipRectUserIntersect &rArr; LCD_SetClipRectEx &rArr; GUI__IntersectRects
 </UL>
-<BR>[Calls]<UL><LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DrawRect
-<LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
+<BR>[Calls]<UL><LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
+<LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DrawRect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[247]"></a>enq</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, pipeline.o(i.enq))
+<P><STRONG><a name="[246]"></a>enq</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, pipeline.o(i.enq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = enq &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
@@ -3474,7 +3464,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[24c]"></a>erasePipes</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, pipeline.o(i.erasePipes))
+<P><STRONG><a name="[24d]"></a>erasePipes</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, pipeline.o(i.erasePipes))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = erasePipes &rArr; GUI_ClearRect &rArr; WM__InitIVRSearch &rArr; WM__GetNextIVR &rArr; WM__ActivateClipRect &rArr; _SetClipRectUserIntersect &rArr; LCD_SetClipRectEx &rArr; GUI__IntersectRects
 </UL>
 <BR>[Calls]<UL><LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
@@ -3487,7 +3477,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = ft5336_Init &rArr; ft5336_I2C_InitializeIfRequired &rArr; TS_IO_Init &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TS_IO_Delay
-<LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_I2C_InitializeIfRequired
+<LI><a href="#[2a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_I2C_InitializeIfRequired
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ft5336.o(.data)
 </UL>
@@ -3495,7 +3485,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = ft5336_ReadID &rArr; TS_IO_Read &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[250]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TS_IO_Read
-<LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_I2C_InitializeIfRequired
+<LI><a href="#[2a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_I2C_InitializeIfRequired
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ft5336.o(.data)
 </UL>
@@ -3558,29 +3548,29 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = ft5336_TS_Start &rArr; ft5336_TS_DisableIT &rArr; TS_IO_Write &rArr; I2Cx_WriteMultiple &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_TS_DisableIT
-<LI><a href="#[2ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_TS_Configure
+<LI><a href="#[2ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_TS_Configure
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ft5336.o(.data)
 </UL>
-<P><STRONG><a name="[243]"></a>initBird</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, main.o(i.initBird))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = initBird &rArr; LCD_GetYSize &rArr; _GetDevProp
+<P><STRONG><a name="[243]"></a>initBird</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, birdy.o(i.initBird))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = initBird &rArr; LCD_GetXSize &rArr; _GetDevProp
 </UL>
-<BR>[Calls]<UL><LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
-<LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetXSize
+<BR>[Calls]<UL><LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetXSize
+<LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
 </UL>
 <BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[244]"></a>initPipes</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, main.o(i.initPipes))
+<P><STRONG><a name="[244]"></a>initPipes</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, pipeline.o(i.initPipes))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = initPipes &rArr; malloc &rArr; _malloc_internal &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; _free_internal
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<LI><a href="#[2ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
 </UL>
 <BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[249]"></a>isOffScreen</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, pipeline.o(i.isOffScreen))
+<P><STRONG><a name="[24a]"></a>isOffScreen</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pipeline.o(i.isOffScreen))
 <BR><BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
@@ -3728,7 +3718,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Tick_Handler
 </UL>
 
-<P><STRONG><a name="[246]"></a>queueCreate</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, pipeline.o(i.queueCreate))
+<P><STRONG><a name="[245]"></a>queueCreate</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, pipeline.o(i.queueCreate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = queueCreate &rArr; malloc &rArr; _malloc_internal &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; _free_internal
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
@@ -3736,8 +3726,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[2a9]"></a>queueEmpty</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, pipeline.o(i.queueEmpty))
-<BR><BR>[Called By]<UL><LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deq
+<P><STRONG><a name="[2a8]"></a>queueEmpty</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, pipeline.o(i.queueEmpty))
+<BR><BR>[Called By]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deq
 </UL>
 
 <P><STRONG><a name="[82]"></a>rt_alloc_box</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, rt_membox.o(i.rt_alloc_box))
@@ -4260,7 +4250,20 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_systick
 </UL>
 
-<P><STRONG><a name="[24d]"></a>updatePipes</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, pipeline.o(i.updatePipes))
+<P><STRONG><a name="[2e6]"></a>up</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, birdy.o(i.up))
+<BR><BR>[Called By]<UL><LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateBird
+</UL>
+
+<P><STRONG><a name="[249]"></a>updateBird</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, birdy.o(i.updateBird))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = updateBird &rArr; LCD_GetYSize &rArr; _GetDevProp
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;up
+<LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
+</UL>
+<BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
+</UL>
+
+<P><STRONG><a name="[248]"></a>updatePipes</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, pipeline.o(i.updatePipes))
 <BR><BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
@@ -4268,9 +4271,9 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_fp_1
 </UL>
 
-<P><STRONG><a name="[322]"></a>__fplib_config_fpu_vfp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
+<P><STRONG><a name="[323]"></a>__fplib_config_fpu_vfp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
 
-<P><STRONG><a name="[323]"></a>__fplib_config_pureend_doubles</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
+<P><STRONG><a name="[324]"></a>__fplib_config_pureend_doubles</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
 <P>
 <H3>
 Local Symbols
@@ -4304,21 +4307,21 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[2ab]"></a>ft5336_Get_I2C_InitializedStatus</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, ft5336.o(i.ft5336_Get_I2C_InitializedStatus))
-<BR><BR>[Called By]<UL><LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_I2C_InitializeIfRequired
+<P><STRONG><a name="[2aa]"></a>ft5336_Get_I2C_InitializedStatus</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, ft5336.o(i.ft5336_Get_I2C_InitializedStatus))
+<BR><BR>[Called By]<UL><LI><a href="#[2a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_I2C_InitializeIfRequired
 </UL>
 
-<P><STRONG><a name="[2aa]"></a>ft5336_I2C_InitializeIfRequired</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, ft5336.o(i.ft5336_I2C_InitializeIfRequired))
+<P><STRONG><a name="[2a9]"></a>ft5336_I2C_InitializeIfRequired</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, ft5336.o(i.ft5336_I2C_InitializeIfRequired))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = ft5336_I2C_InitializeIfRequired &rArr; TS_IO_Init &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TS_IO_Init
-<LI><a href="#[2ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_Get_I2C_InitializedStatus
+<LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_Get_I2C_InitializedStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_ReadID
 <LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_Init
 </UL>
 
-<P><STRONG><a name="[2ac]"></a>ft5336_TS_Configure</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, ft5336.o(i.ft5336_TS_Configure))
+<P><STRONG><a name="[2ab]"></a>ft5336_TS_Configure</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, ft5336.o(i.ft5336_TS_Configure))
 <BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336_TS_Start
 </UL>
 
@@ -5241,8 +5244,8 @@ Local Symbols
 <LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetMirrorXEx
 <LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetMaxValue
 <LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetNumColorsEx
-<LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetXSize
+<LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSizeEx
 <LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetXSizeEx
 <LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetSwapXYEx
