@@ -48,6 +48,10 @@ Purpose     : Main program Template
 #include "GUI.h"
 #include "Board_Touch.h"                // ::Board Support:Touchscreen
 #include <stdlib.h>
+#include "PipeLine.h"
+
+static int count = 0;
+
 extern const GUI_BITMAP bmBlueBird;
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
@@ -58,13 +62,6 @@ uint32_t HAL_GetTick(void) {
   return os_time; 
 }
 #endif
-typedef struct Pipe{
-	int top;
-	int bottom;
-	int width;
-	int x;
-	int speed;
-}Pipe;
 
 
 typedef struct Birdy{
@@ -79,9 +76,10 @@ typedef struct Birdy{
 
 void up(Birdy *bird);
 void updateBird(Birdy *bird, TOUCH_STATE *tsc_state);
-void initPipes(Pipe *pipe);
+Pipe* initPipes();
 void initBird(Birdy *bird);
-void updatePipes(Pipe *pipe);
+Pipe* addPipes();
+void drawPipes();
 /**
   * System Clock Configuration
   *   System Clock source            = PLL (HSE)
@@ -142,12 +140,17 @@ static void CPU_CACHE_Enable (void) {
 *       MainTask
 */
 void MainTask(void) {
-	Pipe pipe;
+	Pipe *p;
+	Pipe *pipe;	
+	Pipe *secondPipe;
+	Pipe *thirdPipe;
+	queue * pipeQueue;
  // GUI_BITMAP bmbirdy;
 	TOUCH_STATE tsc_state;
   int xPos, yPos, xSize, ySize;
 	int randTop, randBot;
   int i = 0;
+	int numPipes;
 	GUI_RECT rect;
 	Birdy bird;
   CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
@@ -158,25 +161,69 @@ void MainTask(void) {
   GUI_Init();
   Touch_Initialize();
   GUI_SetBkColor(GUI_BLACK);
-  GUI_Clear();
 	
 	initBird(&bird);
 	
 	// Initialising the pipe
-  initPipes(&pipe);
+	
+    pipe = initPipes();
+	  secondPipe = addPipes(150);
+		thirdPipe = addPipes(300);
+		
+		
+		
+		pipeQueue = queueCreate();
+	  enq(pipeQueue,pipe);
+		enq(pipeQueue,secondPipe);
+		enq(pipeQueue,thirdPipe);
+		
+
+	
+	//thirdPipe = addPipes(&secondPipe);
+	//add_to_list(&thirdPipe);
+	
 	// getting the bitmap of the bird
+		
+		/*		
+		GUI_DrawRect(pipe->x, 0, pipe->x+50, pipe->top);
+	  GUI_DrawRect(pipe->x, pipe->bottom, pipe->x+50, LCD_GetYSize());
+		
+		GUI_DrawRect(secondPipe->x, 0, secondPipe->x+50, secondPipe->top);
+	  GUI_DrawRect(secondPipe->x, secondPipe->bottom, secondPipe->x+50, LCD_GetYSize());
+		
+		GUI_DrawRect(thirdPipe->x, 0, thirdPipe->x+50, thirdPipe->top);
+	  GUI_DrawRect(thirdPipe->x, thirdPipe->bottom, thirdPipe->x+50, LCD_GetYSize());
+		*/
 		
   while (1) {
 		Touch_GetState(&tsc_state);
-		updatePipes(&pipe);
-		updateBird(&bird, &tsc_state);
+		if(isOffScreen(pipeQueue)){
+			Pipe* newest = addPipes();
+			deq(pipeQueue);
+			enq(pipeQueue, newest);
+		}
+		///updateBird(&bird, &tsc_state);
+		
+		//updatePipes(secondPipe);
+		//updatePipes(thirdPipe);
+		
+
+		
+		// draw the bird
 		GUI_DrawBitmap(&bmBlueBird, bird.xPos,bird.yPos);
-		GUI_DrawRect(pipe.x, 0, pipe.x+50, pipe.top);
-	  GUI_DrawRect(pipe.x, pipe.bottom, pipe.x+50, LCD_GetYSize());
+	
+		// draw the pipes
+		drawPipes(pipeQueue);
 		for(i = 0; i< 3000000; i++){};
-		GUI_ClearRect(pipe.x, pipe.bottom, pipe.x+50, LCD_GetYSize());
-		GUI_ClearRect(pipe.x, 0, pipe.x+50, pipe.top);	
-	  GUI_ClearRect(bird.xPos, bird.yPos, bird.xPos+20, bird.yPos+20);
+		erasePipes(pipeQueue); 	
+
+		
+
+			
+			
+		updatePipes(pipeQueue);
+			
+		GUI_ClearRect(bird.xPos, bird.yPos, bird.xPos+20, bird.yPos+20);
   } 
 	
 	
@@ -194,9 +241,7 @@ void up(Birdy *bird){
 	bird->velocity += - bird->gravity*4;
 }
 
-void updatePipes(Pipe *pipe){
-	pipe->x -= pipe->speed;
-}
+
 
 void updateBird(Birdy *bird, TOUCH_STATE *tsc_state){
 	int screenHeight = LCD_GetYSize();
@@ -238,14 +283,32 @@ void initBird(Birdy *bird){
 
 
 
-void initPipes(Pipe *pipe){
+Pipe* initPipes(){
 	int ySize = 100;
 	int randTop= rand() % ySize;
 	int randBot = rand() % ySize+100;
+	Pipe *pipe;
+	pipe = malloc(sizeof(Pipe));
 	pipe->top =randTop;
 	pipe->bottom = randBot;
+	count = 100;
 	pipe->x = 100;
 	pipe->speed = 5;
+	return pipe;
+}
+
+Pipe* addPipes(){
+	 int ySize = 100;
+	int randTop= rand() % ySize;
+	int randBot = rand() % ySize+100; 
+	Pipe *newPipe;
+	 newPipe = malloc(sizeof(Pipe));
+	newPipe->top =randTop;
+	newPipe->bottom = randBot;
+	count = count + 100;
+	newPipe->x = count;
+	newPipe->speed = 5;
+	return newPipe;
 }
 
 

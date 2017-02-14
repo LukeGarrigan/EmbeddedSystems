@@ -41,3 +41,5 @@
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Version.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board\Board_Touch.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: PipeLine.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

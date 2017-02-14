@@ -384,6 +384,21 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>BlueBird.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BlueBird.c</FilePath>
+            </File>
+            <File>
+              <FileName>PipeLine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\PipeLine.c</FilePath>
+            </File>
+            <File>
+              <FileName>PipeLine.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\PipeLine.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
