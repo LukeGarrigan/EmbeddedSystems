@@ -50,10 +50,13 @@ Purpose     : Main program Template
 #include <stdlib.h>
 #include "PipeLine.h"
 #include "Birdy.h"
+#include "main.h"
+//#include "InitGame.c"
+GameInfo thisGame;
 
 static int count = 0;
-extern GUI_CONST_STORAGE GUI_BITMAP bmbackground;
-extern const GUI_BITMAP bmBlueBird;
+//extern GUI_CONST_STORAGE GUI_BITMAP bmbackground;
+
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
 
@@ -127,63 +130,48 @@ static void CPU_CACHE_Enable (void) {
 *
 *       MainTask
 */
+
 void MainTask(void) {
 	int frameCount=0;
 	//Pipe *p;
 	Pipe *pipe;	
 	//Pipe *secondPipe;
 	//Pipe *thirdPipe;
-	queue * pipeQueue;
+	//queue * pipeQueue;
  // GUI_BITMAP bmbirdy;
 	TOUCH_STATE tsc_state;
   int i = 0;
 	int numPipes;
 	GUI_RECT rect;
-	Birdy bird;
   CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
   HAL_Init();                               /* Initialize the HAL Library     */
   BSP_SDRAM_Init();                         /* Initialize BSP SDRAM           */
   SystemClock_Config();                     /* Configure the System Clock     */
-
+	initGame();
   GUI_Init();
   Touch_Initialize();
-  GUI_SetBkColor(GUI_BLACK);
- // GUI_DrawBitmap(&bmbackground,10, 10);
-	initBird(&bird);
-
+  //GUI_SetBkColor(GUI_BLACK);
+	//initBird(&bird);
+	//initBirdy();
 	
 	 // Initialising the pipe and the pipe queue
-    pipe = initPipes();
-		pipeQueue = queueCreate();
-	  enq(pipeQueue,pipe);
-		
+		GUI_DrawBitmap(&thisGame.bird.myBirdy,thisGame.bird.xPos, thisGame.bird.yPos);
+	//	GUI_DrawBitmap(&bmbackground,10, 10);
   while (1) {
-		// checks whether the screen has been touched
-		Touch_GetState(&tsc_state);
-		frameCount++;
-		updatePipes(pipeQueue);
-	  updateBird(&bird, &tsc_state);
-		
-		if(frameCount % 50 == 0){
-				Pipe* newest = initPipes();
-			  enq(pipeQueue, newest);
-		}
-		if(isOffScreen(pipeQueue)){
-			deq(pipeQueue);
-		}
-	
-		
-
-		
-		// draw the bird
-		GUI_DrawBitmap(&bmBlueBird, bird.xPos,bird.yPos);
-		
-		// draw the pipes
-		drawPipes(pipeQueue);
-		for(i = 0; i< 3000000; i++){};
 			
-		erasePipes(pipeQueue);
-		GUI_ClearRect(bird.xPos, bird.yPos, bird.xPos+20, bird.yPos+20);
+		wait_delay(thisGame.num_ticks);	
+		//GUI_Delay(50);
+		GUI_Clear();
+		frameCount++;
+		
+		updateAllPipes();
+		updateBirdy();
+			
+		if(frameCount % 50 == 0){
+				initPipes();
+		}
+		//GUI_BITMAP 
+		drawAllPipes();
   } 
 	
 	

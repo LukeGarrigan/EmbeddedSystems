@@ -1,6 +1,9 @@
 #ifndef PipeLine_H_INCLUDED
 #define PipeLine_H_INCLUDED
 #include <stdbool.h>
+
+
+/*
 typedef struct Pipe {
 	 int top;
    int bottom;
@@ -15,6 +18,9 @@ typedef struct queue {
      Pipe *tail;
 }queue ;
 
+
+
+
 Pipe* initPipes();
 void deq(queue *q);
 void updatePipes(queue *q);
@@ -25,4 +31,5 @@ queue * queueCreate(void);
 void drawPipes();
 Pipe* getList(int position);
 bool isOffScreen(queue *q);
+*/
 #endif

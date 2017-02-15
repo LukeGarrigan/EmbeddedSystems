@@ -44,3 +44,4 @@
 .\objects\main.o: PipeLine.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\main.o: Birdy.h
+.\objects\main.o: main.h

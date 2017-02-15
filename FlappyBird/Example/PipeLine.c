@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "PipeLine.h"
+
+#include "main.h"
 #include "GUI.h"
 #include <stdio.h>
 #include <assert.h>
@@ -107,6 +108,7 @@ void updatePipes(queue *q){
 		}
 }
 
+/*
 Pipe* initPipes(){
 	int ySize = 100;
 	int randTop= rand() % ySize;
@@ -119,6 +121,6 @@ Pipe* initPipes(){
 	pipe->speed = 5;
 	return pipe;
 }
-
+*/
 
 

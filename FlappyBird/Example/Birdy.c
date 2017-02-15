@@ -1,16 +1,23 @@
 #include "Birdy.h"
 #include "GUI.h"
 #include "Board_Touch.h" 
+#include "main.h"
+
+extern GameInfo thisGame;
+
+
+
 
 void up(Birdy *bird){
-	bird->velocity += - bird->gravity*3;
+	bird->velocity += - bird->gravity*10;
 }
 void updateBird(Birdy *bird, TOUCH_STATE *tsc_state){
 	int screenHeight = LCD_GetYSize();
 	if(tsc_state->pressed){
 		up(bird);
 	}else{
-		bird->velocity += bird->gravity;
+		bird->velocity *=0.70;
+		bird->velocity += bird->gravity*2;
 		bird->yPos += bird->velocity;
 	}
 
@@ -24,7 +31,10 @@ void updateBird(Birdy *bird, TOUCH_STATE *tsc_state){
 		bird->yPos = 0;
 		bird->velocity = 0;
 	}
+	GUI_DrawBitmap(&thisGame.bird.myBirdy,thisGame.bird.xPos, thisGame.bird.yPos);
+	
 }
+
 
 void initBird(Birdy *bird){
 	// Initialising the bird
@@ -38,7 +48,7 @@ void initBird(Birdy *bird){
 	bird->xPos = xPos;
 	bird->yPos = yPos;
 	bird->gravity = 1;
-	bird->velocity = 0;
+	bird->velocity = 1;
 	bird->lift = -10;
 
 }

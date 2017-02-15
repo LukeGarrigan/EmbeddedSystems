@@ -9,3 +9,5 @@
 .\objects\birdy.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\LCD.h
 .\objects\birdy.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\Global.h
 .\objects\birdy.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Version.h
+.\objects\birdy.o: main.h
+.\objects\birdy.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

@@ -2,7 +2,7 @@
 .\objects\pipeline.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\pipeline.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\pipeline.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\pipeline.o: PipeLine.h
+.\objects\pipeline.o: main.h
 .\objects\pipeline.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI.h
 .\objects\pipeline.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_ConfDefaults.h
 .\objects\pipeline.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUIConf.h
