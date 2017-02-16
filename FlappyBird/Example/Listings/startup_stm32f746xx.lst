@@ -956,18 +956,16 @@ ARM Macro Assembler    Page 15
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M7.fp.sp --apcs=
 interwork --depend=.\objects\startup_stm32f746xx.d -o.\objects\startup_stm32f74
-6xx.o -IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird\Example\RTE\D
-evice\STM32F746NGHx -IC:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird
-\Example\RTE\_STM32F746_Flash -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Inclu
-de -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\RTOS\RTX\INC -IC:\Keil_v5\ARM\PA
-CK\Keil\MDK-Middleware\7.3.0\Board -IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.
-3.0\emWin\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\ST
-M32746G-Discovery -IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\
-Device\ST\STM32F7xx\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Driv
-ers\STM32F7xx_HAL_Driver\Inc --predefine="__RTX SETA 1" --predefine="__UVISION_
-VERSION SETA 522" --predefine="_RTE_ SETA 1" --predefine="STM32F746xx SETA 1" -
--list=.\listings\startup_stm32f746xx.lst RTE\Device\STM32F746NGHx\startup_stm32
-f746xx.s
+6xx.o -I.\RTE\Device\STM32F746NGHx -I.\RTE\_STM32F746_Flash -IC:\Keil_v5\ARM\PA
+CK\ARM\CMSIS\5.0.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\RT
+OS\RTX\INC -IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.0\Board -IC:\Keil_v5\A
+RM\PACK\Keil\MDK-Middleware\7.4.0\emWin\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery -IC:\Keil_v5\ARM\PACK\Keil\STM3
+2F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include -IC:\Keil_v5\ARM\PACK
+\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc --predefine="__RTX S
+ETA 1" --predefine="__UVISION_VERSION SETA 523" --predefine="_RTE_ SETA 1" --pr
+edefine="STM32F746xx SETA 1" --list=.\listings\startup_stm32f746xx.lst RTE\Devi
+ce\STM32F746NGHx\startup_stm32f746xx.s
 
 
 

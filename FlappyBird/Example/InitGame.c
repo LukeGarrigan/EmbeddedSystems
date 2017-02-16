@@ -19,12 +19,13 @@ void initBirds(void){
   int xPos = xSize / 15;
   int yPos = ySize / 5;
 
-	bird.myBirdy = bmBlueBird;
+	bird.myBirdy = &bmBlueBird;
 	bird.xPos = xPos;
 	bird.yPos = yPos;
 	bird.gravity = 1;
 	bird.velocity = 1;
 	bird.lift = -10;
+	bird.hsprite = GUI_SPRITE_Create(bird.myBirdy,bird.xPos,bird.yPos);
 	thisGame.bird = bird;
 }
 
@@ -73,7 +74,7 @@ void updateBirdy(void){
 		thisGame.bird.velocity += thisGame.bird.gravity*2;
 		thisGame.bird.yPos += thisGame.bird.velocity;
 	}
-
-	GUI_DrawBitmap(&thisGame.bird.myBirdy,thisGame.bird.xPos, thisGame.bird.yPos);
+	GUI_SPRITE_SetPosition(thisGame.bird.hsprite,thisGame.bird.xPos, thisGame.bird.yPos);
+	//GUI_DrawBitmap(thisGame.bird.myBirdy,thisGame.bird.xPos, thisGame.bird.yPos);
 	
 }

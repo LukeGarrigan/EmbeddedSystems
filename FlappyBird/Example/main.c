@@ -147,20 +147,21 @@ void MainTask(void) {
   HAL_Init();                               /* Initialize the HAL Library     */
   BSP_SDRAM_Init();                         /* Initialize BSP SDRAM           */
   SystemClock_Config();                     /* Configure the System Clock     */
-	initGame();
+	
   GUI_Init();
+	initGame();
   Touch_Initialize();
+	//GUI_DrawGradientV(0, 0, 480, 272, 0xffffff, 0xff0000);
   //GUI_SetBkColor(GUI_BLACK);
 	//initBird(&bird);
-	//initBirdy();
+	initBirdy();
 	
 	 // Initialising the pipe and the pipe queue
-		GUI_DrawBitmap(&thisGame.bird.myBirdy,thisGame.bird.xPos, thisGame.bird.yPos);
+		//GUI_DrawBitmap(&thisGame.bird.myBirdy,thisGame.bird.xPos, thisGame.bird.yPos);
 	//	GUI_DrawBitmap(&bmbackground,10, 10);
   while (1) {
-			
-		wait_delay(thisGame.num_ticks);	
-		//GUI_Delay(50);
+		//GUI_DrawGradientRoundedV(10,10,70, 70,2, 0xffffff, 0xff0000);
+		GUI_Delay(20);
 		GUI_Clear();
 		frameCount++;
 		

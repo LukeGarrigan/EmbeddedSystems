@@ -27,7 +27,8 @@ typedef struct{
 	int gravity; 
 	int velocity;
 	int lift;
-	GUI_BITMAP myBirdy;
+	GUI_CONST_STORAGE GUI_BITMAP *myBirdy;
+	GUI_HSPRITE hsprite;
 }Birdy;
 
 
