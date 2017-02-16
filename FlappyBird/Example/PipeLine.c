@@ -85,23 +85,6 @@ void queueDestroy(struct queue *q)
 }
 
 
-void drawPipes(queue *q) {
-	Pipe* e;
-	for(e = q->head; e != 0; e = e->next){
-	  GUI_DrawRect(e->x, 0, e->x+50, e->top);
-	  GUI_DrawRect(e->x, e->bottom, e->x+50, LCD_GetYSize());	
-//		GUI_DrawGradientRoundedV(e->x, 0, e->x+50, e->top,2,0xff0000,0xffffff);
-//		GUI_DrawGradientRoundedV(e->x,e->bottom, e->x+50, LCD_GetYSize(),2,0xffffff,0xff0000);
-	}
-}
-
-void erasePipes(queue *q) {
-	Pipe* e;
-	for(e = q->head; e != 0; e = e->next){
-	  GUI_ClearRect(e->x, 0, e->x+50, e->top);
-	  GUI_ClearRect(e->x, e->bottom, e->x+50, LCD_GetYSize());
-	}
-}
 
 void updatePipes(queue *q){
 	Pipe* e;

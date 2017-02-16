@@ -8,11 +8,11 @@
 
 extern GameInfo thisGame;
 Birdy bird;
-Pipe *pipe;
+
 queue * pipeQueue;
 extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
-
-
+extern GUI_CONST_STORAGE GUI_BITMAP bmTopPipe;
+extern GUI_CONST_STORAGE GUI_BITMAP bmBottomPipe;
 void initBirds(void){
 	int xSize = LCD_GetXSize();
   int ySize = LCD_GetYSize();
@@ -30,6 +30,31 @@ void initBirds(void){
 }
 
 void initPipes(void){
+	Pipe *pipe;
+	int ySize = 100;
+	int randTop= rand() % ySize;
+	int randBot = rand() % ySize+100;
+
+	
+	pipe = malloc(sizeof(Pipe));
+	pipe->topSprite.top =randTop;
+	pipe->botSprite.bottom = randBot;
+	pipe->x = 300;
+	pipe->speed = 5;
+	pipe->botSprite.bmBottomPipe= &bmBottomPipe; 
+  pipe->botSprite.botSprite = GUI_SPRITE_Create(pipe->botSprite.bmBottomPipe, pipe->x ,170);
+
+	pipe->topSprite.bmTopPipe= &bmTopPipe; 
+  pipe->topSprite.topSprite = GUI_SPRITE_Create(pipe->topSprite.bmTopPipe, pipe->x,-70);
+	enq(pipeQueue, pipe);
+	
+
+	
+}
+
+
+/*
+void initPipes(void){
 int ySize = 100;
 	int randTop= rand() % ySize;
 	int randBot = rand() % ySize+100;
@@ -40,24 +65,31 @@ int ySize = 100;
 	pipe->speed = 5;
 	enq(pipeQueue, pipe);
 }
-
+*/
 
 void initGame(void){
 	initBirds();
 	pipeQueue = queueCreate();
 	initPipes();
 	thisGame.num_ticks = T_SHORT;
-	//initBirdy();
+	thisGame.que = *pipeQueue;
 	
 }
 void updateAllPipes(){
-	updatePipes(pipeQueue);
-	if(isOffScreen(pipeQueue)){
+	//updatePipes(pipeQueue);
+	 Pipe *currentPipe;
+	
+	if(pipeQueue->head->x <0){
 		deq(pipeQueue);
 	}
-}
-void drawAllPipes(){
-	drawPipes(pipeQueue);
+	//if(isOffScreen(pipeQueue)){
+	//	deq(pipeQueue);
+	//}
+	for(currentPipe = thisGame.que.head; currentPipe != 0; currentPipe = currentPipe->next){
+		currentPipe->x = currentPipe->x-1;
+		GUI_SPRITE_SetPosition(currentPipe->botSprite.botSprite, currentPipe->x, 170);
+	  GUI_SPRITE_SetPosition(currentPipe->topSprite.topSprite, currentPipe->x, -70);
+		}
 }
 
 void upBirdy(void){

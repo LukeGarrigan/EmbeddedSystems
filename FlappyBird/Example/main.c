@@ -48,14 +48,15 @@ Purpose     : Main program Template
 #include "GUI.h"
 #include "Board_Touch.h"                // ::Board Support:Touchscreen
 #include <stdlib.h>
-#include "PipeLine.h"
-#include "Birdy.h"
 #include "main.h"
 //#include "InitGame.c"
 GameInfo thisGame;
-
-static int count = 0;
 //extern GUI_CONST_STORAGE GUI_BITMAP bmbackground;
+
+extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
+extern GUI_CONST_STORAGE GUI_BITMAP bmTopPipe;
+extern GUI_CONST_STORAGE GUI_BITMAP bmBottomPipe;
+
 
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
@@ -66,11 +67,6 @@ uint32_t HAL_GetTick(void) {
   return os_time; 
 }
 #endif
-
-
-
-
-void drawPipes();
 /**
   * System Clock Configuration
   *   System Clock source            = PLL (HSE)
@@ -132,51 +128,46 @@ static void CPU_CACHE_Enable (void) {
 */
 
 void MainTask(void) {
+
+	int x = 400;
+	int p = 400;
 	int frameCount=0;
-	//Pipe *p;
-	Pipe *pipe;	
-	//Pipe *secondPipe;
-	//Pipe *thirdPipe;
-	//queue * pipeQueue;
- // GUI_BITMAP bmbirdy;
-	TOUCH_STATE tsc_state;
-  int i = 0;
-	int numPipes;
-	GUI_RECT rect;
+	GUI_HSPRITE topSprite;
+	GUI_HSPRITE bottomSprite;
   CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
   HAL_Init();                               /* Initialize the HAL Library     */
   BSP_SDRAM_Init();                         /* Initialize BSP SDRAM           */
   SystemClock_Config();                     /* Configure the System Clock     */
-	
   GUI_Init();
+
+//	GUI_ALLOC_AssignMemory();
 	initGame();
   Touch_Initialize();
-	//GUI_DrawGradientV(0, 0, 480, 272, 0xffffff, 0xff0000);
-  //GUI_SetBkColor(GUI_BLACK);
-	//initBird(&bird);
-	initBirdy();
+	//GUI_DrawBitmap(&bmTopPipe, 100, 50);
+	//GUI_DrawBitmap(&bmBottomPipe, 200, 50);
+	//GUI_SPRITE_Create(ptrTop,100, -100);
 	
-	 // Initialising the pipe and the pipe queue
-		//GUI_DrawBitmap(&thisGame.bird.myBirdy,thisGame.bird.xPos, thisGame.bird.yPos);
-	//	GUI_DrawBitmap(&bmbackground,10, 10);
+	//GUI_SPRITE_Create(&bmBlueBird, 200,200);
+
   while (1) {
-		//GUI_DrawGradientRoundedV(10,10,70, 70,2, 0xffffff, 0xff0000);
-		GUI_Delay(20);
-		GUI_Clear();
+
+	
 		frameCount++;
 		
 		updateAllPipes();
 		updateBirdy();
-			
-		if(frameCount % 50 == 0){
+		if(frameCount % 600 == 0){
 				initPipes();
 		}
-		//GUI_BITMAP 
-		drawAllPipes();
+			
+		
   } 
+			
 	
+
+	}
 	
-}
+
 
 /*********************************************************************
 *

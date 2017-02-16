@@ -409,6 +409,16 @@
               <FileType>1</FileType>
               <FilePath>.\InitGame.c</FilePath>
             </File>
+            <File>
+              <FileName>BottomPipe.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BottomPipe.c</FilePath>
+            </File>
+            <File>
+              <FileName>TopPipe.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\TopPipe.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

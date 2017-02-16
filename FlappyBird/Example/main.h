@@ -6,11 +6,26 @@
 #include <stdbool.h>
 #define T_SHORT 60
 
-typedef struct Pipe {
-	 int top;
+
+
+
+typedef struct TopSprite{
+	 GUI_CONST_STORAGE GUI_BITMAP *bmTopPipe;
+	 GUI_HSPRITE topSprite;
+   int top;
+}TopSprite;
+
+typedef struct BotSprite{
+	 GUI_CONST_STORAGE GUI_BITMAP *bmBottomPipe;
+	 GUI_HSPRITE botSprite;	
    int bottom;
+}BotSprite;
+
+typedef struct Pipe {
    int x;
    int speed;
+	 TopSprite topSprite;
+	 BotSprite botSprite;
 	 struct Pipe *next;
 }Pipe ;
 
@@ -35,7 +50,7 @@ typedef struct{
 typedef struct{
 	unsigned int num_ticks;
 	Birdy bird;
-	Pipe pipe;
+	queue que;
 } GameInfo;
 
 
@@ -43,17 +58,15 @@ typedef struct{
 void upBirdy(void);
 void initBirdy(void);
 void updateBirdy(void);
+void initPipes(void);
 
-void 	drawAllPipes();
-void updateAllPipes();
-void initPipes();
+
+void updateAllPipes(void);
 void deq(queue *q);
 void updatePipes(queue *q);
 void erasePipes(queue *q); 
-void drawPipes(queue *q);
 void enq(queue *q, Pipe *p);
 queue * queueCreate(void);
-void drawPipes();
 Pipe* getList(int position);
 bool isOffScreen(queue *q);
 void initGame(void);
