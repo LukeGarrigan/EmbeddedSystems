@@ -53,9 +53,6 @@ Purpose     : Main program Template
 GameInfo thisGame;
 //extern GUI_CONST_STORAGE GUI_BITMAP bmbackground;
 
-extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
-extern GUI_CONST_STORAGE GUI_BITMAP bmTopPipe;
-extern GUI_CONST_STORAGE GUI_BITMAP bmBottomPipe;
 
 
 #ifdef RTE_CMSIS_RTOS_RTX
@@ -128,43 +125,33 @@ static void CPU_CACHE_Enable (void) {
 */
 
 void MainTask(void) {
-
+	
 	int x = 400;
 	int p = 400;
 	int frameCount=0;
-	GUI_HSPRITE topSprite;
-	GUI_HSPRITE bottomSprite;
-  CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
-  HAL_Init();                               /* Initialize the HAL Library     */
-  BSP_SDRAM_Init();                         /* Initialize BSP SDRAM           */
-  SystemClock_Config();                     /* Configure the System Clock     */
-  GUI_Init();
 
-//	GUI_ALLOC_AssignMemory();
+	
+	CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
+	HAL_Init();
+	BSP_SDRAM_Init();                         /* Initialize BSP SDRAM           */
+  SystemClock_Config();                     /* Configure the System Clock     */
+
+  GUI_Init();
 	initGame();
   Touch_Initialize();
-	//GUI_DrawBitmap(&bmTopPipe, 100, 50);
-	//GUI_DrawBitmap(&bmBottomPipe, 200, 50);
-	//GUI_SPRITE_Create(ptrTop,100, -100);
 	
-	//GUI_SPRITE_Create(&bmBlueBird, 200,200);
-
   while (1) {
-
-	
 		frameCount++;
-		
 		updateAllPipes();
 		updateBirdy();
-		if(frameCount % 600 == 0){
-				initPipes();
-		}
-			
+		GUI_Delay(10);
 		
-  } 
+		if(frameCount % 300 == 0){
+			initPipes();
+		}		
+		
 			
-	
-
+  } 
 	}
 	
 

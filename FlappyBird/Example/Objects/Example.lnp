@@ -6,6 +6,7 @@
 ".\objects\initgame.o"
 ".\objects\bottompipe.o"
 ".\objects\toppipe.o"
+".\objects\bluebird2.o"
 ".\objects\ft5336.o"
 ".\objects\stm32746g_discovery.o"
 ".\objects\stm32746g_discovery_sdram.o"

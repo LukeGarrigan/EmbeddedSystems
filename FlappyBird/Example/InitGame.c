@@ -13,13 +13,16 @@ queue * pipeQueue;
 extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
 extern GUI_CONST_STORAGE GUI_BITMAP bmTopPipe;
 extern GUI_CONST_STORAGE GUI_BITMAP bmBottomPipe;
+extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird2;
+
 void initBirds(void){
 	int xSize = LCD_GetXSize();
   int ySize = LCD_GetYSize();
   int xPos = xSize / 15;
   int yPos = ySize / 5;
-
+  bird.whichBird = 0;
 	bird.myBirdy = &bmBlueBird;
+	bird.myBirdy2 = &bmBlueBird2;
 	bird.xPos = xPos;
 	bird.yPos = yPos;
 	bird.gravity = 1;
@@ -39,17 +42,11 @@ void initPipes(void){
 	pipe = malloc(sizeof(Pipe));
 	pipe->topSprite.top =randTop;
 	pipe->botSprite.bottom = randBot;
-	pipe->x = 300;
+	pipe->x = 400;
 	pipe->speed = 5;
-	pipe->botSprite.bmBottomPipe= &bmBottomPipe; 
-  pipe->botSprite.botSprite = GUI_SPRITE_Create(pipe->botSprite.bmBottomPipe, pipe->x ,170);
-
-	pipe->topSprite.bmTopPipe= &bmTopPipe; 
-  pipe->topSprite.topSprite = GUI_SPRITE_Create(pipe->topSprite.bmTopPipe, pipe->x,-70);
+	GUI_DrawBitmap(&bmTopPipe, pipe->x, 170);
+	GUI_DrawBitmap(&bmBottomPipe, pipe->x,-70);
 	enq(pipeQueue, pipe);
-	
-
-	
 }
 
 
@@ -77,18 +74,19 @@ void initGame(void){
 }
 void updateAllPipes(){
 	//updatePipes(pipeQueue);
+
 	 Pipe *currentPipe;
 	
-	if(pipeQueue->head->x <0){
+	if(pipeQueue->head->x <50){
 		deq(pipeQueue);
 	}
-	//if(isOffScreen(pipeQueue)){
-	//	deq(pipeQueue);
-	//}
+	
 	for(currentPipe = thisGame.que.head; currentPipe != 0; currentPipe = currentPipe->next){
 		currentPipe->x = currentPipe->x-1;
-		GUI_SPRITE_SetPosition(currentPipe->botSprite.botSprite, currentPipe->x, 170);
-	  GUI_SPRITE_SetPosition(currentPipe->topSprite.topSprite, currentPipe->x, -70);
+		
+		
+		GUI_DrawBitmap(&bmTopPipe, currentPipe->x, 170);
+		GUI_DrawBitmap(&bmBottomPipe, currentPipe->x,-70);
 		}
 }
 
@@ -106,7 +104,39 @@ void updateBirdy(void){
 		thisGame.bird.velocity += thisGame.bird.gravity*2;
 		thisGame.bird.yPos += thisGame.bird.velocity;
 	}
+	if(thisGame.bird.yPos > LCD_GetYSize()-30){
+		thisGame.bird.yPos = LCD_GetYSize()-30;
+	}
 	GUI_SPRITE_SetPosition(thisGame.bird.hsprite,thisGame.bird.xPos, thisGame.bird.yPos);
 	//GUI_DrawBitmap(thisGame.bird.myBirdy,thisGame.bird.xPos, thisGame.bird.yPos);
 	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+	if(frameCount % 10==0){
+	if(thisGame.bird.whichBird == 0){
+		thisGame.bird.whichBird =1;
+		GUI_SPRITE_Delete(thisGame.bird.hsprite);
+		thisGame.bird.hsprite = GUI_SPRITE_Create(bird.myBirdy2 ,bird.xPos,bird.yPos);
+	}else{
+		thisGame.bird.whichBird =0;
+		GUI_SPRITE_Delete(thisGame.bird.hsprite);
+		thisGame.bird.hsprite = GUI_SPRITE_Create(bird.myBirdy ,bird.xPos,bird.yPos);
+	}
+
+
+*/
