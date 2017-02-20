@@ -35,6 +35,11 @@ typedef struct Bird{
 }Bird;
 
 
+typedef struct Coin{
+	int x;
+	int y;
+}Coin;
+
 typedef struct GameInfo{
 	Bird * birdy;
 	queue * que;

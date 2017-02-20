@@ -50,12 +50,15 @@ Purpose     : Main program Template
 #include "main.h"
 #include "Board_Touch.h" 
 extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
+extern GUI_CONST_STORAGE GUI_BITMAP bmBackground;
+extern GUI_CONST_STORAGE GUI_BITMAP bmCoin;
+static int frameCount =1;
 Bird bird;
 queue pipeQueue;
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
 GameInfo gameInfo;
-
+Coin coin;
 
 uint32_t HAL_GetTick(void) { 
   return os_time; 
@@ -122,23 +125,27 @@ static void CPU_CACHE_Enable (void) {
 
 
 static void drawRectangle(void * pData){
-	static int i =0;
+	//static int i =0;
 	char str[15];
 	Pipe *currentPipe;
 	sprintf(str, "%d", gameInfo.score);
 	GUI_Clear();
-	GUI_SetColor(GUI_WHITE);
-  GUI_SetFont(&GUI_Font8x16x1x2);
-  GUI_DispStringHCenterAt(str, LCD_GetXSize()/2 , 70);
+	GUI_DrawBitmap(&bmBackground, 0,0);
 	
-	GUI_SetBkColor(GUI_BLUE);
-	GUI_SetColor(GUI_GREEN);
+	GUI_SelectLayer(1);
+	GUI_SetColor(GUI_BROWN);
 	for(currentPipe = pipeQueue.head; currentPipe != 0; currentPipe = currentPipe->next){
 		GUI_FillRect(currentPipe->x, 0, currentPipe->x+50, currentPipe->topY);
 		GUI_FillRect(currentPipe->x, currentPipe->bottomY, currentPipe->x+50, 272);
 	}
 	GUI_DrawBitmap(&bmBlueBird, bird.x, bird.y);
-	
+	GUI_DrawBitmap(&bmCoin, coin.x, coin.y);
+	// for printing the score
+	GUI_SelectLayer(2);
+	GUI_SetTextMode(GUI_TM_TRANS | GUI_TM_REV);
+	GUI_SetColor(GUI_WHITE);
+  GUI_SetFont(&GUI_Font8x16x1x2);
+	GUI_DispStringHCenterAt(str, LCD_GetXSize()/2 , 70);
 } 
 
 
@@ -146,7 +153,7 @@ void initPipes(){
 	Pipe *pipe = malloc(sizeof*pipe);
 
 	int screenHeight = 272; // height of screen
-	int gap = 100;
+	int gap = 120;
 	int min = 20; 	// minimum height of either pipe
 	int forRand = screenHeight - gap - min; 
 	
@@ -159,7 +166,7 @@ void initPipes(){
 }
 
 bool hits(Pipe * p){
-	if(bird.y < p->topY || bird.y > 272-p->bottomY){
+	if(bird.y < p->topY || bird.y > p->bottomY){
 		if(bird.x > p->x && bird.x < p->x + 50){
 			return true;
 		}
@@ -168,25 +175,39 @@ bool hits(Pipe * p){
 }
 
 void updateAllPipes(){
-	//updatePipes(pipeQueue);
-
-	 Pipe *currentPipe;
 	
+	Pipe *currentPipe;
+	static bool down = false;
 	if(pipeQueue.head->x <-50){
 		deq(&pipeQueue);
 		gameInfo.score++;
 	}
 	
 	for(currentPipe = pipeQueue.head; currentPipe != 0; currentPipe = currentPipe->next){
-		currentPipe->x = currentPipe->x-1;
+		 currentPipe->x = currentPipe->x-2;
+			// All the code below is for the pipes moving on the y axis
+			// This will only be implemented on more difficult version 
+			// *****************DO NOT DELETE*************************
+		  /*
+      if(down == true){
+					currentPipe->topY = currentPipe->topY-1;
+					currentPipe->bottomY = currentPipe->bottomY-1;
+					if(frameCount % 10 == 0){
+						down = false;
+					}
+			}else if( down == false){
+				currentPipe->topY = currentPipe->topY+1;
+				currentPipe->bottomY = currentPipe->bottomY+1;
+					if(frameCount % 10 == 0){
+						down = true;
+					}
+			}
+		 */
 	}
-		if(hits(pipeQueue.head)){
-			gameInfo.score = 0;
-		}
-	
+	if(hits(pipeQueue.head)){
+		gameInfo.score = 0;
+	}
 }
-
-
 void initBird(){
 	//bird = malloc(sizeof(Bird));
 	bird.x = 10;
@@ -196,7 +217,7 @@ void initBird(){
 	//bird.lift = -10;
 }
 void upBirdy(void){
-	bird.velocity += - bird.gravity*5;
+	bird.velocity += - bird.gravity*2;
 }
 
 void updateBirdy(void){
@@ -204,21 +225,36 @@ void updateBirdy(void){
   Touch_GetState (&tsc_state);
 	if(tsc_state.pressed){
 		upBirdy();	
-	}else{
-		bird.velocity *=0.7;
-		bird.velocity += bird.gravity;
-		bird.y += bird.velocity;
 	}
+	//bird.velocity *=0.7;
+	bird.velocity += bird.gravity;
+	bird.y += bird.velocity;
 	if(bird.y > 272){
 		bird.y = 272/2;
 	}	
-		
+	
+	
+	if(bird.velocity > 3){
+		bird.velocity = 3;
+	}
+}
+
+
+void updateCoin(){
+	coin.x = coin.x -2;
+	if(abs(bird.x-coin.x)<4){
+		gameInfo.score=gameInfo.score+3;
+		coin.x=-20;
+	}
+	
+}
+void initCoin(){
+	coin.x = 400;
+	coin.y = 186;
 }
 
 
 void MainTask(void) {
-
-  int frameCount =1;
 	GUI_RECT Rect = {0, 0, 602,272};
 	CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
   HAL_Init();                               /* Initialize the HAL Library     */
@@ -231,15 +267,22 @@ void MainTask(void) {
 	gameInfo.score = 0;
   while (1) {
 		
+		updateCoin();
 		updateAllPipes();
 		updateBirdy();
-		if(frameCount %160 == 0){
+		if(frameCount %150 == 0){
 			initPipes();
 		}
+		if(frameCount %1170 == 0){
+			initCoin();
+		}
+		
     GUI_MEMDEV_Draw(&Rect, &drawRectangle, &pipeQueue, 0, 0);
 		frameCount ++;
-		}
-  } 
+		GUI_Delay(2);
+	}
+	
+} 
 
 	
 	

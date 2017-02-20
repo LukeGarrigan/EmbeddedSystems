@@ -1,4 +1,4 @@
-.\objects\bluebird.o: ..\..\..\GitHub\EmbeddedSystems\FlappyBird\Example\BlueBird.c
+.\objects\bluebird.o: BlueBird.c
 .\objects\bluebird.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\bluebird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI.h
 .\objects\bluebird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_ConfDefaults.h

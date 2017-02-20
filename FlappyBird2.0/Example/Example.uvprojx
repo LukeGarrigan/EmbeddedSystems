@@ -397,7 +397,17 @@
             <File>
               <FileName>BlueBird.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\GitHub\EmbeddedSystems\FlappyBird\Example\BlueBird.c</FilePath>
+              <FilePath>.\BlueBird.c</FilePath>
+            </File>
+            <File>
+              <FileName>Background.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Background.c</FilePath>
+            </File>
+            <File>
+              <FileName>Coin.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Coin.c</FilePath>
             </File>
           </Files>
         </Group>
