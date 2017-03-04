@@ -25,7 +25,7 @@ queue * queueCreate(void)
 /* push a new value onto top of Queue */
 void enq(queue *q, Pipe *p)
 {
-    assert(p);
+    //assert(p);
 
 
     /* Because I will be the tail, nobody is behind me */
@@ -61,12 +61,13 @@ void deq(queue *q)
     int ret;
     Pipe *e;
 	
-    assert(!queueEmpty(q));
+    //assert(!queueEmpty(q));
     /* patch out first element */
     e = q->head;
     q->head = e->next;	
 	  free(e);
 }
+
 
 
 /* free a queue and all of its elements */
@@ -75,8 +76,7 @@ void queueDestroy(struct queue *q)
     while(!queueEmpty(q)) {
         deq(q);
     }
-
-    free(q);
+		free(q);
 }
 
 

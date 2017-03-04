@@ -409,6 +409,16 @@
               <FileType>1</FileType>
               <FilePath>.\Coin.c</FilePath>
             </File>
+            <File>
+              <FileName>Pregame.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Pregame.c</FilePath>
+            </File>
+            <File>
+              <FileName>HighScores.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\HighScores.txt</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -641,6 +651,18 @@
         <targetInfos>
           <targetInfo name="STM32F746 Flash"/>
         </targetInfos>
+      </file>
+      <file attr="config" category="source" name="FileSystem\Config\FS_Config.c" version="6.2.0">
+        <instance index="0" removed="1">RTE\File_System\FS_Config.c</instance>
+        <component Cbundle="MDK-Pro" Cclass="File System" Cgroup="CORE" Cvariant="SFN" Cvendor="Keil" Cversion="6.9.0" condition="CMSIS Core with RTOS and File System I/O"/>
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.3.0"/>
+        <targetInfos/>
+      </file>
+      <file attr="config" category="source" name="FileSystem\Config\FS_Config_MC.h" version="6.2.0">
+        <instance index="0" removed="1">RTE\File_System\FS_Config_MC_0.h</instance>
+        <component Cbundle="MDK-Pro" Cclass="File System" Cgroup="Drive" Csub="Memory Card" Cvendor="Keil" Cversion="6.9.0" condition="File System and SD/MMC Driver" maxInstances="2"/>
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.3.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="source" name="emWin\Sample\Config\GUIConf.c" version="5.00">
         <instance index="0">RTE\Graphics\GUIConf.c</instance>

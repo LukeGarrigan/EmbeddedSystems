@@ -32,6 +32,7 @@ typedef struct Bird{
   int gravity;
 	int velocity;
 	int lift;
+	bool up;
 }Bird;
 
 
@@ -41,13 +42,20 @@ typedef struct Coin{
 }Coin;
 
 typedef struct GameInfo{
-	Bird * birdy;
+	Bird *birdy;
 	queue * que;
+	Coin * coin;
+	bool alive;
 	int score;
 }GameInfo;
 
 
+typedef struct Difficulty {
+	GameInfo *gameinfo;
+}Difficulty;
 
+void queueDestroy(struct queue *q);
+int queueEmpty(const struct queue *q);
 void updateAllPipes(void);
 void deq(queue *q);
 void updatePipes(queue *q);
