@@ -2,6 +2,7 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 #include <stdbool.h>
+#include "Board_Touch.h"
 
 typedef struct {
   int Xpos;
@@ -47,6 +48,9 @@ typedef struct GameInfo{
 	Coin * coin;
 	bool alive;
 	int score;
+	int pipeGap;
+	int highScore;
+	int scores[4];
 }GameInfo;
 
 
@@ -65,4 +69,15 @@ queue * queueCreate(void);
 Pipe* getList(int position);
 bool isOffScreen(queue *q);
 void initGame(void);
+void initBird(void);
+void initCoin(void);
+void setupGameInfo(void);
+void initPipes(void);
+void displayLeaderboard(TOUCH_STATE  tsc_state, GUI_RECT Rect);
+void initPregame(TOUCH_STATE  tsc_state, GUI_RECT Rect);
+bool isbirdAlive(void);
+void updateCoin(void);
+void updateBirdy(void);
+void drawEverything(GUI_RECT Rect);
+void createPipeQueue(void);
 #endif /* _MAIN_H */

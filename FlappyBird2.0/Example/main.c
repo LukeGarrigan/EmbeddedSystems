@@ -49,18 +49,14 @@ Purpose     : Main program Template
 #include <stdlib.h>
 #include "main.h"
 #include "Board_Touch.h" 
-extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
-extern GUI_CONST_STORAGE GUI_BITMAP bmBackground;
-extern GUI_CONST_STORAGE GUI_BITMAP bmCoin;
-extern GUI_CONST_STORAGE GUI_BITMAP bmPregame;
-static int frameCount =1;
+
 FILE *file;
 
 //Bird bird;
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
 Coin coin;
-GameInfo gameInfo;
+//GameInfo gameInfo;
 Difficulty difficulty;
 uint32_t HAL_GetTick(void) { 
   return os_time; 
@@ -125,245 +121,45 @@ static void CPU_CACHE_Enable (void) {
 }
 
 
-
-static void drawRectangle(void * pData){
-	//static int i =0;
-	char str[15];
-	Pipe *currentPipe;
-	sprintf(str, "%d", gameInfo.score);
-	GUI_Clear();
-	GUI_DrawBitmap(&bmBackground, 0,0);
-	
-	GUI_SelectLayer(1);
-	GUI_SetColor(GUI_BROWN);
-	for(currentPipe = gameInfo.que->head; currentPipe != 0; currentPipe = currentPipe->next){
-		GUI_FillRect(currentPipe->x, 0, currentPipe->x+50, currentPipe->topY);
-		GUI_FillRect(currentPipe->x, currentPipe->bottomY, currentPipe->x+50, 272);
-	}
-	GUI_DrawBitmap(&bmBlueBird, gameInfo.birdy->x, gameInfo.birdy->y);
-	//GUI_DrawBitmap(&bmCoin, coin.x, coin.y);
-	// for printing the score
-	GUI_SelectLayer(2);
-	GUI_SetTextMode(GUI_TM_TRANS | GUI_TM_REV);
-	GUI_SetColor(GUI_WHITE);
-  GUI_SetFont(&GUI_Font8x16x1x2);
-	GUI_DispStringHCenterAt(str, LCD_GetXSize()/2 , 70);
-} 
-
-
-// Draws the pregame, so prompts the user that they 
-// have to tap/hold down to make the bird fly!
-static void drawPregrame(void * pData){
-	GUI_Clear();
-	GUI_DrawBitmap(&bmBackground, 0,0);
-	GUI_SelectLayer(1);
-	GUI_DrawBitmap(&bmPregame, 80, 95);
-	GUI_SelectLayer(2);
-	GUI_DrawBitmap(&bmBlueBird, gameInfo.birdy->x, gameInfo.birdy->y);
-} 
-
-
-static void drawHighscores(void * pData){
-	int c;
-	GUI_Clear();
-	GUI_DrawBitmap(&bmBackground, 0,0);
-	//file = fopen("HighScores.txt", "r");
-	
-	//if (file) {
-  //  while ((c = getc(file)) != EOF)
-     
-  //  fclose(file);
-	//}
-	
-} 
-
-
-void initPipes(){
-	Pipe *pipe = malloc(sizeof(Pipe));
-	int screenHeight = 272; // height of screen
-	int gap = 120;
-	int min = 20; 	// minimum height of either pipe
-	int forRand = screenHeight - gap - min; 
-	int randTop= rand() % forRand+min;
-	pipe->topY = randTop;
-	pipe->bottomY = randTop+gap;
-	pipe->x = 600;
-	pipe->speed = 5;
-	enq(gameInfo.que, pipe);
-}
-
-bool hits(Pipe * p){
-	if(gameInfo.birdy->y < p->topY || gameInfo.birdy->y > p->bottomY){
-		if(gameInfo.birdy->x > p->x && gameInfo.birdy->x < p->x + 50){
-			return true;
-		}
-	}
-	return false;
-}
-
-void updateAllPipes(){
-	
-	Pipe *currentPipe;
-
-	if(gameInfo.que->head->x <-50){
-		deq(gameInfo.que);
-		gameInfo.score++;
-	}
-	for(currentPipe = gameInfo.que->head; currentPipe != 0; currentPipe = currentPipe->next){
-		 currentPipe->x = currentPipe->x-2;
-	}
-
-	
-  if(frameCount %150 == 0){
-			initPipes();
-	}
-	if(hits(gameInfo.que->head)){
-		
-	  gameInfo.alive = false;
-	  gameInfo.score = 0;
-		free(gameInfo.birdy);
-		queueDestroy(gameInfo.que);
-
-	}
-}
-void initBird(){
-	gameInfo.birdy = malloc(sizeof(Bird));
-	gameInfo.birdy->x = 10;
-	gameInfo.birdy->y = 100;
-	gameInfo.birdy->gravity = 1;
-	gameInfo.birdy->velocity = 1;
-	gameInfo.birdy->up = false;
-
-}
-void upBirdy(void){
-	gameInfo.birdy->velocity += - gameInfo.birdy->gravity*2;
-}
-
-void updateBirdy(void){
-	TOUCH_STATE  tsc_state;
-  Touch_GetState (&tsc_state);
-	if(tsc_state.pressed){
-		upBirdy();	
-	}
-	//bird.velocity *=0.7;
-	gameInfo.birdy->velocity += gameInfo.birdy->gravity;
-	gameInfo.birdy->y += gameInfo.birdy->velocity;
-	if(gameInfo.birdy->y > 272){
-		gameInfo.birdy->y = 272/2;
-		gameInfo.score = 0;
-	}	
-	
-	if(gameInfo.birdy->velocity > 3){
-		gameInfo.birdy->velocity = 3;
-	}
-}
-
-
-void initCoin(){
-	gameInfo.coin->x = 600;
-	gameInfo.coin->y = 186;
-}
-
-
-void updateCoin(){
-	gameInfo.coin->x = gameInfo.coin->x -2;
-	if(abs(gameInfo.birdy->x-gameInfo.coin->x)<4){
-		gameInfo.score=gameInfo.score+3;
-		gameInfo.coin->x=-20;
-	}
-	if(frameCount %1170 == 0){
-			initCoin();
-	}
-	
-}
-
-void displayLeaderboard(TOUCH_STATE  tsc_state, GUI_RECT Rect){
-	Touch_GetState (&tsc_state);
-	while(!tsc_state.pressed){
-	    GUI_MEMDEV_Draw(&Rect, &drawHighscores, 0, 0, 0);
-	    Touch_GetState (&tsc_state);
-  }
-}
-
-void initGame(){
-		
+void initGame(){		
 		initBird();
-	 // initCoin();
-		gameInfo.score = 0;
-		gameInfo.alive = true;
+	  initCoin();
+		setupGameInfo();
 		initPipes();
 }
 
-
-void initPregame(TOUCH_STATE  tsc_state, GUI_RECT Rect){
-	while(!tsc_state.pressed){
-		if(gameInfo.birdy->up == false){
-			gameInfo.birdy->y--;
-			if(gameInfo.birdy->y < 100){
-			    gameInfo.birdy->up = true;
-			}
-		}else if(gameInfo.birdy->up == true){
-			gameInfo.birdy->y++;
-			if(gameInfo.birdy->y > 120){
-				gameInfo.birdy->up = false;
-			}
-		}
-		GUI_MEMDEV_Draw(&Rect, &drawPregrame, 0, 0, 0);
-		Touch_GetState (&tsc_state);
-	}
-}
-
 void MainTask(void) {
-	int i =0;
 	GUI_RECT Rect = {0, 0, 602,272};
 	TOUCH_STATE  tsc_state;
-  
-
 
 	while(1){
-	gameInfo.que = queueCreate();	
+	createPipeQueue();	
 	initGame();	
 	displayLeaderboard(tsc_state,Rect);
 	Touch_GetState (&tsc_state);
 	GUI_Delay(500);
 	tsc_state.pressed=false;
 	initPregame(tsc_state,Rect);
-	frameCount = 1;
 	// loop while the bird is still alive
-  while (gameInfo.alive) {
-		
+  while (isbirdAlive()) {	
 		updateCoin();
 		updateAllPipes();
 		updateBirdy();
-		/*
-	
-		*/
-		GUI_MEMDEV_Draw(&Rect, &drawRectangle, gameInfo.que, 0, 0);
-		
-		frameCount ++;
+		drawEverything(Rect);
 	}
 }
 } 
-
-	
-	
-	
-	
-	
-	
-	
 
 /*********************************************************************
 *
 *       Main
 */
 int main (void) {
-		CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
+	CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
   HAL_Init();                               /* Initialize the HAL Library     */
   BSP_SDRAM_Init();                         /* Initialize BSP SDRAM           */
   SystemClock_Config();                     /* Configure the System Clock     */
   GUI_Init();
-
   Touch_Initialize();
   MainTask();
   for (;;);
