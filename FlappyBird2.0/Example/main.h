@@ -13,6 +13,7 @@ typedef struct {
 } Rectangle;
 
 typedef struct Pipe {
+	 bool up;
    int x;
    int speed;
 	 int topY;
@@ -42,15 +43,23 @@ typedef struct Coin{
 	int y;
 }Coin;
 
+typedef struct Score{
+	int score;
+	int difficulty;
+}Score;
+
 typedef struct GameInfo{
 	Bird *birdy;
 	queue * que;
 	Coin * coin;
 	bool alive;
+	int difficulty;
+	int frameCount;
 	int score;
 	int pipeGap;
-	int highScore;
-	int scores[4];
+	Score highScore;
+	int pipeDistance;
+	Score scores[4];
 }GameInfo;
 
 
@@ -80,4 +89,5 @@ void updateCoin(void);
 void updateBirdy(void);
 void drawEverything(GUI_RECT Rect);
 void createPipeQueue(void);
+void setDifficulty(int choice);
 #endif /* _MAIN_H */

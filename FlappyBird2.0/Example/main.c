@@ -121,31 +121,35 @@ static void CPU_CACHE_Enable (void) {
 }
 
 
-void initGame(){		
-		initBird();
-	  initCoin();
+
+void initGame(){	
+		// the bird is needed for 	
+	  initBird();	
 		setupGameInfo();
 		initPipes();
+	  initCoin();
 }
 
 void MainTask(void) {
 	GUI_RECT Rect = {0, 0, 602,272};
 	TOUCH_STATE  tsc_state;
 
-	while(1){
+	while(1){	
 	createPipeQueue();	
-	initGame();	
+
 	displayLeaderboard(tsc_state,Rect);
 	Touch_GetState (&tsc_state);
 	GUI_Delay(500);
 	tsc_state.pressed=false;
-	initPregame(tsc_state,Rect);
+  
+	initGame();
+	initPregame(tsc_state,Rect);	
 	// loop while the bird is still alive
   while (isbirdAlive()) {	
+		drawEverything(Rect);
 		updateCoin();
 		updateAllPipes();
 		updateBirdy();
-		drawEverything(Rect);
 	}
 }
 } 
