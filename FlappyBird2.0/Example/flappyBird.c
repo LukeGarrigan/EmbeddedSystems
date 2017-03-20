@@ -166,8 +166,12 @@ void updateBirdy(void){
 	//bird.velocity *=0.7;
 	gameInfo.birdy->velocity += gameInfo.birdy->gravity;
 	gameInfo.birdy->y += gameInfo.birdy->velocity;
+
 	if(gameInfo.birdy->velocity > 3){
 		gameInfo.birdy->velocity = 3;
+	}
+	if(gameInfo.birdy->velocity < -4){
+		gameInfo.birdy->velocity = -4;
 	}
 	if(gameInfo.birdy->y > 272){
 		updateScores();
