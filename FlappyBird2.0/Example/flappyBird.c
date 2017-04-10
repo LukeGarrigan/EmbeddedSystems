@@ -233,7 +233,7 @@ bool isbirdAlive(){
  * @param  None
  * @retval None
  *
- *  Initialises a bird and adds it to the game state
+ *  Initialises a bird and adds it to the game states
  */
 void initBird(){
 	gameInfo.birdy = malloc(sizeof(Bird));
