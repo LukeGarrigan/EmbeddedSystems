@@ -1,47 +1,19 @@
-/*********************************************************************
-*                SEGGER Microcontroller GmbH & Co. KG                *
-*        Solutions for real time microcontroller applications        *
-**********************************************************************
-*                                                                    *
-*        (c) 1996 - 2016  SEGGER Microcontroller GmbH & Co. KG       *
-*                                                                    *
-*        Internet: www.segger.com    Support:  support@segger.com    *
-*                                                                    *
-**********************************************************************
-
-** emWin V5.36 - Graphical user interface for embedded applications **
-All  Intellectual Property rights  in the Software belongs to  SEGGER.
-emWin is protected by  international copyright laws.  Knowledge of the
-source code may not be used to write a similar product.  This file may
-only be used in accordance with the following terms:
-
-The software has been licensed to  ARM LIMITED whose registered office
-is situated at  110 Fulbourn Road,  Cambridge CB1 9NJ,  England solely
-for  the  purposes  of  creating  libraries  for  ARM7, ARM9, Cortex-M
-series,  and   Cortex-R4   processor-based  devices,  sublicensed  and
-distributed as part of the  MDK-ARM  Professional  under the terms and
-conditions  of  the   End  User  License  supplied  with  the  MDK-ARM
-Professional. 
-Full source code is available at: www.segger.com
-
-We appreciate your understanding and fairness.
-----------------------------------------------------------------------
-Licensing information
-
-Licensor:                 SEGGER Software GmbH
-Licensed to:              ARM Ltd, 110 Fulbourn Road, CB1 9NJ Cambridge, UK
-Licensed SEGGER software: emWin
-License number:           GUI-00181
-License model:            LES-SLA-20007, Agreement, effective since October 1st 2011 
-Licensed product:         MDK-ARM Professional
-Licensed platform:        ARM7/9, Cortex-M/R4
-Licensed number of seats: -
-----------------------------------------------------------------------
-File        : main.c
-Purpose     : Main program Template
----------------------------END-OF-HEADER------------------------------
-*/
-
+/****************************************************************************
+ * Copyright (C) 2017 by Shane Sturgeon, Luke Garrigan                      *
+ *                                                                          *
+ * This file is part of Flappy Birds.                                       *
+ *                                                                          *
+ *  Flappy Birds is a tap based game created on the STM32F746G discovery    *
+ *  board as part of Embedded Systems Coursework                            *
+ *                                                                          *
+ ****************************************************************************/
+/**
+ * @file main.c
+ * @author Luke Garrigan, Shane Sturgeon
+ * @date 17 March 2017
+ * @brief File containing all setup methods to get the game initialised
+ */
+ 
 #include "stm32f7xx_hal.h"
 #include "stm32746g_discovery_sdram.h"
 #include "RTE_Components.h"
@@ -52,11 +24,13 @@ Purpose     : Main program Template
 
 FILE *file;
 
-//Bird bird;
+
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
+
+//Points Coin
 Coin coin;
-//GameInfo gameInfo;
+
 Difficulty difficulty;
 uint32_t HAL_GetTick(void) { 
   return os_time; 
@@ -121,15 +95,31 @@ static void CPU_CACHE_Enable (void) {
 }
 
 
-
+/**
+ * @brief Initialise the game state.
+ * @param  None
+ * @retval None
+ *
+ * Calling @b initGame() creates the initial game state by
+ * creating a bird, setting all game variables, creating the 
+ * pipe queue and adding an extra points coin in.
+ */
 void initGame(){	
-		// the bird is needed for 	
 	  initBird();	
 		setupGameInfo();
 		initPipes();
 	  initCoin();
 }
 
+/**
+ * @brief Task container
+ * @param  None
+ * @retval None
+ *
+ * Holds all method calls to run the game, a while loop to setup 
+ * the game and an inner loop to update all positions of elements 
+ * on screen whilst the bird is alive
+ */
 void MainTask(void) {
 	GUI_RECT Rect = {0, 0, 602,272};
 	TOUCH_STATE  tsc_state;
@@ -154,10 +144,13 @@ void MainTask(void) {
 }
 } 
 
-/*********************************************************************
-*
-*       Main
-*/
+/**
+ * @brief Main
+ * @param  None
+ * @retval int
+ *
+ * Configures all hardware used and calls @b MainTask
+ */
 int main (void) {
 	CPU_CACHE_Enable();                       /* Enable the CPU Cache           */
   HAL_Init();                               /* Initialize the HAL Library     */

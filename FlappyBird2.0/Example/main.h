@@ -1,8 +1,23 @@
-
+/****************************************************************************
+ * Copyright (C) 2017 by Shane Sturgeon, Luke Garrigan                      *
+ *                                                                          *
+ * This file is part of Flappy Birds.                                       *
+ *                                                                          *
+ *  Flappy Birds is a tap based game created on the STM32F746G discovery    *
+ *  board as part of Embedded Systems Coursework                            *
+ *                                                                          *
+ ****************************************************************************/
+/**
+ * @file main.h
+ * @author Luke Garrigan, Shane Sturgeon
+ * @date 17 March 2017
+ * @brief header file containing all methods and structs
+ */
 #ifndef _MAIN_H
 #define _MAIN_H
 #include <stdbool.h>
 #include "Board_Touch.h"
+
 
 typedef struct {
   int Xpos;
@@ -12,54 +27,83 @@ typedef struct {
 	
 } Rectangle;
 
+/**
+ * @brief Models a pipe
+ *
+ *  Structure to model all information needed to draw a pipe. 
+ *  a pipe will be added to the pipeQueue
+ */
 typedef struct Pipe {
-	 bool up;
-   int x;
-   int speed;
-	 int topY;
-	 int bottomY;
-	 struct Pipe *next;
+	 bool up;             /**< Weather the pipe is moving up or down (insane difficulty) */
+   int x;   						/**< x co-ordinate*/
+   int speed;				  	/**< Speed the pipe moves at*/
+	 int topY;          	/**< Y position of the top half of the pipe */
+	 int bottomY;      	  /**< Y position of the bottom half of the pipe */
+	 struct Pipe *next;   /**< Pointer to the following piper */
 }Pipe;
 
-
+/**
+ * @brief Queue of pipes
+ *
+ *  Creates a queue of pipes that is used by the game state
+ */
 typedef struct queue {
-     Pipe *head;
-     Pipe *tail;
+     Pipe *head;			/**< Points to the head pipe of the queue*/
+     Pipe *tail;      /**< Points to the tail pipe of the queue*/
 }queue ;
 
-
+/**
+ * @brief Models a bird
+ *
+ *  Structure to model all information needed to draw a bird.
+ */
 typedef struct Bird{
-	int x;
-	int y;
-  int gravity;
-	int velocity;
-	int lift;
-	bool up;
+	int x;           	 /**< x co-ordinate of birds position*/
+	int y;					 	 /**< y co-ordinate of birds position*/
+  int gravity;       /**< Strength of the gravity */
+	int velocity;      /**< Velocity speed */
+	int lift;          /**< ? */
+	bool up;					 /**< Weather the bird is moving up or down */
 }Bird;
 
-
+/**
+ * @brief Models a coin
+ *
+ *  Structure to model all information needed to draw a coin.
+ */
 typedef struct Coin{
-	int x;
-	int y;
+	int x; 						/**< x co-ordinate of coins position*/
+	int y;						/**< y co-ordinate of coins position*/
 }Coin;
 
+/**
+ * @brief All score information
+ *
+ *  Stores all information regarding score
+ */
 typedef struct Score{
-	int score;
-	int difficulty;
-}Score;
+	int score;       	/**< Score achieved*/
+	int difficulty;		/**< Level of difficulty when score was achieved*/
+}Score;	
 
+/**
+ * @brief Models Game State
+ *
+ *  Stores all game information regarding the current 
+ *  state of the game.
+ */
 typedef struct GameInfo{
-	Bird *birdy;
-	queue * que;
-	Coin * coin;
-	bool alive;
-	int difficulty;
-	int frameCount;
-	int score;
-	int pipeGap;
-	Score highScore;
-	int pipeDistance;
-	Score scores[4];
+	Bird *birdy;      /**< Pointer to bird in play */
+	queue * que;      /**< Pointer to queue containing all pipes */
+	Coin * coin;      /**< Pointer to coin in play*/
+	bool alive;       /**< Boolean check to see if the game is still playing*/
+	int difficulty;		/**< Difficulty rating (0-2)*/
+	int frameCount;   /**< Counter for frames*/
+	int score;				/**< Current score of the game*/
+	int pipeGap;			/**< Distance between top and bottom pipe */
+	Score highScore;  /**< Highest score achieved in game state */
+	int pipeDistance; /**< Distance between concurrent pipes */
+	Score scores[4];  /**< Saves n most current scores */
 }GameInfo;
 
 
