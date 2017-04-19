@@ -28,6 +28,7 @@ extern GUI_CONST_STORAGE GUI_BITMAP bmPregame;
 extern GUI_CONST_STORAGE GUI_BITMAP bmEasy;
 extern GUI_CONST_STORAGE GUI_BITMAP bmHard;
 extern GUI_CONST_STORAGE GUI_BITMAP bmAbsurd;
+extern GUI_CONST_STORAGE GUI_BITMAP bmArrow;
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Game Info~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -253,7 +254,7 @@ void initBird(){
  *  Alters the bird position based on gravity, moving it up 
  */
 void upBirdy(void){
-	gameInfo.birdy->velocity += - gameInfo.birdy->gravity*2;
+	gameInfo.birdy->velocity += - gameInfo.birdy->gravity*4;
 }
 
 /**
@@ -275,9 +276,13 @@ void updateBirdy(void){
 	gameInfo.birdy->velocity += gameInfo.birdy->gravity;
 	gameInfo.birdy->y += gameInfo.birdy->velocity;
 
-	if(gameInfo.birdy->velocity > 3){
-		gameInfo.birdy->velocity = 3;
+	
+	// down velocity
+	if(gameInfo.birdy->velocity > 4){
+		gameInfo.birdy->velocity = 4;
 	}
+	
+	// up velocity
 	if(gameInfo.birdy->velocity < -4){
 		gameInfo.birdy->velocity = -4;
 	}
@@ -349,7 +354,7 @@ static void drawHighscores(void * pData){
 	sprintf(str, "%d is the score to beat", gameInfo.highScore.score);
 	GUI_SetTextMode(GUI_TM_TRANS);
   GUI_SetFont(&GUI_Font8x16x1x2);
-	
+
 	// print strings if there is a highscore
 	if(gameInfo.highScore.score > 0){
 	if(gameInfo.highScore.difficulty == 0)
@@ -361,7 +366,6 @@ static void drawHighscores(void * pData){
 		GUI_DispStringHCenterAt(str, LCD_GetXSize()/2 , 30);
 		GUI_SetColor(GUI_BLACK);
 		GUI_DispStringHCenterAt("Previous Scores:", LCD_GetXSize()/2 , 70);
-		
 		arraySize = sizeof(gameInfo.scores)/sizeof(gameInfo.scores[0]);
 		for(i = 0; i<arraySize;i++){
 			if(gameInfo.scores[i].score!= NULL){
@@ -375,7 +379,14 @@ static void drawHighscores(void * pData){
 				GUI_DispStringHCenterAt(scores, LCD_GetXSize()/2 , listPos);
 				listPos += 40;
 			}
+			
+			
 		}
+	}else{
+			// there has been no scores yet
+			GUI_DispStringHCenterAt("I'd probably do easy if I were you..", LCD_GetXSize()/2+30 , LCD_GetYSize()/2);
+			GUI_DrawBitmap(&bmArrow, 110, 58);
+		
 	}
 	// displays the difficulty buttons
 	

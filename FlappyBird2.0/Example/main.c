@@ -126,7 +126,6 @@ void MainTask(void) {
 
 	while(1){	
 	createPipeQueue();	
-
 	displayLeaderboard(tsc_state,Rect);
 	Touch_GetState (&tsc_state);
 	GUI_Delay(500);
