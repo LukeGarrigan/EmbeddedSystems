@@ -120,7 +120,7 @@ typedef struct GameInfo{
 	Score highScore;  /**< Highest score achieved in game state */
 	int pipeDistance; /**< Distance between concurrent pipes */
 	Score scores[4];  /**< Saves n most current scores */
-
+	int birdType;
 }GameInfo;
 
 

@@ -21,8 +21,9 @@
 #include "main.h"
 #include "Progbar.h"
 #include <math.h>
-
+extern GUI_CONST_STORAGE GUI_BITMAP bmCowboyBirdy;
 extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
+extern GUI_CONST_STORAGE GUI_BITMAP bmKingBirdy;
 extern GUI_CONST_STORAGE GUI_BITMAP bmBackground;
 extern GUI_CONST_STORAGE GUI_BITMAP bmCoin;
 extern GUI_CONST_STORAGE GUI_BITMAP bmPregame;
@@ -111,7 +112,7 @@ void updateScores(){
 		}else if(gameInfo.difficulty == 2){
 			gameInfo.playerLevel->currentXp += gameInfo.score * 3;
 		}
-	
+
 		if(gameInfo.score>gameInfo.highScore.score){
 			gameInfo.highScore.score = gameInfo.score;
 			gameInfo.highScore.difficulty = gameInfo.difficulty;
@@ -272,7 +273,6 @@ void initBird(){
 	gameInfo.birdy->gravity = 1;
 	gameInfo.birdy->velocity = 1;
 	gameInfo.birdy->up = false;
-
 }
 
 /**
@@ -389,11 +389,41 @@ void drawProgress(){
 	
 	
 	sprintf(lvl, "Level: %d", gameInfo.playerLevel->playerLevel);
-	GUI_SetColor(GUI_RED);
+	GUI_SetColor(GUI_WHITE);
 	GUI_SetFont(&GUI_Font8x16x3x3);
-	GUI_DispStringHCenterAt(lvl, 355 , 182);
+	GUI_DispStringHCenterAt(lvl, 370 , 230);
 
 }
+
+void drawBirdChoice(){
+	GUI_DrawBitmap(&bmBlueBird, 250, 185);
+	GUI_SetColor(GUI_GRAY);
+	if(gameInfo.birdType==0){
+			GUI_FillRect(250,214, 285, 217);
+	}else if(gameInfo.birdType==1){
+			GUI_FillRect(320,214, 355, 217);
+	}else if(gameInfo.birdType==2){
+			GUI_FillRect(390,214, 425, 217);
+	}
+		
+		
+	GUI_SetColor(GUI_RED);
+	GUI_SetFont(&GUI_Font8x16x1x2);
+
+
+	
+	if(gameInfo.playerLevel->playerLevel<5){
+		GUI_DispStringHCenterAt("lvl 5:", 410 , 150);
+		if(gameInfo.playerLevel->playerLevel<3){
+			GUI_DispStringHCenterAt("lvl 3:", 340 , 150);
+		}
+	}
+	
+  GUI_DrawBitmap(&bmCowboyBirdy, 320, 181);
+
+	GUI_DrawBitmap(&bmKingBirdy, 390, 181);
+}
+
 
 /**
  * @brief Displays scores and difficulty associated with that score
@@ -424,12 +454,20 @@ void drawHighscores(void * pData){
 	// print strings if there is a highscore
 	if(gameInfo.highScore.score > 0){
 			drawProgress();
-	if(gameInfo.highScore.difficulty == 0)
-			GUI_SetColor(GUI_GREEN);
-	if(gameInfo.highScore.difficulty == 1)
-			GUI_SetColor(GUI_ORANGE);
-	if(gameInfo.highScore.difficulty == 2)
+			drawBirdChoice();
+		
+		
+		
+		
+		if(gameInfo.highScore.difficulty == 0){
+				GUI_SetColor(GUI_GREEN);
+		}
+		if(gameInfo.highScore.difficulty == 1){
+				GUI_SetColor(GUI_ORANGE);
+		}
+		if(gameInfo.highScore.difficulty == 2){
 			GUI_SetColor(GUI_RED);	
+		}
 
 	
 	  GUI_SetFont(&GUI_Font8x16x1x2);
@@ -464,6 +502,8 @@ void drawHighscores(void * pData){
 	GUI_DrawBitmap(&bmAbsurd, 10, 170);
 	GUI_DrawBitmap(&bmlogo2,150,20);
 	
+	
+
 }
 
 
@@ -484,21 +524,52 @@ void displayLeaderboard(TOUCH_STATE  tsc_state, GUI_RECT Rect){
 	    GUI_MEMDEV_Draw(&Rect, &drawHighscores, 0, 0, 0);
 	    Touch_GetState (&tsc_state);
 			if(tsc_state.pressed){
-			if(tsc_state.x >= 10 && tsc_state.x <=90){
-				if(tsc_state.y >=50 && tsc_state.y <=100){
-						buttonPressed = true;
-				    setDifficulty(0);
+				
+					// GUI_DrawBitmap(&bmCowboyBirdy, 320, 181);
+					//GUI_DrawBitmap(&bmKingBirdy, 390, 181);
+					
+					if(tsc_state.y >=181 && tsc_state.y <=250){
+					// blue birdy
+						if(tsc_state.x >=250 && tsc_state.x <=284){
+							gameInfo.birdType = 0;
+						}
+						
+						if(gameInfo.playerLevel->playerLevel >=3){
+							if(tsc_state.x >=320 && tsc_state.x <=354){ //
+								gameInfo.birdType = 1;
+							}
+							
+							if(gameInfo.playerLevel->playerLevel >=5){
+								if(tsc_state.x >=390 && tsc_state.x <=424){ //
+									gameInfo.birdType = 2;
+							}
+								
+						}
+						
+					}
+				 
+				
+				
+				if(tsc_state.x >= 10 && tsc_state.x <=90){
+					if(tsc_state.y >=50 && tsc_state.y <=100){
+							buttonPressed = true;
+							setDifficulty(0);
+					}
+					if(tsc_state.y >=110 && tsc_state.y <=160){
+							buttonPressed = true;
+							setDifficulty(1);
+					}
+					if(tsc_state.y >=170 && tsc_state.y <= 230){
+							buttonPressed = true;
+							setDifficulty(2);
+				  }
+					
+				
+				if(gameInfo.birdType != 2 && gameInfo.birdType !=1){
+					gameInfo.birdType = 0;
 				}
-				if(tsc_state.y >=110 && tsc_state.y <=160){
-						buttonPressed = true;
-					  setDifficulty(1);
-				}
-				if(tsc_state.y >=170 && tsc_state.y <= 230){
-						buttonPressed = true;
-					  setDifficulty(2);
 				}
 		}
-	}
   }
 	// finding which difficulty is chosen
 }
@@ -518,7 +589,16 @@ static void drawPregrame(void * pData){
 	GUI_SelectLayer(1);
 	GUI_DrawBitmap(&bmPregame, 80, 95);
 	GUI_SelectLayer(2);
-	GUI_DrawBitmap(&bmBlueBird, gameInfo.birdy->x, gameInfo.birdy->y);
+	
+	
+	if(gameInfo.birdType ==0){
+		GUI_DrawBitmap(&bmBlueBird, gameInfo.birdy->x, gameInfo.birdy->y);
+	}else if(gameInfo.birdType ==1){
+		GUI_DrawBitmap(&bmCowboyBirdy, gameInfo.birdy->x, gameInfo.birdy->y);
+	}else if(gameInfo.birdType ==2){
+		GUI_DrawBitmap(&bmKingBirdy, gameInfo.birdy->x, gameInfo.birdy->y);
+	}
+	
 	GUI_SelectLayer(3);
 	
 	GUI_SetPenSize(10);
@@ -572,7 +652,16 @@ static void drawGame(void * pData){
 		GUI_FillRect(currentPipe->x, 0, currentPipe->x+50, currentPipe->topY);
 		GUI_FillRect(currentPipe->x, currentPipe->bottomY, currentPipe->x+50, 272);
 	}
-	GUI_DrawBitmap(&bmBlueBird, gameInfo.birdy->x, gameInfo.birdy->y);
+	
+	if(gameInfo.birdType ==0){
+		GUI_DrawBitmap(&bmBlueBird, gameInfo.birdy->x, gameInfo.birdy->y);
+	}else if(gameInfo.birdType ==1){
+		GUI_DrawBitmap(&bmCowboyBirdy, gameInfo.birdy->x, gameInfo.birdy->y);
+	}else if(gameInfo.birdType ==2){
+		GUI_DrawBitmap(&bmKingBirdy, gameInfo.birdy->x, gameInfo.birdy->y);
+	}
+	
+	
 	GUI_DrawBitmap(&bmCoin, gameInfo.coin->x, gameInfo.coin->y);
 	// for printing the score
 	GUI_SelectLayer(2);
