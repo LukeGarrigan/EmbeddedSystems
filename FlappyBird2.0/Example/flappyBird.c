@@ -29,8 +29,7 @@ extern GUI_CONST_STORAGE GUI_BITMAP bmEasy;
 extern GUI_CONST_STORAGE GUI_BITMAP bmHard;
 extern GUI_CONST_STORAGE GUI_BITMAP bmAbsurd;
 extern GUI_CONST_STORAGE GUI_BITMAP bmArrow;
-extern GUI_CONST_STORAGE GUI_BITMAP bmlogo1;
-extern GUI_CONST_STORAGE GUI_BITMAP bmlogo;
+extern GUI_CONST_STORAGE GUI_BITMAP bmlogo2;
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Game Info~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -407,7 +406,7 @@ static void drawHighscores(void * pData){
 	GUI_DrawBitmap(&bmEasy, 10,50);
 	GUI_DrawBitmap(&bmHard, 10,110);
 	GUI_DrawBitmap(&bmAbsurd, 10, 170);
-	GUI_DrawBitmap(&bmlogo,150,20);
+	GUI_DrawBitmap(&bmlogo2,150,20);
 	
 }
 

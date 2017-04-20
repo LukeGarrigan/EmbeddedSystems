@@ -12,6 +12,7 @@
 ".\objects\arrow.o"
 ".\objects\logo1.o"
 ".\objects\logo.o"
+".\objects\logo2.o"
 ".\objects\ft5336.o"
 ".\objects\stm32746g_discovery.o"
 ".\objects\stm32746g_discovery_sdram.o"
