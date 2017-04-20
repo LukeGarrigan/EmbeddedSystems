@@ -376,9 +376,9 @@ static void drawHighscores(void * pData){
 			GUI_SetColor(GUI_ORANGE);
 	if(gameInfo.highScore.difficulty == 2)
 			GUI_SetColor(GUI_RED);		
-		GUI_DispStringHCenterAt(str, LCD_GetXSize()/2 , 30);
+		GUI_DispStringHCenterAt(str, 350 , 100);
 		GUI_SetColor(GUI_BLACK);
-		GUI_DispStringHCenterAt("Previous Scores:", LCD_GetXSize()/2 , 70);
+		GUI_DispStringHCenterAt("Previous Scores:", 170 , 100);
 		arraySize = sizeof(gameInfo.scores)/sizeof(gameInfo.scores[0]);
 		for(i = 0; i<arraySize;i++){
 			if(gameInfo.scores[i].score!= NULL){
@@ -389,7 +389,7 @@ static void drawHighscores(void * pData){
 				if(gameInfo.scores[i].difficulty == 2)
 					GUI_SetColor(GUI_RED);				
 				sprintf(scores, "%d", gameInfo.scores[i].score);	
-				GUI_DispStringHCenterAt(scores, 0 , listPos);
+				GUI_DispStringHCenterAt(scores, 150 , 130);
 				listPos += 40;
 			}
 			
