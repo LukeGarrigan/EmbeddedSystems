@@ -120,10 +120,14 @@ void initGame(){
  * the game and an inner loop to update all positions of elements 
  * on screen whilst the bird is alive
  */
+
+
+
 void MainTask(void) {
+
 	GUI_RECT Rect = {0, 0, 602,272};
 	TOUCH_STATE  tsc_state;
-
+	
 	while(1){	
 	createPipeQueue();	
 	displayLeaderboard(tsc_state,Rect);

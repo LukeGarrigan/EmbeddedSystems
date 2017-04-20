@@ -19,7 +19,7 @@
 #include "GUI.h"
 #include <stdlib.h>
 #include "main.h"
-
+#include "Progbar.h"
 
 extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
 extern GUI_CONST_STORAGE GUI_BITMAP bmBackground;
@@ -35,6 +35,9 @@ extern GUI_CONST_STORAGE GUI_BITMAP bmArrow;
 
 GameInfo gameInfo;
 int turn = 0;
+
+
+
 
 /**
  * @brief SetupGameInfo, sets up game based on difficulty.
@@ -333,6 +336,14 @@ void updateCoin(){
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Displaying to Screen~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+static void demoProgBar(void) {
+	PROGBAR_Handle hProgBar;
+	GUI_DispStringAt("Progress bar", 100, 20);
+	hProgBar = PROGBAR_Create(100, 40, 100, 20, WM_CF_SHOW);
+}
+
+
+
 /**
  * @brief Displays scores and difficulty associated with that score
  * @param  None
@@ -386,15 +397,19 @@ static void drawHighscores(void * pData){
 			// there has been no scores yet
 			GUI_DispStringHCenterAt("I'd probably do easy if I were you..", LCD_GetXSize()/2+30 , LCD_GetYSize()/2);
 			GUI_DrawBitmap(&bmArrow, 110, 58);
+			
 		
 	}
-	// displays the difficulty buttons
-	
+	// displays the difficulty buttons and the experience bar
+	demoProgBar();
 	GUI_DrawBitmap(&bmEasy, 10,50);
 	GUI_DrawBitmap(&bmHard, 10,110);
 	GUI_DrawBitmap(&bmAbsurd, 10, 170);
 	
 }
+
+
+
 
 /**
  * @brief Creates a window to display scores and select difficulty

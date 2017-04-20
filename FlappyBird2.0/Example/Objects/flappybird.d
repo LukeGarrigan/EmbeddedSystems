@@ -43,3 +43,15 @@
 .\objects\flappybird.o: main.h
 .\objects\flappybird.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board\Board_Touch.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\Progbar.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\WM.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\WM_GUI.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\DIALOG_Intern.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\WIDGET.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\WM_Intern.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Private.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\LCD_Protected.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\GUI_Debug.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\SCROLLBAR.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\emWin\Include\WIDGET.h
