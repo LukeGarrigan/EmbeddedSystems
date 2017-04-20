@@ -2,16 +2,16 @@
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_ts.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h
-.\objects\touch_746g_discovery.o: C:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird2.0\Example\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h
-.\objects\touch_746g_discovery.o: C:\Users\Luke\Documents\GitHub\EmbeddedSystems\FlappyBird2.0\Example\RTE\_STM32F746_Flash\RTE_Components.h
+.\objects\touch_746g_discovery.o: .\RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h
+.\objects\touch_746g_discovery.o: .\RTE\_STM32F746_Flash\RTE_Components.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_rcc.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_def.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f7xx.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f746xx.h
-.\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\core_cm7.h
+.\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm7.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\cmsis_compiler.h
-.\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\cmsis_armcc.h
+.\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h
+.\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include\system_stm32f7xx.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
@@ -35,4 +35,4 @@
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery\../Components/ft5336/ft5336.h
 .\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.9.0\Drivers\BSP\STM32746G-Discovery\../Components/ft5336/../Common/ts.h
-.\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.3.0\Board\Board_Touch.h
+.\objects\touch_746g_discovery.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.0\Board\Board_Touch.h
