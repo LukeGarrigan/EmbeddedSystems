@@ -88,6 +88,19 @@ typedef struct Score{
 	int difficulty;		/**< Level of difficulty when score was achieved*/
 }Score;	
 
+
+/**
+ * @brief Tracks the user's current level
+ *
+ *  Stores all game information regarding the current 
+ *  level of the player.
+ */
+typedef struct PlayerLevel{
+	int playerLevel;	/**< Stores level progress for user */
+	int currentXp; 		/**< amount of xp on current level */  
+	int requiredXp;   /**< amount of xp till next level */ 
+}PlayerLevel;
+
 /**
  * @brief Models Game State
  *
@@ -98,6 +111,7 @@ typedef struct GameInfo{
 	Bird *birdy;      /**< Pointer to bird in play */
 	queue * que;      /**< Pointer to queue containing all pipes */
 	Coin * coin;      /**< Pointer to coin in play*/
+	PlayerLevel * playerLevel; /**< Pointer to player level in play*/
 	bool alive;       /**< Boolean check to see if the game is still playing*/
 	int difficulty;		/**< Difficulty rating (0-2)*/
 	int frameCount;   /**< Counter for frames*/
@@ -106,6 +120,7 @@ typedef struct GameInfo{
 	Score highScore;  /**< Highest score achieved in game state */
 	int pipeDistance; /**< Distance between concurrent pipes */
 	Score scores[4];  /**< Saves n most current scores */
+
 }GameInfo;
 
 

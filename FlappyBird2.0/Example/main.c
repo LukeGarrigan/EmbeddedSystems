@@ -109,6 +109,7 @@ void initGame(){
 		setupGameInfo();
 		initPipes();
 	  initCoin();
+		
 }
 
 /**

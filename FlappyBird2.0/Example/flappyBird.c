@@ -20,6 +20,7 @@
 #include <stdlib.h>
 #include "main.h"
 #include "Progbar.h"
+#include <math.h>
 
 extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
 extern GUI_CONST_STORAGE GUI_BITMAP bmBackground;
@@ -36,7 +37,7 @@ extern GUI_CONST_STORAGE GUI_BITMAP bmlogo2;
 
 GameInfo gameInfo;
 int turn = 0;
-
+bool xpSet = false;
 
 
 
@@ -49,10 +50,19 @@ int turn = 0;
  * sets up the speed of the game, distance between concurrent
  * pipes and the gap between the middle of a pipe.
  */
- void setupGameInfo(){
+ void setupGameInfo(){ 
+	  if(xpSet==false){
+				gameInfo.playerLevel = malloc(sizeof(PlayerLevel));
+			  gameInfo.playerLevel->playerLevel = 1;
+				gameInfo.playerLevel->currentXp = 1;
+				gameInfo.playerLevel->requiredXp = 20;
+				xpSet=true;
+		}
 	  gameInfo.frameCount = 1;
 		gameInfo.score = 1;
 		gameInfo.alive = true; 
+
+	 
 	 	if(gameInfo.difficulty == 0){
 		  gameInfo.pipeGap = 140;
 		  gameInfo.pipeDistance = 160;
@@ -93,10 +103,21 @@ void updateScores(){
 	  gameInfo.alive = false;
 		queueDestroy(gameInfo.que);
 		free(gameInfo.birdy);
+		//Increase score multiplier for different difficulties
+		if(gameInfo.difficulty == 0){
+			gameInfo.playerLevel->currentXp += gameInfo.score;
+		}else if(gameInfo.difficulty == 1){
+			gameInfo.playerLevel->currentXp += gameInfo.score * 2;
+		}else if(gameInfo.difficulty == 2){
+			gameInfo.playerLevel->currentXp += gameInfo.score * 3;
+		}
+	
 		if(gameInfo.score>gameInfo.highScore.score){
 			gameInfo.highScore.score = gameInfo.score;
 			gameInfo.highScore.difficulty = gameInfo.difficulty;
 		}
+				
+	
 		
 		// Orders the scores so the most recent are displayed first
 		
@@ -106,6 +127,8 @@ void updateScores(){
 		}
 		gameInfo.scores[0].score = gameInfo.score;
 		gameInfo.scores[0].difficulty = gameInfo.difficulty;
+		
+
 		
 		gameInfo.score = 1;
 		turn ++;
@@ -140,7 +163,7 @@ void createPipeQueue(){
  */
 bool hits(Pipe * p){
 	if(gameInfo.birdy->y < p->topY || gameInfo.birdy->y > p->bottomY){
-		if(gameInfo.birdy->x > p->x && gameInfo.birdy->x < p->x + 50){
+		if(gameInfo.birdy->x > p->x && gameInfo.birdy->x < p->x + 70){
 			return true;
 		}
 	}
@@ -193,11 +216,10 @@ void updateAllPipes(){
   if(gameInfo.frameCount %gameInfo.pipeDistance == 0){
 			initPipes();
 	}
-	if(hits(gameInfo.que->head)){	
-		updateScores();
-	}
+
 	
 	// moving pipes for absurd difficulty
+ 
 	if(gameInfo.difficulty==2){
 	   for(currentPipe = gameInfo.que->head; currentPipe != 0; currentPipe = currentPipe->next){
 				if(!currentPipe->up){
@@ -214,6 +236,9 @@ void updateAllPipes(){
 					}
 				}
 	   }	
+	}
+	if(hits(gameInfo.que->head)){	
+		updateScores();
 	}
 }
 
@@ -337,13 +362,38 @@ void updateCoin(){
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Displaying to Screen~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-static void demoProgBar(void) {
-	PROGBAR_Handle hProgBar;
-	GUI_DispStringAt("Progress bar", 100, 20);
-	hProgBar = PROGBAR_Create(100, 40, 100, 20, WM_CF_SHOW);
+
+void drawProgress(){
+	char lvl[30];
+	char percentToLvl[30];
+	float circleFill = (((float)gameInfo.playerLevel->currentXp/(float)gameInfo.playerLevel->requiredXp)*100)/5;
+	int ceilCircle = ceil(circleFill);
+
+	if(ceilCircle >= 20){
+			int difference = ceilCircle -20;
+			int base = gameInfo.playerLevel->requiredXp;
+			gameInfo.playerLevel->playerLevel = gameInfo.playerLevel->playerLevel+1;
+			gameInfo.playerLevel->currentXp =difference;
+			gameInfo.playerLevel->requiredXp = base*2;
+	}
+	GUI_SetColor(GUI_WHITE);	
+	GUI_FillCircle(455,25,20);
+	GUI_SetColor(GUI_GREEN);
+	GUI_FillCircle(455,25,ceilCircle);
+	
+	
+	sprintf(percentToLvl, "%d%%", ceilCircle*5);
+	GUI_SetColor(GUI_GREEN);
+	GUI_SetFont(&GUI_Font8x16x1x2);
+	GUI_DispStringHCenterAt(percentToLvl, 416 , 10);
+	
+	
+	sprintf(lvl, "Level: %d", gameInfo.playerLevel->playerLevel);
+	GUI_SetColor(GUI_RED);
+	GUI_SetFont(&GUI_Font8x16x3x3);
+	GUI_DispStringHCenterAt(lvl, 355 , 182);
+
 }
-
-
 
 /**
  * @brief Displays scores and difficulty associated with that score
@@ -355,7 +405,9 @@ static void demoProgBar(void) {
  * newest score first in the colour of difficulty played. Also displays the 
  * game states highest score achieved.
  */
-static void drawHighscores(void * pData){
+void drawHighscores(void * pData){
+	
+
 	char str[30];
 	char scores[40];
 	int i;
@@ -364,20 +416,27 @@ static void drawHighscores(void * pData){
 	GUI_Clear();
 	GUI_DrawBitmap(&bmBackground, 0,0);
 	sprintf(str, "%d is the score to beat", gameInfo.highScore.score);
+	
 	GUI_SetTextMode(GUI_TM_TRANS);
   GUI_SetFont(&GUI_Font8x16x1x2);
-
+	
+	
 	// print strings if there is a highscore
 	if(gameInfo.highScore.score > 0){
+			drawProgress();
 	if(gameInfo.highScore.difficulty == 0)
 			GUI_SetColor(GUI_GREEN);
 	if(gameInfo.highScore.difficulty == 1)
 			GUI_SetColor(GUI_ORANGE);
 	if(gameInfo.highScore.difficulty == 2)
-			GUI_SetColor(GUI_RED);		
-		GUI_DispStringHCenterAt(str, 350 , 100);
+			GUI_SetColor(GUI_RED);	
+
+	
+	  GUI_SetFont(&GUI_Font8x16x1x2);
+		GUI_DispStringHCenterAt(str, 350 , 80);
+
 		GUI_SetColor(GUI_BLACK);
-		GUI_DispStringHCenterAt("Previous Scores:", 170 , 100);
+		GUI_DispStringHCenterAt("Previous Scores:", 170 , 80);
 		arraySize = sizeof(gameInfo.scores)/sizeof(gameInfo.scores[0]);
 		for(i = 0; i<arraySize;i++){
 			if(gameInfo.scores[i].score!= NULL){
@@ -388,11 +447,9 @@ static void drawHighscores(void * pData){
 				if(gameInfo.scores[i].difficulty == 2)
 					GUI_SetColor(GUI_RED);				
 				sprintf(scores, "%d", gameInfo.scores[i].score);	
-				GUI_DispStringHCenterAt(scores, 150 , 130);
+				GUI_DispStringHCenterAt(scores, 150 , listPos);
 				listPos += 40;
 			}
-			
-			
 		}
 	}else{
 			// there has been no scores yet
@@ -402,7 +459,6 @@ static void drawHighscores(void * pData){
 		
 	}
 	// displays the difficulty buttons and the experience bar
-	//demoProgBar();
 	GUI_DrawBitmap(&bmEasy, 10,50);
 	GUI_DrawBitmap(&bmHard, 10,110);
 	GUI_DrawBitmap(&bmAbsurd, 10, 170);

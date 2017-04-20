@@ -55,3 +55,4 @@
 .\objects\flappybird.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.0\emWin\Include\SCROLLBAR.h
 .\objects\flappybird.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.0\emWin\Include\WIDGET.h
+.\objects\flappybird.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
