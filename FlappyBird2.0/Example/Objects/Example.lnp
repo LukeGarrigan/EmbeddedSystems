@@ -15,6 +15,7 @@
 ".\objects\logo2.o"
 ".\objects\cowboybirdy .o"
 ".\objects\kingbirdy.o"
+".\objects\egg.o"
 ".\objects\ft5336.o"
 ".\objects\stm32746g_discovery.o"
 ".\objects\stm32746g_discovery_sdram.o"

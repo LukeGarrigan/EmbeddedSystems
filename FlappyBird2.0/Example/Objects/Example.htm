@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Example.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Example.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Thu Apr 20 22:34:03 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Fri Apr 21 14:23:10 2017
 <BR><P>
 <H3>Maximum Stack Usage =        712 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1175,8 +1175,8 @@ Global Symbols
 <P><STRONG><a name="[164]"></a>__rt_SIGRTMEM</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, defsig_rtmem_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __rt_SIGRTMEM &rArr; __rt_SIGRTMEM_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
-<BR>[Calls]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM_inner
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
+<BR>[Calls]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
+<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM_inner
 </UL>
 <BR>[Called By]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
 <LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Broken
@@ -1366,24 +1366,24 @@ Global Symbols
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetDrawMode
 <LI><a href="#[190]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> f8x16.o(.constdata)
+<BR>[Address Reference Count : 3]<UL><LI> f6x8.o(.constdata)
 <LI> f8x16.o(.constdata)
-<LI> f6x8.o(.constdata)
+<LI> f8x16.o(.constdata)
 </UL>
 <P><STRONG><a name="[108]"></a>GUIMONO_GetCharDistX</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gui_charm.o(i.GUIMONO_GetCharDistX))
-<BR>[Address Reference Count : 3]<UL><LI> f8x16.o(.constdata)
+<BR>[Address Reference Count : 3]<UL><LI> f6x8.o(.constdata)
 <LI> f8x16.o(.constdata)
-<LI> f6x8.o(.constdata)
+<LI> f8x16.o(.constdata)
 </UL>
 <P><STRONG><a name="[109]"></a>GUIMONO_GetFontInfo</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, gui_charm.o(i.GUIMONO_GetFontInfo))
-<BR>[Address Reference Count : 3]<UL><LI> f8x16.o(.constdata)
+<BR>[Address Reference Count : 3]<UL><LI> f6x8.o(.constdata)
 <LI> f8x16.o(.constdata)
-<LI> f6x8.o(.constdata)
+<LI> f8x16.o(.constdata)
 </UL>
 <P><STRONG><a name="[10a]"></a>GUIMONO_IsInFont</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, gui_charm.o(i.GUIMONO_IsInFont))
-<BR>[Address Reference Count : 3]<UL><LI> f8x16.o(.constdata)
+<BR>[Address Reference Count : 3]<UL><LI> f6x8.o(.constdata)
 <LI> f8x16.o(.constdata)
-<LI> f6x8.o(.constdata)
+<LI> f8x16.o(.constdata)
 </UL>
 <P><STRONG><a name="[191]"></a>GUITASK_CopyContext</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, gui_task.o(i.GUITASK_CopyContext))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = GUITASK_CopyContext &rArr; _GetTaskNo &rArr; GUI_X_GetTaskId
@@ -1502,9 +1502,6 @@ Global Symbols
 <LI><a href="#[1ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Delete
 <LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Clear
 <LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__InitIVRSearch
-<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XY2PTR
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPixelIndex
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetRect
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_FillRect
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawVLine
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
@@ -1548,6 +1545,9 @@ Global Symbols
 <LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_Exec1Input
 <LI><a href="#[2ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__PaintWinAndOverlays
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XorPixel
+<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XY2PTR
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPixelIndex
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetRect
 <LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_ResizeWindow
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_WriteAt
 <LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_Unlink
@@ -1583,9 +1583,6 @@ Global Symbols
 <LI><a href="#[1ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Delete
 <LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Clear
 <LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__InitIVRSearch
-<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XY2PTR
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPixelIndex
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetRect
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_FillRect
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawVLine
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
@@ -1629,6 +1626,9 @@ Global Symbols
 <LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_Exec1Input
 <LI><a href="#[2ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__PaintWinAndOverlays
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XorPixel
+<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XY2PTR
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPixelIndex
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetRect
 <LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_ResizeWindow
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_WriteAt
 <LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_Unlink
@@ -3301,9 +3301,9 @@ Global Symbols
 <P><STRONG><a name="[171]"></a>HAL_SDRAM_Init</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HAL_SDRAM_Init &rArr; FMC_SDRAM_Timing_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FMC_SDRAM_Init
-<LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SDRAM_MspInit
+<BR>[Calls]<UL><LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SDRAM_MspInit
 <LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FMC_SDRAM_Timing_Init
+<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FMC_SDRAM_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SDRAM_Init
 </UL>
@@ -4676,7 +4676,7 @@ Global Symbols
 <LI><a href="#[2ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateAllPipes
 </UL>
 
-<P><STRONG><a name="[2a7]"></a>displayLeaderboard</STRONG> (Thumb, 276 bytes, Stack size 32 bytes, flappybird.o(i.displayLeaderboard))
+<P><STRONG><a name="[2a7]"></a>displayLeaderboard</STRONG> (Thumb, 256 bytes, Stack size 32 bytes, flappybird.o(i.displayLeaderboard))
 <BR><BR>[Stack]<UL><LI>Max Depth = 464<LI>Call Chain = displayLeaderboard &rArr; GUI_MEMDEV_Draw &rArr; GUI_MEMDEV_CopyToLCD &rArr; GUI_MEMDEV_CopyToLCDAt &rArr; GUI_MEMDEV__WriteToActiveOpaque &rArr; _WriteToActiveOpaque_8 &rArr; LCD__DrawBitmap_1bpp &rArr; LCD_FillRect
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Draw
@@ -4706,7 +4706,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[b9]"></a>drawHighscores</STRONG> (Thumb, 348 bytes, Stack size 104 bytes, flappybird.o(i.drawHighscores))
+<P><STRONG><a name="[b9]"></a>drawHighscores</STRONG> (Thumb, 346 bytes, Stack size 104 bytes, flappybird.o(i.drawHighscores))
 <BR><BR>[Stack]<UL><LI>Max Depth = 440 + Unknown Stack Size
 <LI>Call Chain = drawHighscores &rArr; drawProgress &rArr; GUI_DispStringHCenterAt &rArr; GUI_DispStringAt &rArr; GUI_DispString &rArr; GUI__DispLine &rArr; WM__InitIVRSearch &rArr; WM__GetNextIVR &rArr; WM__ActivateClipRect &rArr; _SetClipRectUserIntersect &rArr; LCD_SetClipRectEx &rArr; GUI__IntersectRects
 </UL>
@@ -4724,7 +4724,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> flappybird.o(i.displayLeaderboard)
 </UL>
-<P><STRONG><a name="[331]"></a>drawProgress</STRONG> (Thumb, 266 bytes, Stack size 96 bytes, flappybird.o(i.drawProgress))
+<P><STRONG><a name="[331]"></a>drawProgress</STRONG> (Thumb, 264 bytes, Stack size 96 bytes, flappybird.o(i.drawProgress))
 <BR><BR>[Stack]<UL><LI>Max Depth = 336 + Unknown Stack Size
 <LI>Call Chain = drawProgress &rArr; GUI_DispStringHCenterAt &rArr; GUI_DispStringAt &rArr; GUI_DispString &rArr; GUI__DispLine &rArr; WM__InitIVRSearch &rArr; WM__GetNextIVR &rArr; WM__ActivateClipRect &rArr; _SetClipRectUserIntersect &rArr; LCD_SetClipRectEx &rArr; GUI__IntersectRects
 </UL>
@@ -5608,7 +5608,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[2ac]"></a>updateCoin</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, flappybird.o(i.updateCoin))
+<P><STRONG><a name="[2ac]"></a>updateCoin</STRONG> (Thumb, 138 bytes, Stack size 8 bytes, flappybird.o(i.updateCoin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = updateCoin &rArr; initCoin
 </UL>
 <BR>[Calls]<UL><LI><a href="#[338]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initCoin
@@ -5616,8 +5616,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
-<P><STRONG><a name="[379]"></a>updateScores</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, flappybird.o(i.updateScores))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = updateScores &rArr; queueDestroy &rArr; deq &rArr; free &rArr; _free_internal
+<P><STRONG><a name="[379]"></a>updateScores</STRONG> (Thumb, 194 bytes, Stack size 8 bytes, flappybird.o(i.updateScores))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = updateScores &rArr; queueDestroy &rArr; deq &rArr; free &rArr; _free_internal
 </UL>
 <BR>[Calls]<UL><LI><a href="#[346]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queueDestroy
 <LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
@@ -5758,7 +5758,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[ba]"></a>drawGame</STRONG> (Thumb, 236 bytes, Stack size 32 bytes, flappybird.o(i.drawGame))
+<P><STRONG><a name="[ba]"></a>drawGame</STRONG> (Thumb, 278 bytes, Stack size 32 bytes, flappybird.o(i.drawGame))
 <BR><BR>[Stack]<UL><LI>Max Depth = 272 + Unknown Stack Size
 <LI>Call Chain = drawGame &rArr; GUI_DispStringHCenterAt &rArr; GUI_DispStringAt &rArr; GUI_DispString &rArr; GUI__DispLine &rArr; WM__InitIVRSearch &rArr; WM__GetNextIVR &rArr; WM__ActivateClipRect &rArr; _SetClipRectUserIntersect &rArr; LCD_SetClipRectEx &rArr; GUI__IntersectRects
 </UL>
@@ -7144,12 +7144,12 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_LockH
-<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XY2PTR
 <LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitLine4BPP
 <LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitLine32BPP_DDB
 <LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitLine2BPP
 <LI><a href="#[312]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitLine1BPP
 <LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_AddRect
+<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XY2PTR
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> guidev_32.o(.constdata)
@@ -7175,8 +7175,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_LockH
-<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XY2PTR
 <LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_USAGE_AddRect
+<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XY2PTR
 </UL>
 <BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawHLine
 </UL>
@@ -7224,12 +7224,12 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_LockH
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPixelIndex
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetPixelIndex
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_FillRect
+<BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_FillRect
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawVLine
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_XorPixel
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPixelIndex
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetPixelIndex
 </UL>
 
 <P><STRONG><a name="[11b]"></a>_XorPixel</STRONG> (Thumb, 82 bytes, Stack size 32 bytes, guidev_32.o(i._XorPixel))

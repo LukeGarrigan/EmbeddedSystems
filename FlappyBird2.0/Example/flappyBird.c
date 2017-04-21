@@ -32,6 +32,7 @@ extern GUI_CONST_STORAGE GUI_BITMAP bmHard;
 extern GUI_CONST_STORAGE GUI_BITMAP bmAbsurd;
 extern GUI_CONST_STORAGE GUI_BITMAP bmArrow;
 extern GUI_CONST_STORAGE GUI_BITMAP bmlogo2;
+extern GUI_CONST_STORAGE GUI_BITMAP bmEgg;
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Game Info~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -62,8 +63,6 @@ bool xpSet = false;
 	  gameInfo.frameCount = 1;
 		gameInfo.score = 1;
 		gameInfo.alive = true; 
-
-	 
 	 	if(gameInfo.difficulty == 0){
 		  gameInfo.pipeGap = 140;
 		  gameInfo.pipeDistance = 160;
@@ -103,7 +102,7 @@ void updateScores(){
 	  int i;
 	  gameInfo.alive = false;
 		queueDestroy(gameInfo.que);
-		free(gameInfo.birdy);
+		
 		//Increase score multiplier for different difficulties
 		if(gameInfo.difficulty == 0){
 			gameInfo.playerLevel->currentXp += gameInfo.score;
@@ -121,16 +120,14 @@ void updateScores(){
 	
 		
 		// Orders the scores so the most recent are displayed first
-		
-		arraySize = sizeof(gameInfo.scores)/sizeof(gameInfo.scores[0]);
-		for(i=arraySize-1; i>=0; i--){
+	
+		for(i=2; i>=0; i--){
 			gameInfo.scores[i+1] = gameInfo.scores[i];
 		}
 		gameInfo.scores[0].score = gameInfo.score;
 		gameInfo.scores[0].difficulty = gameInfo.difficulty;
 		
-
-		
+		free(gameInfo.birdy);
 		gameInfo.score = 1;
 		turn ++;
 }
@@ -349,9 +346,14 @@ void initCoin(){
  */
 void updateCoin(){
 	gameInfo.coin->x = gameInfo.coin->x -2;
-	if(abs(gameInfo.birdy->x-gameInfo.coin->x)<4){
-		gameInfo.score=gameInfo.score+3;
-		gameInfo.coin->x=-20;
+	if(abs(gameInfo.birdy->x-gameInfo.coin->x)<10 && abs(gameInfo.birdy->y-gameInfo.coin->y)<10){
+		// this means they're eating the egg rather than the coin!
+		if(gameInfo.frameCount >= 3000){
+			gameInfo.score=gameInfo.score+10;
+		}else{
+			gameInfo.score=gameInfo.score+3;
+			gameInfo.coin->x=-20;
+		}
 	}
 	if(gameInfo.frameCount %1170 == 0){
 			initCoin();
@@ -376,7 +378,7 @@ void drawProgress(){
 			gameInfo.playerLevel->currentXp =difference;
 			gameInfo.playerLevel->requiredXp = base*2;
 	}
-	GUI_SetColor(GUI_WHITE);	
+	GUI_SetColor(GUI_GRAY_3F);	
 	GUI_FillCircle(455,25,20);
 	GUI_SetColor(GUI_GREEN);
 	GUI_FillCircle(455,25,ceilCircle);
@@ -442,7 +444,6 @@ void drawHighscores(void * pData){
 	char scores[40];
 	int i;
 	int listPos = 110;
-	int arraySize;
 	GUI_Clear();
 	GUI_DrawBitmap(&bmBackground, 0,0);
 	sprintf(str, "%d is the score to beat", gameInfo.highScore.score);
@@ -475,8 +476,7 @@ void drawHighscores(void * pData){
 
 		GUI_SetColor(GUI_BLACK);
 		GUI_DispStringHCenterAt("Previous Scores:", 170 , 80);
-		arraySize = sizeof(gameInfo.scores)/sizeof(gameInfo.scores[0]);
-		for(i = 0; i<arraySize;i++){
+		for(i = 0; i<4;i++){
 			if(gameInfo.scores[i].score!= NULL){
 				if(gameInfo.scores[i].difficulty == 0)
 					GUI_SetColor(GUI_GREEN);
@@ -525,28 +525,26 @@ void displayLeaderboard(TOUCH_STATE  tsc_state, GUI_RECT Rect){
 	    Touch_GetState (&tsc_state);
 			if(tsc_state.pressed){
 				
-					// GUI_DrawBitmap(&bmCowboyBirdy, 320, 181);
-					//GUI_DrawBitmap(&bmKingBirdy, 390, 181);
-					
 					if(tsc_state.y >=181 && tsc_state.y <=250){
-					// blue birdy
+						// blue birdy
 						if(tsc_state.x >=250 && tsc_state.x <=284){
 							gameInfo.birdType = 0;
 						}
 						
-						if(gameInfo.playerLevel->playerLevel >=3){
+						else if(gameInfo.playerLevel->playerLevel >=3){
 							if(tsc_state.x >=320 && tsc_state.x <=354){ //
 								gameInfo.birdType = 1;
 							}
 							
-							if(gameInfo.playerLevel->playerLevel >=5){
-								if(tsc_state.x >=390 && tsc_state.x <=424){ //
+						else if(gameInfo.playerLevel->playerLevel >=5){
+							if(tsc_state.x >=390 && tsc_state.x <=424){ //
 									gameInfo.birdType = 2;
 							}
 								
 						}
 						
 					}
+				}
 				 
 				
 				
@@ -563,11 +561,6 @@ void displayLeaderboard(TOUCH_STATE  tsc_state, GUI_RECT Rect){
 							buttonPressed = true;
 							setDifficulty(2);
 				  }
-					
-				
-				if(gameInfo.birdType != 2 && gameInfo.birdType !=1){
-					gameInfo.birdType = 0;
-				}
 				}
 		}
   }
@@ -662,7 +655,13 @@ static void drawGame(void * pData){
 	}
 	
 	
-	GUI_DrawBitmap(&bmCoin, gameInfo.coin->x, gameInfo.coin->y);
+	if(gameInfo.coin->x > 0){
+		if(gameInfo.frameCount >= 3000){
+			GUI_DrawBitmap(&bmEgg, gameInfo.coin->x, gameInfo.coin->y);
+		}else{
+			GUI_DrawBitmap(&bmCoin, gameInfo.coin->x, gameInfo.coin->y);
+		}
+	}
 	// for printing the score
 	GUI_SelectLayer(2);
 	GUI_SetTextMode(GUI_TM_TRANS | GUI_TM_REV);
