@@ -475,7 +475,7 @@ void drawHighscores(void * pData){
 		GUI_DispStringHCenterAt(str, 350 , 80);
 
 		GUI_SetColor(GUI_BLACK);
-		GUI_DispStringHCenterAt("Previous Scores:", 170 , 80);
+		GUI_DispStringHCenterAt("Previous Scores:", 180 , 80);
 		for(i = 0; i<4;i++){
 			if(gameInfo.scores[i].score!= NULL){
 				if(gameInfo.scores[i].difficulty == 0)
@@ -485,21 +485,26 @@ void drawHighscores(void * pData){
 				if(gameInfo.scores[i].difficulty == 2)
 					GUI_SetColor(GUI_RED);				
 				sprintf(scores, "%d", gameInfo.scores[i].score);	
-				GUI_DispStringHCenterAt(scores, 150 , listPos);
+				GUI_DispStringHCenterAt(scores, 160 , listPos);
 				listPos += 40;
 			}
 		}
 	}else{
 			// there has been no scores yet
+			GUI_SetColor(GUI_WHITE);
 			GUI_DispStringHCenterAt("I'd probably do easy if I were you..", LCD_GetXSize()/2+30 , LCD_GetYSize()/2);
 			GUI_DrawBitmap(&bmArrow, 110, 58);
 			
 		
 	}
 	// displays the difficulty buttons and the experience bar
+	GUI_SetColor(GUI_GRAY);
 	GUI_DrawBitmap(&bmEasy, 10,50);
+	GUI_DispStringHCenterAt("x1", 100 , 40);
 	GUI_DrawBitmap(&bmHard, 10,110);
+	GUI_DispStringHCenterAt("x2", 100 , 100);
 	GUI_DrawBitmap(&bmAbsurd, 10, 170);
+	GUI_DispStringHCenterAt("x3", 100 , 160);
 	GUI_DrawBitmap(&bmlogo2,150,20);
 	
 	
