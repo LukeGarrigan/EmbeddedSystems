@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.4.19)  7 MAY 2017 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.4.19)  7 MAY 2017 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1533,7 +1533,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 8FC18612A949D3173617F8AABAC7643B;28581.
+(rerunfilecheck)             Checksum: 8F05C0904D3B17BD3A519095BF0C8CE2;28438.
 
 
 LaTeX Warning: There were undefined references.
@@ -1543,7 +1543,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 187.
 Here is how much of TeX's memory you used:
  15828 strings out of 493013
  235863 string characters out of 6136993
- 334037 words of memory out of 5000000
+ 333629 words of memory out of 5000000
  18542 multiletter control sequences out of 15000+600000
  66372 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1557,7 +1557,7 @@ c:/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2016
 /texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><c:/texlive/2016/texmf-dist/fo
 nts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/h
 elvetic/uhvro8a.pfb>
-Output written on refman.pdf (61 pages, 199852 bytes).
+Output written on refman.pdf (61 pages, 199652 bytes).
 PDF statistics:
  1988 PDF objects out of 2073 (max. 8388607)
  1895 compressed objects within 19 object streams
