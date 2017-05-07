@@ -21,6 +21,10 @@
 #include "main.h"
 #include "Progbar.h"
 #include <math.h>
+//All images within the game
+/** @defgroup Flappy_Bird
+* @{
+*/ 
 extern GUI_CONST_STORAGE GUI_BITMAP bmCowboyBirdy;
 extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
 extern GUI_CONST_STORAGE GUI_BITMAP bmKingBirdy;
@@ -33,6 +37,7 @@ extern GUI_CONST_STORAGE GUI_BITMAP bmAbsurd;
 extern GUI_CONST_STORAGE GUI_BITMAP bmArrow;
 extern GUI_CONST_STORAGE GUI_BITMAP bmlogo2;
 extern GUI_CONST_STORAGE GUI_BITMAP bmEgg;
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Game Info~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -41,12 +46,11 @@ GameInfo gameInfo;
 int turn = 0;
 bool xpSet = false;
 
-
-
 /**
  * @brief SetupGameInfo, sets up game based on difficulty.
  * @param  None
  * @retval None
+ *
  *
  * Based on gameinfo struct difficulty variable this method
  * sets up the speed of the game, distance between concurrent
@@ -81,6 +85,7 @@ bool xpSet = false;
  * @retval None
  * @note 0 = Normal, 1 = Hard, 2 = Insane
  *
+ *
  * sets gameInfo struct game difficulty to later be used
  * by @b setupGameInfo 
  */
@@ -92,6 +97,7 @@ void setDifficulty(int choice){
  * @brief Updates the scoreboard
  * @param  None
  * @retval None
+ *
  *
  * Once a bird dies, this method updates the scoreboard in 
  * order of most recent 1st and what difficulty the score was 
@@ -115,9 +121,7 @@ void updateScores(){
 		if(gameInfo.score>gameInfo.highScore.score){
 			gameInfo.highScore.score = gameInfo.score;
 			gameInfo.highScore.difficulty = gameInfo.difficulty;
-		}
-				
-	
+		}	
 		
 		// Orders the scores so the most recent are displayed first
 	
@@ -143,6 +147,7 @@ void updateScores(){
  * @param  None
  * @retval None
  *
+ *
  * @b queueCreate methods is called and returned value
  * is saved within gameinfo structs queue
  */
@@ -154,6 +159,7 @@ void createPipeQueue(){
  * @brief Detects collisions
  * @param  pointer to the head pipe
  * @retval bool True of False
+ *
  *
  * Takes in the head of the pipe queue to get the position on screen,
  * if the birds position is in the same co-ordinates true is returned
@@ -172,6 +178,7 @@ bool hits(Pipe * p){
  * @brief Initialises a pipe
  * @param  None
  * @retval None
+ *
  *
  * Creates a pipe and enques pipe to the game info
  * pipe queue
@@ -196,6 +203,7 @@ void initPipes(){
  * @param  None
  * @retval None
  * @note also changes pipe gap size and position for insane dif
+ *
  *
  * udpates co-ordinates for all pipes currently in the pipequeue, 
  * as well as calling @b hits to see if bird is still alive
@@ -249,6 +257,7 @@ void updateAllPipes(){
  * @param  None
  * @retval bool true or false
  *
+ *
  * Returns the gameinfo struct alive boolean variable that is altered 
  * by @b updateScores 
  */
@@ -260,6 +269,7 @@ bool isbirdAlive(){
  * @brief Initialises a bird
  * @param  None
  * @retval None
+ *
  *
  *  Initialises a bird and adds it to the game states
  */
@@ -277,6 +287,7 @@ void initBird(){
  * @param  None
  * @retval None
  *
+ *
  *  Alters the bird position based on gravity, moving it up 
  */
 void upBirdy(void){
@@ -287,6 +298,7 @@ void upBirdy(void){
  * @brief Updates the birds state 
  * @param  None
  * @retval None
+ *
  *
  * Updates the birds y positioning (up and down movements),
  * as well as checking the bird hasn't fell below the screen line
@@ -327,6 +339,7 @@ void updateBirdy(void){
  * @param  None
  * @retval None
  *
+ *
  * Initialises a coin to a random position in the game state
  */
 void initCoin(){
@@ -340,6 +353,7 @@ void initCoin(){
  * @brief Updates coin positioning
  * @param  None
  * @retval None
+ *
  *
  * Update coins x position to move it across the screen, calling 
  * @b initCoin when a new coin needs initalising (every 1170 frames)
@@ -364,7 +378,14 @@ void updateCoin(){
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Displaying to Screen~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-
+/**
+ * @brief Draws progress circles
+ * @param  None
+ * @retval None
+ *
+ * 
+ * Draws progress circles that grow the closer the user is to obtaining the next level
+ */
 void drawProgress(){
 	char lvl[30];
 	char percentToLvl[30];
@@ -396,7 +417,15 @@ void drawProgress(){
 	GUI_DispStringHCenterAt(lvl, 370 , 230);
 
 }
-
+/**
+ * @brief Draws the bird selector
+ * @param  None
+ * @retval None.
+ * @note lv 0 = normal, lv3 = cowboy bird, lv5 = king bird
+ *
+ *
+ * Gives an option on what bird the game is to be played with
+ */
 void drawBirdChoice(){
 	GUI_DrawBitmap(&bmBlueBird, 250, 185);
 	GUI_SetColor(GUI_GRAY);
@@ -433,13 +462,13 @@ void drawBirdChoice(){
  * @retval None
  * @note Normal = Green, Hard = Orange, Insane = Red
  *
+ *
  * Method that displays all scores saved within the game state, displaying 
  * newest score first in the colour of difficulty played. Also displays the 
  * game states highest score achieved.
  */
 void drawHighscores(void * pData){
 	
-
 	char str[30];
 	char scores[40];
 	int i;
@@ -456,9 +485,6 @@ void drawHighscores(void * pData){
 	if(gameInfo.highScore.score > 0){
 			drawProgress();
 			drawBirdChoice();
-		
-		
-		
 		
 		if(gameInfo.highScore.difficulty == 0){
 				GUI_SetColor(GUI_GREEN);
@@ -507,17 +533,14 @@ void drawHighscores(void * pData){
 	GUI_DispStringHCenterAt("x3", 100 , 160);
 	GUI_DrawBitmap(&bmlogo2,150,20);
 	
-	
-
 }
-
-
 
 
 /**
  * @brief Creates a window to display scores and select difficulty
  * @param  TOUCH_STATE where the screen has been pressed, GUI_RECT where to display
- * @retval None
+ * @retval None.
+ *
  *
  * Sets the game mode based on what button is pressed and 
  * calls @b drawHighScores to display scores and buttons. 
@@ -544,15 +567,10 @@ void displayLeaderboard(TOUCH_STATE  tsc_state, GUI_RECT Rect){
 						else if(gameInfo.playerLevel->playerLevel >=5){
 							if(tsc_state.x >=390 && tsc_state.x <=424){ //
 									gameInfo.birdType = 2;
-							}
-								
-						}
-						
+							}							
+						}					
 					}
-				}
-				 
-				
-				
+				}					
 				if(tsc_state.x >= 10 && tsc_state.x <=90){
 					if(tsc_state.y >=50 && tsc_state.y <=100){
 							buttonPressed = true;
@@ -576,7 +594,8 @@ void displayLeaderboard(TOUCH_STATE  tsc_state, GUI_RECT Rect){
 /**
  * @brief Displays the how to play window
  * @param  None
- * @retval None
+ * @retval None.
+ *
  *
  * Displays  an information screen informing the user how to 
  * play
@@ -607,7 +626,8 @@ static void drawPregrame(void * pData){
 /**
  * @brief Initilise pregame
  * @param  TOUCH_STATE where the screen has been pressed, GUI_RECT where to display
- * @retval None
+ * @retval None.
+ *
  *
  * Creates the window for the pregame to be drawn and waits for input
  */
@@ -632,7 +652,8 @@ void initPregame(TOUCH_STATE  tsc_state, GUI_RECT Rect){
 /**
  * @brief Creates all images to be drawn
  * @param  None
- * @retval None
+ * @retval None.
+ *
  *
  * Draws all elements of the game (coin,bird,pipeQueue,background)
  */
@@ -678,7 +699,8 @@ static void drawGame(void * pData){
 /**
  * @brief Allocates memory for drawing elements
  * @param  None
- * @retval None
+ * @retval None.
+ *
  *
  * Allocates the memory for @b drawGame as well as incrementing
  * games frame-counter

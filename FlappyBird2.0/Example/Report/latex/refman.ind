@@ -1,0 +1,327 @@
+\begin{theindex}
+
+  \item {Absurd.\+c}, \hyperpage{37}
+    \subitem {bm\+Absurd}, \hyperpage{37}
+  \item {alive}
+    \subitem {Game\+Info}, \hyperpage{28}
+
+  \indexspace
+
+  \item {Background.\+c}, \hyperpage{38}
+    \subitem {bm\+Background}, \hyperpage{38}
+  \item {Bird}, \hyperpage{23}
+    \subitem {gravity}, \hyperpage{23}
+    \subitem {lift}, \hyperpage{23}
+    \subitem {main.\+h}, \hyperpage{47}
+    \subitem {up}, \hyperpage{24}
+    \subitem {velocity}, \hyperpage{24}
+    \subitem {x}, \hyperpage{24}
+    \subitem {y}, \hyperpage{24}
+  \item {birdy}
+    \subitem {Game\+Info}, \hyperpage{28}
+  \item {Blue\+Bird.\+c}, \hyperpage{39}
+    \subitem {bm\+Blue\+Bird}, \hyperpage{39}
+  \item {bm\+Absurd}
+    \subitem {Absurd.\+c}, \hyperpage{37}
+  \item {bm\+Background}
+    \subitem {Background.\+c}, \hyperpage{38}
+  \item {bm\+Blue\+Bird}
+    \subitem {Blue\+Bird.\+c}, \hyperpage{39}
+  \item {bm\+Coin}
+    \subitem {Coin.\+c}, \hyperpage{41}
+  \item {bm\+Easy}
+    \subitem {Easy.\+c}, \hyperpage{42}
+  \item {bm\+Hard}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{15}
+    \subitem {Hard.\+c}, \hyperpage{44}
+  \item {bm\+King\+Birdy}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{16}
+  \item {bm\+Pregame}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{16}
+    \subitem {Pregame.\+c}, \hyperpage{49}
+  \item {bmlogo2}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{16}
+  \item {bottomY}
+    \subitem {Pipe}, \hyperpage{30}
+
+  \indexspace
+
+  \item {Coin}, \hyperpage{24}
+    \subitem {main.\+h}, \hyperpage{48}
+    \subitem {x}, \hyperpage{25}
+    \subitem {y}, \hyperpage{25}
+  \item {coin}
+    \subitem {Game\+Info}, \hyperpage{28}
+  \item {Coin.\+c}, \hyperpage{40}
+    \subitem {bm\+Coin}, \hyperpage{41}
+  \item {create\+Pipe\+Queue}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{8}
+  \item {current\+Xp}
+    \subitem {Player\+Level}, \hyperpage{31}
+
+  \indexspace
+
+  \item {D\+IR}, \hyperpage{25}
+  \item {deq}
+    \subitem {Queue\+\_\+\+Structure}, \hyperpage{19}
+  \item {difficulty}
+    \subitem {Game\+Info}, \hyperpage{28}
+    \subitem {Score}, \hyperpage{35}
+  \item {display\+Leaderboard}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{8}
+  \item {draw\+Bird\+Choice}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{9}
+  \item {draw\+Everything}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{9}
+  \item {draw\+Highscores}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{10}
+  \item {draw\+Progress}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Easy.\+c}, \hyperpage{41}
+    \subitem {bm\+Easy}, \hyperpage{42}
+  \item {enq}
+    \subitem {Queue\+\_\+\+Structure}, \hyperpage{19}
+
+  \indexspace
+
+  \item {F\+A\+T\+FS}, \hyperpage{26}
+  \item {F\+I\+L\+E\+S\+EM}, \hyperpage{27}
+  \item {F\+I\+L\+I\+N\+FO}, \hyperpage{27}
+  \item {F\+IL}, \hyperpage{26}
+  \item {Flappy\+\_\+\+Bird}, \hyperpage{7}
+    \subitem {bm\+Hard}, \hyperpage{15}
+    \subitem {bm\+King\+Birdy}, \hyperpage{16}
+    \subitem {bm\+Pregame}, \hyperpage{16}
+    \subitem {bmlogo2}, \hyperpage{16}
+    \subitem {create\+Pipe\+Queue}, \hyperpage{8}
+    \subitem {display\+Leaderboard}, \hyperpage{8}
+    \subitem {draw\+Bird\+Choice}, \hyperpage{9}
+    \subitem {draw\+Everything}, \hyperpage{9}
+    \subitem {draw\+Highscores}, \hyperpage{10}
+    \subitem {draw\+Progress}, \hyperpage{10}
+    \subitem {hits}, \hyperpage{10}
+    \subitem {init\+Bird}, \hyperpage{11}
+    \subitem {init\+Coin}, \hyperpage{11}
+    \subitem {init\+Pipes}, \hyperpage{11}
+    \subitem {init\+Pregame}, \hyperpage{12}
+    \subitem {isbird\+Alive}, \hyperpage{12}
+    \subitem {set\+Difficulty}, \hyperpage{13}
+    \subitem {setup\+Game\+Info}, \hyperpage{13}
+    \subitem {up\+Birdy}, \hyperpage{13}
+    \subitem {update\+All\+Pipes}, \hyperpage{14}
+    \subitem {update\+Birdy}, \hyperpage{14}
+    \subitem {update\+Coin}, \hyperpage{15}
+    \subitem {update\+Scores}, \hyperpage{15}
+  \item {flappy\+Bird.\+c}, \hyperpage{42}
+  \item {frame\+Count}
+    \subitem {Game\+Info}, \hyperpage{28}
+
+  \indexspace
+
+  \item {Game\+\_\+\+Start\+\_\+\+Functions}, \hyperpage{17}
+    \subitem {init\+Game}, \hyperpage{17}
+    \subitem {main}, \hyperpage{17}
+    \subitem {Main\+Task}, \hyperpage{18}
+  \item {Game\+Info}, \hyperpage{27}
+    \subitem {alive}, \hyperpage{28}
+    \subitem {birdy}, \hyperpage{28}
+    \subitem {coin}, \hyperpage{28}
+    \subitem {difficulty}, \hyperpage{28}
+    \subitem {frame\+Count}, \hyperpage{28}
+    \subitem {high\+Score}, \hyperpage{28}
+    \subitem {main.\+h}, \hyperpage{48}
+    \subitem {pipe\+Distance}, \hyperpage{28}
+    \subitem {pipe\+Gap}, \hyperpage{29}
+    \subitem {player\+Level}, \hyperpage{29}
+    \subitem {que}, \hyperpage{29}
+    \subitem {score}, \hyperpage{29}
+    \subitem {scores}, \hyperpage{29}
+  \item {gravity}
+    \subitem {Bird}, \hyperpage{23}
+
+  \indexspace
+
+  \item {Hard.\+c}, \hyperpage{44}
+    \subitem {bm\+Hard}, \hyperpage{44}
+  \item {head}
+    \subitem {queue}, \hyperpage{33}
+  \item {high\+Score}
+    \subitem {Game\+Info}, \hyperpage{28}
+  \item {hits}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{10}
+
+  \indexspace
+
+  \item {init\+Bird}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{11}
+  \item {init\+Coin}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{11}
+  \item {init\+Game}
+    \subitem {Game\+\_\+\+Start\+\_\+\+Functions}, \hyperpage{17}
+  \item {init\+Pipes}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{11}
+  \item {init\+Pregame}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{12}
+  \item {is\+Off\+Screen}
+    \subitem {Queue\+\_\+\+Structure}, \hyperpage{20}
+  \item {isbird\+Alive}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{12}
+
+  \indexspace
+
+  \item {lift}
+    \subitem {Bird}, \hyperpage{23}
+
+  \indexspace
+
+  \item {main}
+    \subitem {Game\+\_\+\+Start\+\_\+\+Functions}, \hyperpage{17}
+  \item {main.\+c}, \hyperpage{45}
+  \item {main.\+h}, \hyperpage{45}
+    \subitem {Bird}, \hyperpage{47}
+    \subitem {Coin}, \hyperpage{48}
+    \subitem {Game\+Info}, \hyperpage{48}
+    \subitem {Pipe}, \hyperpage{48}
+    \subitem {Player\+Level}, \hyperpage{48}
+    \subitem {queue}, \hyperpage{48}
+    \subitem {Score}, \hyperpage{48}
+  \item {Main\+Task}
+    \subitem {Game\+\_\+\+Start\+\_\+\+Functions}, \hyperpage{18}
+
+  \indexspace
+
+  \item {next}
+    \subitem {Pipe}, \hyperpage{30}
+
+  \indexspace
+
+  \item {Pipe}, \hyperpage{29}
+    \subitem {bottomY}, \hyperpage{30}
+    \subitem {main.\+h}, \hyperpage{48}
+    \subitem {next}, \hyperpage{30}
+    \subitem {speed}, \hyperpage{30}
+    \subitem {topY}, \hyperpage{30}
+    \subitem {up}, \hyperpage{30}
+    \subitem {x}, \hyperpage{31}
+  \item {pipe\+Distance}
+    \subitem {Game\+Info}, \hyperpage{28}
+  \item {pipe\+Gap}
+    \subitem {Game\+Info}, \hyperpage{29}
+  \item {Player\+Level}, \hyperpage{31}
+    \subitem {current\+Xp}, \hyperpage{31}
+    \subitem {main.\+h}, \hyperpage{48}
+    \subitem {player\+Level}, \hyperpage{31}
+    \subitem {required\+Xp}, \hyperpage{32}
+  \item {player\+Level}
+    \subitem {Game\+Info}, \hyperpage{29}
+    \subitem {Player\+Level}, \hyperpage{31}
+  \item {Pregame.\+c}, \hyperpage{49}
+    \subitem {bm\+Pregame}, \hyperpage{49}
+  \item {putbuff}, \hyperpage{32}
+
+  \indexspace
+
+  \item {que}
+    \subitem {Game\+Info}, \hyperpage{29}
+  \item {queue}, \hyperpage{32}
+    \subitem {head}, \hyperpage{33}
+    \subitem {main.\+h}, \hyperpage{48}
+    \subitem {tail}, \hyperpage{33}
+  \item {Queue\+\_\+\+Structure}, \hyperpage{19}
+    \subitem {deq}, \hyperpage{19}
+    \subitem {enq}, \hyperpage{19}
+    \subitem {is\+Off\+Screen}, \hyperpage{20}
+    \subitem {queue\+Create}, \hyperpage{20}
+    \subitem {queue\+Destroy}, \hyperpage{20}
+    \subitem {queue\+Empty}, \hyperpage{21}
+    \subitem {update\+Pipes}, \hyperpage{21}
+  \item {queue\+Create}
+    \subitem {Queue\+\_\+\+Structure}, \hyperpage{20}
+  \item {queue\+Destroy}
+    \subitem {Queue\+\_\+\+Structure}, \hyperpage{20}
+  \item {queue\+Empty}
+    \subitem {Queue\+\_\+\+Structure}, \hyperpage{21}
+
+  \indexspace
+
+  \item {Rectangle}, \hyperpage{33}
+    \subitem {Xpos}, \hyperpage{33}
+    \subitem {Xpos2}, \hyperpage{34}
+    \subitem {Ypos}, \hyperpage{34}
+    \subitem {Ypos2}, \hyperpage{34}
+  \item {required\+Xp}
+    \subitem {Player\+Level}, \hyperpage{32}
+
+  \indexspace
+
+  \item {Score}, \hyperpage{34}
+    \subitem {difficulty}, \hyperpage{35}
+    \subitem {main.\+h}, \hyperpage{48}
+    \subitem {score}, \hyperpage{35}
+  \item {score}
+    \subitem {Game\+Info}, \hyperpage{29}
+    \subitem {Score}, \hyperpage{35}
+  \item {scores}
+    \subitem {Game\+Info}, \hyperpage{29}
+  \item {set\+Difficulty}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{13}
+  \item {setup\+Game\+Info}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{13}
+  \item {speed}
+    \subitem {Pipe}, \hyperpage{30}
+
+  \indexspace
+
+  \item {tail}
+    \subitem {queue}, \hyperpage{33}
+  \item {topY}
+    \subitem {Pipe}, \hyperpage{30}
+
+  \indexspace
+
+  \item {up}
+    \subitem {Bird}, \hyperpage{24}
+    \subitem {Pipe}, \hyperpage{30}
+  \item {up\+Birdy}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{13}
+  \item {update\+All\+Pipes}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{14}
+  \item {update\+Birdy}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{14}
+  \item {update\+Coin}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{15}
+  \item {update\+Pipes}
+    \subitem {Queue\+\_\+\+Structure}, \hyperpage{21}
+  \item {update\+Scores}
+    \subitem {Flappy\+\_\+\+Bird}, \hyperpage{15}
+
+  \indexspace
+
+  \item {velocity}
+    \subitem {Bird}, \hyperpage{24}
+
+  \indexspace
+
+  \item {x}
+    \subitem {Bird}, \hyperpage{24}
+    \subitem {Coin}, \hyperpage{25}
+    \subitem {Pipe}, \hyperpage{31}
+  \item {Xpos}
+    \subitem {Rectangle}, \hyperpage{33}
+  \item {Xpos2}
+    \subitem {Rectangle}, \hyperpage{34}
+
+  \indexspace
+
+  \item {y}
+    \subitem {Bird}, \hyperpage{24}
+    \subitem {Coin}, \hyperpage{25}
+  \item {Ypos}
+    \subitem {Rectangle}, \hyperpage{34}
+  \item {Ypos2}
+    \subitem {Rectangle}, \hyperpage{34}
+
+\end{theindex}

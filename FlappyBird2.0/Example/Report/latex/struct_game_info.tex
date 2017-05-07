@@ -1,0 +1,126 @@
+\hypertarget{struct_game_info}{}\section{Game\+Info Struct Reference}
+\label{struct_game_info}\index{Game\+Info@{Game\+Info}}
+
+
+Models Game State.  
+
+
+
+
+{\ttfamily \#include $<$main.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_bird}{Bird} $\ast$ \hyperlink{struct_game_info_aee4a8447023b7f3f3ceb9588cd84c7ce}{birdy}
+\item 
+\hyperlink{structqueue}{queue} $\ast$ \hyperlink{struct_game_info_ae921d4765b1a89b5fcf7ca5a5462bfbf}{que}
+\item 
+\hyperlink{struct_coin}{Coin} $\ast$ \hyperlink{struct_game_info_a7aa65ed4a2ab803f3cad3a2eb1e0947b}{coin}
+\item 
+\hyperlink{struct_player_level}{Player\+Level} $\ast$ \hyperlink{struct_game_info_a7c1f3db004a89ba5384af9a54abd1f46}{player\+Level}
+\item 
+bool \hyperlink{struct_game_info_a47a0b9a98cef651d98214b126d6ed7ec}{alive}
+\item 
+int \hyperlink{struct_game_info_ae502ef89edb1039e4bd2e703f8d407b4}{difficulty}
+\item 
+int \hyperlink{struct_game_info_afd418f5a5bdde1773c8ba201340cd71c}{frame\+Count}
+\item 
+int \hyperlink{struct_game_info_ac46b9867fe4baf039bb1ebb132f1168f}{score}
+\item 
+int \hyperlink{struct_game_info_a35dd3f7cc8f29de98575321a8c710d9e}{pipe\+Gap}
+\item 
+\hyperlink{struct_score}{Score} \hyperlink{struct_game_info_aad280f82718715eb41462a5d3f290594}{high\+Score}
+\item 
+int \hyperlink{struct_game_info_a948bb38de6f9b40bf6b44c5b56f80a75}{pipe\+Distance}
+\item 
+\hyperlink{struct_score}{Score} \hyperlink{struct_game_info_a5bd798bc489729fd6fd44ba615cefb7c}{scores} \mbox{[}4\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_game_info_ae4666e5199b67e492b3617e6fd41d459}\label{struct_game_info_ae4666e5199b67e492b3617e6fd41d459}} 
+int {\bfseries bird\+Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Models Game State. 
+
+Stores all game information regarding the current state of the game. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_game_info_a47a0b9a98cef651d98214b126d6ed7ec}\label{struct_game_info_a47a0b9a98cef651d98214b126d6ed7ec}} 
+\index{Game\+Info@{Game\+Info}!alive@{alive}}
+\index{alive@{alive}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{alive}{alive}}
+{\footnotesize\ttfamily bool Game\+Info\+::alive}
+
+Boolean check to see if the game is still playing \mbox{\Hypertarget{struct_game_info_aee4a8447023b7f3f3ceb9588cd84c7ce}\label{struct_game_info_aee4a8447023b7f3f3ceb9588cd84c7ce}} 
+\index{Game\+Info@{Game\+Info}!birdy@{birdy}}
+\index{birdy@{birdy}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{birdy}{birdy}}
+{\footnotesize\ttfamily \hyperlink{struct_bird}{Bird}$\ast$ Game\+Info\+::birdy}
+
+Pointer to bird in play \mbox{\Hypertarget{struct_game_info_a7aa65ed4a2ab803f3cad3a2eb1e0947b}\label{struct_game_info_a7aa65ed4a2ab803f3cad3a2eb1e0947b}} 
+\index{Game\+Info@{Game\+Info}!coin@{coin}}
+\index{coin@{coin}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{coin}{coin}}
+{\footnotesize\ttfamily \hyperlink{struct_coin}{Coin}$\ast$ Game\+Info\+::coin}
+
+Pointer to coin in play \mbox{\Hypertarget{struct_game_info_ae502ef89edb1039e4bd2e703f8d407b4}\label{struct_game_info_ae502ef89edb1039e4bd2e703f8d407b4}} 
+\index{Game\+Info@{Game\+Info}!difficulty@{difficulty}}
+\index{difficulty@{difficulty}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{difficulty}{difficulty}}
+{\footnotesize\ttfamily int Game\+Info\+::difficulty}
+
+Difficulty rating (0-\/2) \mbox{\Hypertarget{struct_game_info_afd418f5a5bdde1773c8ba201340cd71c}\label{struct_game_info_afd418f5a5bdde1773c8ba201340cd71c}} 
+\index{Game\+Info@{Game\+Info}!frame\+Count@{frame\+Count}}
+\index{frame\+Count@{frame\+Count}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{frame\+Count}{frameCount}}
+{\footnotesize\ttfamily int Game\+Info\+::frame\+Count}
+
+Counter for frames \mbox{\Hypertarget{struct_game_info_aad280f82718715eb41462a5d3f290594}\label{struct_game_info_aad280f82718715eb41462a5d3f290594}} 
+\index{Game\+Info@{Game\+Info}!high\+Score@{high\+Score}}
+\index{high\+Score@{high\+Score}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{high\+Score}{highScore}}
+{\footnotesize\ttfamily \hyperlink{struct_score}{Score} Game\+Info\+::high\+Score}
+
+Highest score achieved in game state \mbox{\Hypertarget{struct_game_info_a948bb38de6f9b40bf6b44c5b56f80a75}\label{struct_game_info_a948bb38de6f9b40bf6b44c5b56f80a75}} 
+\index{Game\+Info@{Game\+Info}!pipe\+Distance@{pipe\+Distance}}
+\index{pipe\+Distance@{pipe\+Distance}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{pipe\+Distance}{pipeDistance}}
+{\footnotesize\ttfamily int Game\+Info\+::pipe\+Distance}
+
+Distance between concurrent pipes \mbox{\Hypertarget{struct_game_info_a35dd3f7cc8f29de98575321a8c710d9e}\label{struct_game_info_a35dd3f7cc8f29de98575321a8c710d9e}} 
+\index{Game\+Info@{Game\+Info}!pipe\+Gap@{pipe\+Gap}}
+\index{pipe\+Gap@{pipe\+Gap}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{pipe\+Gap}{pipeGap}}
+{\footnotesize\ttfamily int Game\+Info\+::pipe\+Gap}
+
+Distance between top and bottom pipe \mbox{\Hypertarget{struct_game_info_a7c1f3db004a89ba5384af9a54abd1f46}\label{struct_game_info_a7c1f3db004a89ba5384af9a54abd1f46}} 
+\index{Game\+Info@{Game\+Info}!player\+Level@{player\+Level}}
+\index{player\+Level@{player\+Level}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{player\+Level}{playerLevel}}
+{\footnotesize\ttfamily \hyperlink{struct_player_level}{Player\+Level}$\ast$ Game\+Info\+::player\+Level}
+
+Pointer to player level in play \mbox{\Hypertarget{struct_game_info_ae921d4765b1a89b5fcf7ca5a5462bfbf}\label{struct_game_info_ae921d4765b1a89b5fcf7ca5a5462bfbf}} 
+\index{Game\+Info@{Game\+Info}!que@{que}}
+\index{que@{que}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{que}{que}}
+{\footnotesize\ttfamily \hyperlink{structqueue}{queue}$\ast$ Game\+Info\+::que}
+
+Pointer to queue containing all pipes \mbox{\Hypertarget{struct_game_info_ac46b9867fe4baf039bb1ebb132f1168f}\label{struct_game_info_ac46b9867fe4baf039bb1ebb132f1168f}} 
+\index{Game\+Info@{Game\+Info}!score@{score}}
+\index{score@{score}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily int Game\+Info\+::score}
+
+Current score of the game \mbox{\Hypertarget{struct_game_info_a5bd798bc489729fd6fd44ba615cefb7c}\label{struct_game_info_a5bd798bc489729fd6fd44ba615cefb7c}} 
+\index{Game\+Info@{Game\+Info}!scores@{scores}}
+\index{scores@{scores}!Game\+Info@{Game\+Info}}
+\subsubsection{\texorpdfstring{scores}{scores}}
+{\footnotesize\ttfamily \hyperlink{struct_score}{Score} Game\+Info\+::scores\mbox{[}4\mbox{]}}
+
+Saves n most current scores 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8h}{main.\+h}\end{DoxyCompactItemize}

@@ -11,26 +11,39 @@
 
 typedef struct queue *q;
 
-queue * queueCreate(void)
-{
+/** @defgroup Queue_Structure
+* @{
+*/ 
+
+/**
+ * @brief Creates empty queue structure
+ * @param  None
+ * @retval queue
+ *
+ */
+queue * queueCreate(void){
     struct queue *q;
-
+	
     q = malloc(sizeof(struct queue));
-
     q->head = q->tail = 0;
 
     return q;
 }
 
-/* push a new value onto top of Queue */
+/**
+ * @brief Push pipe to queue
+ * @param  queue *q, Pipe *p
+ * @retval None
+ *
+ *
+ * Method pushes given pipe to the top of a given queue
+ *
+ */
 void enq(queue *q, Pipe *p)
 {
     //assert(p);
-
-
     /* Because I will be the tail, nobody is behind me */
     p->next = NULL;
-
     if(q->head == 0) {
         /* If the queue was empty, I become the head */
         q->head = p;
@@ -38,16 +51,29 @@ void enq(queue *q, Pipe *p)
         /* Otherwise I get in line after the old tail */
         q->tail->next = p;
     }
-
+		
     /* I become the new tail */
     q->tail = p;
 }
 
+/**
+ * @brief Checks if the queue is empty
+ * @param  None
+ * @retval None
+ *
+ */
 int queueEmpty(const struct queue *q)
 {
     return (q->head == 0);
 }
 
+
+/**
+ * @brief Checks if the queue is off screen
+ * @param  queue *q
+ * @retval bool
+ *
+ */
 bool isOffScreen(queue *q){
 	if(q->head->x < -50){
 		return true;
@@ -56,6 +82,13 @@ bool isOffScreen(queue *q){
 	}
 }
 
+
+/**
+ * @brief Removes pipe at the head of the queue
+ * @param  queue *q
+ * @retval None
+ *
+ */
 void deq(queue *q)
 {
     int ret;
@@ -70,7 +103,12 @@ void deq(queue *q)
 
 
 
-/* free a queue and all of its elements */
+/**
+ * @brief Removes entire queue and frees memory
+ * @param  queue *q
+ * @retval None
+ *
+ */
 void queueDestroy(struct queue *q)
 {
     while(!queueEmpty(q)) {
@@ -79,8 +117,12 @@ void queueDestroy(struct queue *q)
 		free(q);
 }
 
-
-
+/**
+ * @brief Updates pipe positions
+ * @param  queue *q
+ * @retval None
+ *
+ */
 void updatePipes(queue *q){
 	Pipe* e;
 	for(e = q->head; e != 0; e = e->next){

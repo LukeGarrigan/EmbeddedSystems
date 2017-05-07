@@ -1,0 +1,165 @@
+\hypertarget{group___queue___structure}{}\section{Queue\+\_\+\+Structure}
+\label{group___queue___structure}\index{Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structqueue}{queue} $\ast$ \hyperlink{group___queue___structure_gae93a1da4d92342fc6237dcfaf4d034a2}{queue\+Create} (void)
+\begin{DoxyCompactList}\small\item\em Creates empty queue structure. \end{DoxyCompactList}\item 
+void \hyperlink{group___queue___structure_ga89512be15c27bb4def10b3e6dff1d240}{enq} (\hyperlink{structqueue}{queue} $\ast$\hyperlink{structqueue}{q}, \hyperlink{struct_pipe}{Pipe} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Push pipe to queue. \end{DoxyCompactList}\item 
+int \hyperlink{group___queue___structure_gaceddff2dc3ce07ad02a362bee362afb8}{queue\+Empty} (const struct \hyperlink{structqueue}{queue} $\ast$\hyperlink{structqueue}{q})
+\begin{DoxyCompactList}\small\item\em Checks if the queue is empty. \end{DoxyCompactList}\item 
+bool \hyperlink{group___queue___structure_ga9156a87b52e80132d4458a46fdfa0083}{is\+Off\+Screen} (\hyperlink{structqueue}{queue} $\ast$\hyperlink{structqueue}{q})
+\begin{DoxyCompactList}\small\item\em Checks if the queue is off screen. \end{DoxyCompactList}\item 
+void \hyperlink{group___queue___structure_ga096d562d71d667b63d6dfedb74cd2729}{deq} (\hyperlink{structqueue}{queue} $\ast$\hyperlink{structqueue}{q})
+\begin{DoxyCompactList}\small\item\em Removes pipe at the head of the queue. \end{DoxyCompactList}\item 
+void \hyperlink{group___queue___structure_gaf0183bb74c502f839f05ccb60e90496f}{queue\+Destroy} (struct \hyperlink{structqueue}{queue} $\ast$\hyperlink{structqueue}{q})
+\begin{DoxyCompactList}\small\item\em Removes entire queue and frees memory. \end{DoxyCompactList}\item 
+void \hyperlink{group___queue___structure_gaa67785a5fa2b77b9cb310adba3fd18af}{update\+Pipes} (\hyperlink{structqueue}{queue} $\ast$\hyperlink{structqueue}{q})
+\begin{DoxyCompactList}\small\item\em Updates pipe positions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___queue___structure_ga096d562d71d667b63d6dfedb74cd2729}\label{group___queue___structure_ga096d562d71d667b63d6dfedb74cd2729}} 
+\index{Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}!deq@{deq}}
+\index{deq@{deq}!Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}}
+\subsubsection{\texorpdfstring{deq()}{deq()}}
+{\footnotesize\ttfamily void deq (\begin{DoxyParamCaption}\item[{\hyperlink{structqueue}{queue} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Removes pipe at the head of the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & $\ast$q \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___queue___structure_ga89512be15c27bb4def10b3e6dff1d240}\label{group___queue___structure_ga89512be15c27bb4def10b3e6dff1d240}} 
+\index{Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}!enq@{enq}}
+\index{enq@{enq}!Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}}
+\subsubsection{\texorpdfstring{enq()}{enq()}}
+{\footnotesize\ttfamily void enq (\begin{DoxyParamCaption}\item[{\hyperlink{structqueue}{queue} $\ast$}]{q,  }\item[{\hyperlink{struct_pipe}{Pipe} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Push pipe to queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & $\ast$q, \hyperlink{struct_pipe}{Pipe} $\ast$p \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Method pushes given pipe to the top of a given queue \mbox{\Hypertarget{group___queue___structure_ga9156a87b52e80132d4458a46fdfa0083}\label{group___queue___structure_ga9156a87b52e80132d4458a46fdfa0083}} 
+\index{Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}!is\+Off\+Screen@{is\+Off\+Screen}}
+\index{is\+Off\+Screen@{is\+Off\+Screen}!Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}}
+\subsubsection{\texorpdfstring{is\+Off\+Screen()}{isOffScreen()}}
+{\footnotesize\ttfamily bool is\+Off\+Screen (\begin{DoxyParamCaption}\item[{\hyperlink{structqueue}{queue} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Checks if the queue is off screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & $\ast$q \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em bool} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___queue___structure_gae93a1da4d92342fc6237dcfaf4d034a2}\label{group___queue___structure_gae93a1da4d92342fc6237dcfaf4d034a2}} 
+\index{Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}!queue\+Create@{queue\+Create}}
+\index{queue\+Create@{queue\+Create}!Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}}
+\subsubsection{\texorpdfstring{queue\+Create()}{queueCreate()}}
+{\footnotesize\ttfamily \hyperlink{structqueue}{queue}$\ast$ queue\+Create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Creates empty queue structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em queue} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___queue___structure_gaf0183bb74c502f839f05ccb60e90496f}\label{group___queue___structure_gaf0183bb74c502f839f05ccb60e90496f}} 
+\index{Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}!queue\+Destroy@{queue\+Destroy}}
+\index{queue\+Destroy@{queue\+Destroy}!Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}}
+\subsubsection{\texorpdfstring{queue\+Destroy()}{queueDestroy()}}
+{\footnotesize\ttfamily void queue\+Destroy (\begin{DoxyParamCaption}\item[{struct \hyperlink{structqueue}{queue} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Removes entire queue and frees memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & $\ast$q \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___queue___structure_gaceddff2dc3ce07ad02a362bee362afb8}\label{group___queue___structure_gaceddff2dc3ce07ad02a362bee362afb8}} 
+\index{Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}!queue\+Empty@{queue\+Empty}}
+\index{queue\+Empty@{queue\+Empty}!Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}}
+\subsubsection{\texorpdfstring{queue\+Empty()}{queueEmpty()}}
+{\footnotesize\ttfamily int queue\+Empty (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structqueue}{queue} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Checks if the queue is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___queue___structure_gaa67785a5fa2b77b9cb310adba3fd18af}\label{group___queue___structure_gaa67785a5fa2b77b9cb310adba3fd18af}} 
+\index{Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}!update\+Pipes@{update\+Pipes}}
+\index{update\+Pipes@{update\+Pipes}!Queue\+\_\+\+Structure@{Queue\+\_\+\+Structure}}
+\subsubsection{\texorpdfstring{update\+Pipes()}{updatePipes()}}
+{\footnotesize\ttfamily void update\+Pipes (\begin{DoxyParamCaption}\item[{\hyperlink{structqueue}{queue} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Updates pipe positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & $\ast$q \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

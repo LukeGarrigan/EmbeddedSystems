@@ -20,12 +20,16 @@
 
 
 
-
+/**
+ * @brief Models a prectangle
+ *
+ *  Stores all the points of a rectangle
+ */
 typedef struct {
-  int Xpos;
-  int Ypos;
-	int Xpos2;
-	int Ypos2;
+  int Xpos;		/**< Top left corner */
+  int Ypos;   /**< Bottom left corner */
+	int Xpos2;  /**< Top right corner */
+	int Ypos2;  /**< Bottom right corner */
 	
 } Rectangle;
 
@@ -122,11 +126,6 @@ typedef struct GameInfo{
 	Score scores[4];  /**< Saves n most current scores */
 	int birdType;
 }GameInfo;
-
-
-typedef struct Difficulty {
-	GameInfo *gameinfo;
-}Difficulty;
 
 void queueDestroy(struct queue *q);
 int queueEmpty(const struct queue *q);

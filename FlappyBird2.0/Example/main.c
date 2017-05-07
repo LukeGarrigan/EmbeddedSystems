@@ -24,7 +24,6 @@
 
 FILE *file;
 
-
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
 
@@ -95,10 +94,16 @@ static void CPU_CACHE_Enable (void) {
 }
 
 
+/** @defgroup Game_Start_Functions
+* @{
+*/ 
+
+
 /**
  * @brief Initialise the game state.
  * @param  None
  * @retval None
+ *
  *
  * Calling @b initGame() creates the initial game state by
  * creating a bird, setting all game variables, creating the 
@@ -108,22 +113,19 @@ void initGame(){
 	  initBird();	
 		setupGameInfo();
 		initPipes();
-	  initCoin();
-		
+	  initCoin();		
 }
 
 /**
  * @brief Task container
  * @param  None
- * @retval None
+ * @retval None.
+ *
  *
  * Holds all method calls to run the game, a while loop to setup 
  * the game and an inner loop to update all positions of elements 
  * on screen whilst the bird is alive
  */
-
-
-
 void MainTask(void) {
 
 	GUI_RECT Rect = {0, 0, 602,272};
@@ -132,10 +134,10 @@ void MainTask(void) {
 	while(1){	
 	createPipeQueue();	
 	displayLeaderboard(tsc_state,Rect);
-	Touch_GetState (&tsc_state);
+	Touch_GetState(&tsc_state);
 	GUI_Delay(500);
 	tsc_state.pressed=false;
-  
+
 	initGame();
 	initPregame(tsc_state,Rect);	
 	// loop while the bird is still alive
@@ -152,6 +154,7 @@ void MainTask(void) {
  * @brief Main
  * @param  None
  * @retval int
+ *
  *
  * Configures all hardware used and calls @b MainTask
  */

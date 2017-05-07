@@ -1,0 +1,78 @@
+\hypertarget{group___game___start___functions}{}\section{Game\+\_\+\+Start\+\_\+\+Functions}
+\label{group___game___start___functions}\index{Game\+\_\+\+Start\+\_\+\+Functions@{Game\+\_\+\+Start\+\_\+\+Functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___game___start___functions_ga486f7b71aa892de0f05c6187647613b9}{init\+Game} ()
+\begin{DoxyCompactList}\small\item\em Initialise the game state. \end{DoxyCompactList}\item 
+void \hyperlink{group___game___start___functions_gaec7cf19e4225041fa5e3ea90b904b775}{Main\+Task} (void)
+\begin{DoxyCompactList}\small\item\em Task container. \end{DoxyCompactList}\item 
+int \hyperlink{group___game___start___functions_ga840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\begin{DoxyCompactList}\small\item\em Main. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___game___start___functions_ga486f7b71aa892de0f05c6187647613b9}\label{group___game___start___functions_ga486f7b71aa892de0f05c6187647613b9}} 
+\index{Game\+\_\+\+Start\+\_\+\+Functions@{Game\+\_\+\+Start\+\_\+\+Functions}!init\+Game@{init\+Game}}
+\index{init\+Game@{init\+Game}!Game\+\_\+\+Start\+\_\+\+Functions@{Game\+\_\+\+Start\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{init\+Game()}{initGame()}}
+{\footnotesize\ttfamily void init\+Game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialise the game state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Calling {\bfseries \hyperlink{group___game___start___functions_ga486f7b71aa892de0f05c6187647613b9}{init\+Game()}} creates the initial game state by creating a bird, setting all game variables, creating the pipe queue and adding an extra points coin in. \mbox{\Hypertarget{group___game___start___functions_ga840291bc02cba5474a4cb46a9b9566fe}\label{group___game___start___functions_ga840291bc02cba5474a4cb46a9b9566fe}} 
+\index{Game\+\_\+\+Start\+\_\+\+Functions@{Game\+\_\+\+Start\+\_\+\+Functions}!main@{main}}
+\index{main@{main}!Game\+\_\+\+Start\+\_\+\+Functions@{Game\+\_\+\+Start\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+Configures all hardware used and calls {\bfseries Main\+Task} \mbox{\Hypertarget{group___game___start___functions_gaec7cf19e4225041fa5e3ea90b904b775}\label{group___game___start___functions_gaec7cf19e4225041fa5e3ea90b904b775}} 
+\index{Game\+\_\+\+Start\+\_\+\+Functions@{Game\+\_\+\+Start\+\_\+\+Functions}!Main\+Task@{Main\+Task}}
+\index{Main\+Task@{Main\+Task}!Game\+\_\+\+Start\+\_\+\+Functions@{Game\+\_\+\+Start\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{Main\+Task()}{MainTask()}}
+{\footnotesize\ttfamily void Main\+Task (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Task container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+Holds all method calls to run the game, a while loop to setup the game and an inner loop to update all positions of elements on screen whilst the bird is alive 

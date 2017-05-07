@@ -1,0 +1,560 @@
+\hypertarget{group___flappy___bird}{}\section{Flappy\+\_\+\+Bird}
+\label{group___flappy___bird}\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___flappy___bird_ga4b5a711a6b4b72b301a69dc3d5fd43ac}{setup\+Game\+Info} ()
+\begin{DoxyCompactList}\small\item\em Setup\+Game\+Info, sets up game based on difficulty. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga4a1fc7e6be8da601d6c09b6bd54b2130}{set\+Difficulty} (int choice)
+\begin{DoxyCompactList}\small\item\em Sets game difficulty. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gae103b6fea2d41881b821fff74047d2ac}{update\+Scores} ()
+\begin{DoxyCompactList}\small\item\em Updates the scoreboard. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga94e07f51239dbd78a020cf0cef7ac605}{create\+Pipe\+Queue} ()
+\begin{DoxyCompactList}\small\item\em Assigns a pipe queue to the game state. \end{DoxyCompactList}\item 
+bool \hyperlink{group___flappy___bird_gacd19dd68085054a6f6fdf8b4ac664255}{hits} (\hyperlink{struct_pipe}{Pipe} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Detects collisions. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga1e02da6e4d86847797f3b06dd1f6e76c}{init\+Pipes} ()
+\begin{DoxyCompactList}\small\item\em Initialises a pipe. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gab3c978c3d1d01f63bb632d6f49ed9c20}{update\+All\+Pipes} ()
+\begin{DoxyCompactList}\small\item\em Updates all pipes in the queue. \end{DoxyCompactList}\item 
+bool \hyperlink{group___flappy___bird_ga819692f49c5f4cc8981ef9509ac19630}{isbird\+Alive} ()
+\begin{DoxyCompactList}\small\item\em If the bird is alive or not. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga2aac1cc1c29f5be4955f4bbf802289c6}{init\+Bird} ()
+\begin{DoxyCompactList}\small\item\em Initialises a bird. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gaf7865b4fde856c70ea4ec05b0ebb1dfe}{up\+Birdy} (void)
+\begin{DoxyCompactList}\small\item\em Moves the bird up. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga54cf26cd9679c160760e7f03f4ac2e93}{update\+Birdy} (void)
+\begin{DoxyCompactList}\small\item\em Updates the birds state. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gaf8cb5edf1854b35a943571697abdcdec}{init\+Coin} ()
+\begin{DoxyCompactList}\small\item\em Initialises a coin. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga7ca93fcd8c7440e7b3f64c595a5be28c}{update\+Coin} ()
+\begin{DoxyCompactList}\small\item\em Updates coin positioning. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gac05c4ab9e73e7da3aba0176b07d2be38}{draw\+Progress} ()
+\begin{DoxyCompactList}\small\item\em Draws progress circles. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga9190fcf2aa0aeea553dcad1bdd5a4a46}{draw\+Bird\+Choice} ()
+\begin{DoxyCompactList}\small\item\em Draws the bird selector. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga30accaeacb835fd678ae029b46c79049}{draw\+Highscores} (void $\ast$p\+Data)
+\begin{DoxyCompactList}\small\item\em Displays scores and difficulty associated with that score. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gabfcc5324c3f7bb7ce59a6e462a1ebd42}{display\+Leaderboard} (T\+O\+U\+C\+H\+\_\+\+S\+T\+A\+TE tsc\+\_\+state, G\+U\+I\+\_\+\+R\+E\+CT Rect)
+\begin{DoxyCompactList}\small\item\em Creates a window to display scores and select difficulty. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga332be568448526bd288ccd321978fb1b}{init\+Pregame} (T\+O\+U\+C\+H\+\_\+\+S\+T\+A\+TE tsc\+\_\+state, G\+U\+I\+\_\+\+R\+E\+CT Rect)
+\begin{DoxyCompactList}\small\item\em Initilise pregame. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga5b822966aed05dfd5193feab196a3239}{draw\+Everything} (G\+U\+I\+\_\+\+R\+E\+CT Rect)
+\begin{DoxyCompactList}\small\item\em Allocates memory for drawing elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_ga29850cd5c5a0512f53a5f83c1ba46bd1}\label{group___flappy___bird_ga29850cd5c5a0512f53a5f83c1ba46bd1}} 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Cowboy\+Birdy}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_gae9f981a6948159afdef83258b14ab699}\label{group___flappy___bird_gae9f981a6948159afdef83258b14ab699}} 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Blue\+Bird}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+King\+Birdy}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_gad9178ef06d3cf78c3ab64a11cc27c0e4}\label{group___flappy___bird_gad9178ef06d3cf78c3ab64a11cc27c0e4}} 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Background}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_gaf9301686710e62723a7a622d9cd355eb}\label{group___flappy___bird_gaf9301686710e62723a7a622d9cd355eb}} 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Coin}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Pregame}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_gad0a18046e4cf176ac2ed4837a8fce282}\label{group___flappy___bird_gad0a18046e4cf176ac2ed4837a8fce282}} 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Easy}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Hard}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_ga2db12ef701fde80baf122d8af915fdc7}\label{group___flappy___bird_ga2db12ef701fde80baf122d8af915fdc7}} 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Absurd}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_gadd6a3b2bdca4ffe584dc53cefe4225ad}\label{group___flappy___bird_gadd6a3b2bdca4ffe584dc53cefe4225ad}} 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Arrow}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bmlogo2}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_ga5dda9fe83ba425fc1dfe67e778959b77}\label{group___flappy___bird_ga5dda9fe83ba425fc1dfe67e778959b77}} 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Egg}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_ga4089233ede3ad3ba9618e76697aeda27}\label{group___flappy___bird_ga4089233ede3ad3ba9618e76697aeda27}} 
+\hyperlink{struct_game_info}{Game\+Info} {\bfseries game\+Info}
+\item 
+\mbox{\Hypertarget{group___flappy___bird_gaaefa47f4fdf865c2358c22b542a993e4}\label{group___flappy___bird_gaaefa47f4fdf865c2358c22b542a993e4}} 
+int {\bfseries turn} = 0
+\item 
+\mbox{\Hypertarget{group___flappy___bird_gac641742c262db8ea24d8a4fcfd228e87}\label{group___flappy___bird_gac641742c262db8ea24d8a4fcfd228e87}} 
+bool {\bfseries xp\+Set} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___flappy___bird_ga94e07f51239dbd78a020cf0cef7ac605}\label{group___flappy___bird_ga94e07f51239dbd78a020cf0cef7ac605}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!create\+Pipe\+Queue@{create\+Pipe\+Queue}}
+\index{create\+Pipe\+Queue@{create\+Pipe\+Queue}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{create\+Pipe\+Queue()}{createPipeQueue()}}
+{\footnotesize\ttfamily void create\+Pipe\+Queue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Assigns a pipe queue to the game state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+{\bfseries queue\+Create} methods is called and returned value is saved within gameinfo structs queue \mbox{\Hypertarget{group___flappy___bird_gabfcc5324c3f7bb7ce59a6e462a1ebd42}\label{group___flappy___bird_gabfcc5324c3f7bb7ce59a6e462a1ebd42}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!display\+Leaderboard@{display\+Leaderboard}}
+\index{display\+Leaderboard@{display\+Leaderboard}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{display\+Leaderboard()}{displayLeaderboard()}}
+{\footnotesize\ttfamily void display\+Leaderboard (\begin{DoxyParamCaption}\item[{T\+O\+U\+C\+H\+\_\+\+S\+T\+A\+TE}]{tsc\+\_\+state,  }\item[{G\+U\+I\+\_\+\+R\+E\+CT}]{Rect }\end{DoxyParamCaption})}
+
+
+
+Creates a window to display scores and select difficulty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+O\+U\+C\+H\+\_\+\+S\+T\+A\+TE} & where the screen has been pressed, G\+U\+I\+\_\+\+R\+E\+CT where to display \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+Sets the game mode based on what button is pressed and calls {\bfseries draw\+High\+Scores} to display scores and buttons. \mbox{\Hypertarget{group___flappy___bird_ga9190fcf2aa0aeea553dcad1bdd5a4a46}\label{group___flappy___bird_ga9190fcf2aa0aeea553dcad1bdd5a4a46}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!draw\+Bird\+Choice@{draw\+Bird\+Choice}}
+\index{draw\+Bird\+Choice@{draw\+Bird\+Choice}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{draw\+Bird\+Choice()}{drawBirdChoice()}}
+{\footnotesize\ttfamily void draw\+Bird\+Choice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the bird selector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+lv 0 = normal, lv3 = cowboy bird, lv5 = king bird
+\end{DoxyNote}
+Gives an option on what bird the game is to be played with \mbox{\Hypertarget{group___flappy___bird_ga5b822966aed05dfd5193feab196a3239}\label{group___flappy___bird_ga5b822966aed05dfd5193feab196a3239}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!draw\+Everything@{draw\+Everything}}
+\index{draw\+Everything@{draw\+Everything}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{draw\+Everything()}{drawEverything()}}
+{\footnotesize\ttfamily void draw\+Everything (\begin{DoxyParamCaption}\item[{G\+U\+I\+\_\+\+R\+E\+CT}]{Rect }\end{DoxyParamCaption})}
+
+
+
+Allocates memory for drawing elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+Allocates the memory for {\bfseries draw\+Game} as well as incrementing games frame-\/counter \mbox{\Hypertarget{group___flappy___bird_ga30accaeacb835fd678ae029b46c79049}\label{group___flappy___bird_ga30accaeacb835fd678ae029b46c79049}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!draw\+Highscores@{draw\+Highscores}}
+\index{draw\+Highscores@{draw\+Highscores}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{draw\+Highscores()}{drawHighscores()}}
+{\footnotesize\ttfamily void draw\+Highscores (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Data }\end{DoxyParamCaption})}
+
+
+
+Displays scores and difficulty associated with that score. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+Normal = Green, Hard = Orange, Insane = Red
+\end{DoxyNote}
+Method that displays all scores saved within the game state, displaying newest score first in the colour of difficulty played. Also displays the game states highest score achieved. \mbox{\Hypertarget{group___flappy___bird_gac05c4ab9e73e7da3aba0176b07d2be38}\label{group___flappy___bird_gac05c4ab9e73e7da3aba0176b07d2be38}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!draw\+Progress@{draw\+Progress}}
+\index{draw\+Progress@{draw\+Progress}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{draw\+Progress()}{drawProgress()}}
+{\footnotesize\ttfamily void draw\+Progress (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws progress circles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Draws progress circles that grow the closer the user is to obtaining the next level \mbox{\Hypertarget{group___flappy___bird_gacd19dd68085054a6f6fdf8b4ac664255}\label{group___flappy___bird_gacd19dd68085054a6f6fdf8b4ac664255}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!hits@{hits}}
+\index{hits@{hits}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{hits()}{hits()}}
+{\footnotesize\ttfamily bool hits (\begin{DoxyParamCaption}\item[{\hyperlink{struct_pipe}{Pipe} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Detects collisions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the head pipe \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em bool} & True of False\\
+\hline
+\end{DoxyRetVals}
+Takes in the head of the pipe queue to get the position on screen, if the birds position is in the same co-\/ordinates true is returned otherwise false. \mbox{\Hypertarget{group___flappy___bird_ga2aac1cc1c29f5be4955f4bbf802289c6}\label{group___flappy___bird_ga2aac1cc1c29f5be4955f4bbf802289c6}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!init\+Bird@{init\+Bird}}
+\index{init\+Bird@{init\+Bird}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{init\+Bird()}{initBird()}}
+{\footnotesize\ttfamily void init\+Bird (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises a bird. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Initialises a bird and adds it to the game states \mbox{\Hypertarget{group___flappy___bird_gaf8cb5edf1854b35a943571697abdcdec}\label{group___flappy___bird_gaf8cb5edf1854b35a943571697abdcdec}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!init\+Coin@{init\+Coin}}
+\index{init\+Coin@{init\+Coin}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{init\+Coin()}{initCoin()}}
+{\footnotesize\ttfamily void init\+Coin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises a coin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Initialises a coin to a random position in the game state \mbox{\Hypertarget{group___flappy___bird_ga1e02da6e4d86847797f3b06dd1f6e76c}\label{group___flappy___bird_ga1e02da6e4d86847797f3b06dd1f6e76c}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!init\+Pipes@{init\+Pipes}}
+\index{init\+Pipes@{init\+Pipes}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{init\+Pipes()}{initPipes()}}
+{\footnotesize\ttfamily void init\+Pipes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises a pipe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Creates a pipe and enques pipe to the game info pipe queue \mbox{\Hypertarget{group___flappy___bird_ga332be568448526bd288ccd321978fb1b}\label{group___flappy___bird_ga332be568448526bd288ccd321978fb1b}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!init\+Pregame@{init\+Pregame}}
+\index{init\+Pregame@{init\+Pregame}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{init\+Pregame()}{initPregame()}}
+{\footnotesize\ttfamily void init\+Pregame (\begin{DoxyParamCaption}\item[{T\+O\+U\+C\+H\+\_\+\+S\+T\+A\+TE}]{tsc\+\_\+state,  }\item[{G\+U\+I\+\_\+\+R\+E\+CT}]{Rect }\end{DoxyParamCaption})}
+
+
+
+Initilise pregame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+O\+U\+C\+H\+\_\+\+S\+T\+A\+TE} & where the screen has been pressed, G\+U\+I\+\_\+\+R\+E\+CT where to display \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+Creates the window for the pregame to be drawn and waits for input \mbox{\Hypertarget{group___flappy___bird_ga819692f49c5f4cc8981ef9509ac19630}\label{group___flappy___bird_ga819692f49c5f4cc8981ef9509ac19630}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!isbird\+Alive@{isbird\+Alive}}
+\index{isbird\+Alive@{isbird\+Alive}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{isbird\+Alive()}{isbirdAlive()}}
+{\footnotesize\ttfamily bool isbird\+Alive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+If the bird is alive or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em bool} & true or false\\
+\hline
+\end{DoxyRetVals}
+Returns the gameinfo struct alive boolean variable that is altered by {\bfseries update\+Scores} \mbox{\Hypertarget{group___flappy___bird_ga4a1fc7e6be8da601d6c09b6bd54b2130}\label{group___flappy___bird_ga4a1fc7e6be8da601d6c09b6bd54b2130}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!set\+Difficulty@{set\+Difficulty}}
+\index{set\+Difficulty@{set\+Difficulty}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{set\+Difficulty()}{setDifficulty()}}
+{\footnotesize\ttfamily void set\+Difficulty (\begin{DoxyParamCaption}\item[{int}]{choice }\end{DoxyParamCaption})}
+
+
+
+Sets game difficulty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & difficulty choice, num between 0-\/2 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+0 = Normal, 1 = Hard, 2 = Insane
+\end{DoxyNote}
+sets game\+Info struct game difficulty to later be used by {\bfseries setup\+Game\+Info} \mbox{\Hypertarget{group___flappy___bird_ga4b5a711a6b4b72b301a69dc3d5fd43ac}\label{group___flappy___bird_ga4b5a711a6b4b72b301a69dc3d5fd43ac}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!setup\+Game\+Info@{setup\+Game\+Info}}
+\index{setup\+Game\+Info@{setup\+Game\+Info}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{setup\+Game\+Info()}{setupGameInfo()}}
+{\footnotesize\ttfamily void setup\+Game\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Setup\+Game\+Info, sets up game based on difficulty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Based on gameinfo struct difficulty variable this method sets up the speed of the game, distance between concurrent pipes and the gap between the middle of a pipe. \mbox{\Hypertarget{group___flappy___bird_gaf7865b4fde856c70ea4ec05b0ebb1dfe}\label{group___flappy___bird_gaf7865b4fde856c70ea4ec05b0ebb1dfe}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!up\+Birdy@{up\+Birdy}}
+\index{up\+Birdy@{up\+Birdy}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{up\+Birdy()}{upBirdy()}}
+{\footnotesize\ttfamily void up\+Birdy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Moves the bird up. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Alters the bird position based on gravity, moving it up \mbox{\Hypertarget{group___flappy___bird_gab3c978c3d1d01f63bb632d6f49ed9c20}\label{group___flappy___bird_gab3c978c3d1d01f63bb632d6f49ed9c20}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!update\+All\+Pipes@{update\+All\+Pipes}}
+\index{update\+All\+Pipes@{update\+All\+Pipes}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{update\+All\+Pipes()}{updateAllPipes()}}
+{\footnotesize\ttfamily void update\+All\+Pipes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Updates all pipes in the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+also changes pipe gap size and position for insane dif
+\end{DoxyNote}
+udpates co-\/ordinates for all pipes currently in the pipequeue, as well as calling {\bfseries hits} to see if bird is still alive \mbox{\Hypertarget{group___flappy___bird_ga54cf26cd9679c160760e7f03f4ac2e93}\label{group___flappy___bird_ga54cf26cd9679c160760e7f03f4ac2e93}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!update\+Birdy@{update\+Birdy}}
+\index{update\+Birdy@{update\+Birdy}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{update\+Birdy()}{updateBirdy()}}
+{\footnotesize\ttfamily void update\+Birdy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Updates the birds state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Updates the birds y positioning (up and down movements), as well as checking the bird hasn\textquotesingle{}t fell below the screen line calling {\bfseries updates\+Scores} and ending a game loop \mbox{\Hypertarget{group___flappy___bird_ga7ca93fcd8c7440e7b3f64c595a5be28c}\label{group___flappy___bird_ga7ca93fcd8c7440e7b3f64c595a5be28c}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!update\+Coin@{update\+Coin}}
+\index{update\+Coin@{update\+Coin}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{update\+Coin()}{updateCoin()}}
+{\footnotesize\ttfamily void update\+Coin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Updates coin positioning. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Update coins x position to move it across the screen, calling {\bfseries init\+Coin} when a new coin needs initalising (every 1170 frames) \mbox{\Hypertarget{group___flappy___bird_gae103b6fea2d41881b821fff74047d2ac}\label{group___flappy___bird_gae103b6fea2d41881b821fff74047d2ac}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!update\+Scores@{update\+Scores}}
+\index{update\+Scores@{update\+Scores}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{update\+Scores()}{updateScores()}}
+{\footnotesize\ttfamily void update\+Scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the scoreboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Once a bird dies, this method updates the scoreboard in order of most recent 1st and what difficulty the score was achieved on 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{group___flappy___bird_ga7a953ee4b333e05b3030bb8122c960d2}\label{group___flappy___bird_ga7a953ee4b333e05b3030bb8122c960d2}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!bm\+Hard@{bm\+Hard}}
+\index{bm\+Hard@{bm\+Hard}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{bm\+Hard}{bmHard}}
+{\footnotesize\ttfamily G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP bm\+Hard}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  80, 
+  50, 
+  320, 
+  32, 
+  (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)\_acHard,  
+  NULL,  
+  GUI\_DRAW\_BMP8888
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___flappy___bird_ga6eb6473b1aa5f3d15c7663658ac8d4d0}\label{group___flappy___bird_ga6eb6473b1aa5f3d15c7663658ac8d4d0}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!bm\+King\+Birdy@{bm\+King\+Birdy}}
+\index{bm\+King\+Birdy@{bm\+King\+Birdy}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{bm\+King\+Birdy}{bmKingBirdy}}
+{\footnotesize\ttfamily G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP bm\+King\+Birdy}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  34, 
+  31, 
+  136, 
+  32, 
+  (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)\_acKingBirdy,  
+  NULL,  
+  GUI\_DRAW\_BMP8888
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___flappy___bird_gacc645a283949b10be3aa313b20b95f95}\label{group___flappy___bird_gacc645a283949b10be3aa313b20b95f95}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!bmlogo2@{bmlogo2}}
+\index{bmlogo2@{bmlogo2}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{bmlogo2}{bmlogo2}}
+{\footnotesize\ttfamily G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP bmlogo2}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  240, 
+  52, 
+  960, 
+  32, 
+  (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)\_aclogo2,  
+  NULL,  
+  GUI\_DRAW\_BMP8888
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___flappy___bird_gad17411bd07bfb3ac5aad8ec61f1d8ca4}\label{group___flappy___bird_gad17411bd07bfb3ac5aad8ec61f1d8ca4}} 
+\index{Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}!bm\+Pregame@{bm\+Pregame}}
+\index{bm\+Pregame@{bm\+Pregame}!Flappy\+\_\+\+Bird@{Flappy\+\_\+\+Bird}}
+\subsubsection{\texorpdfstring{bm\+Pregame}{bmPregame}}
+{\footnotesize\ttfamily G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP bm\+Pregame}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  120, 
+  141, 
+  480, 
+  32, 
+  (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)\_acPregame,  
+  NULL,  
+  GUI\_DRAW\_BMP8888
+\}
+\end{DoxyCode}

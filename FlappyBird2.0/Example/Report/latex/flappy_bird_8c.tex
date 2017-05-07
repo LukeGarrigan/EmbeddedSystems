@@ -1,0 +1,100 @@
+\hypertarget{flappy_bird_8c}{}\section{flappy\+Bird.\+c File Reference}
+\label{flappy_bird_8c}\index{flappy\+Bird.\+c@{flappy\+Bird.\+c}}
+
+
+File containing all methods to update the gamestate.  
+
+
+{\ttfamily \#include \char`\"{}stm32f7xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32746g\+\_\+discovery\+\_\+sdram.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+T\+E\+\_\+\+Components.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G\+U\+I.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Progbar.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___flappy___bird_ga4b5a711a6b4b72b301a69dc3d5fd43ac}{setup\+Game\+Info} ()
+\begin{DoxyCompactList}\small\item\em Setup\+Game\+Info, sets up game based on difficulty. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga4a1fc7e6be8da601d6c09b6bd54b2130}{set\+Difficulty} (int choice)
+\begin{DoxyCompactList}\small\item\em Sets game difficulty. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gae103b6fea2d41881b821fff74047d2ac}{update\+Scores} ()
+\begin{DoxyCompactList}\small\item\em Updates the scoreboard. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga94e07f51239dbd78a020cf0cef7ac605}{create\+Pipe\+Queue} ()
+\begin{DoxyCompactList}\small\item\em Assigns a pipe queue to the game state. \end{DoxyCompactList}\item 
+bool \hyperlink{group___flappy___bird_gacd19dd68085054a6f6fdf8b4ac664255}{hits} (\hyperlink{struct_pipe}{Pipe} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Detects collisions. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga1e02da6e4d86847797f3b06dd1f6e76c}{init\+Pipes} ()
+\begin{DoxyCompactList}\small\item\em Initialises a pipe. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gab3c978c3d1d01f63bb632d6f49ed9c20}{update\+All\+Pipes} ()
+\begin{DoxyCompactList}\small\item\em Updates all pipes in the queue. \end{DoxyCompactList}\item 
+bool \hyperlink{group___flappy___bird_ga819692f49c5f4cc8981ef9509ac19630}{isbird\+Alive} ()
+\begin{DoxyCompactList}\small\item\em If the bird is alive or not. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga2aac1cc1c29f5be4955f4bbf802289c6}{init\+Bird} ()
+\begin{DoxyCompactList}\small\item\em Initialises a bird. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gaf7865b4fde856c70ea4ec05b0ebb1dfe}{up\+Birdy} (void)
+\begin{DoxyCompactList}\small\item\em Moves the bird up. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga54cf26cd9679c160760e7f03f4ac2e93}{update\+Birdy} (void)
+\begin{DoxyCompactList}\small\item\em Updates the birds state. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gaf8cb5edf1854b35a943571697abdcdec}{init\+Coin} ()
+\begin{DoxyCompactList}\small\item\em Initialises a coin. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga7ca93fcd8c7440e7b3f64c595a5be28c}{update\+Coin} ()
+\begin{DoxyCompactList}\small\item\em Updates coin positioning. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gac05c4ab9e73e7da3aba0176b07d2be38}{draw\+Progress} ()
+\begin{DoxyCompactList}\small\item\em Draws progress circles. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga9190fcf2aa0aeea553dcad1bdd5a4a46}{draw\+Bird\+Choice} ()
+\begin{DoxyCompactList}\small\item\em Draws the bird selector. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga30accaeacb835fd678ae029b46c79049}{draw\+Highscores} (void $\ast$p\+Data)
+\begin{DoxyCompactList}\small\item\em Displays scores and difficulty associated with that score. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_gabfcc5324c3f7bb7ce59a6e462a1ebd42}{display\+Leaderboard} (T\+O\+U\+C\+H\+\_\+\+S\+T\+A\+TE tsc\+\_\+state, G\+U\+I\+\_\+\+R\+E\+CT Rect)
+\begin{DoxyCompactList}\small\item\em Creates a window to display scores and select difficulty. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga332be568448526bd288ccd321978fb1b}{init\+Pregame} (T\+O\+U\+C\+H\+\_\+\+S\+T\+A\+TE tsc\+\_\+state, G\+U\+I\+\_\+\+R\+E\+CT Rect)
+\begin{DoxyCompactList}\small\item\em Initilise pregame. \end{DoxyCompactList}\item 
+void \hyperlink{group___flappy___bird_ga5b822966aed05dfd5193feab196a3239}{draw\+Everything} (G\+U\+I\+\_\+\+R\+E\+CT Rect)
+\begin{DoxyCompactList}\small\item\em Allocates memory for drawing elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Cowboy\+Birdy}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Blue\+Bird}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+King\+Birdy}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Background}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Coin}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Pregame}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Easy}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Hard}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Absurd}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Arrow}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bmlogo2}
+\item 
+G\+U\+I\+\_\+\+C\+O\+N\+S\+T\+\_\+\+S\+T\+O\+R\+A\+GE G\+U\+I\+\_\+\+B\+I\+T\+M\+AP {\bfseries bm\+Egg}
+\item 
+\hyperlink{struct_game_info}{Game\+Info} {\bfseries game\+Info}
+\item 
+int {\bfseries turn} = 0
+\item 
+bool {\bfseries xp\+Set} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing all methods to update the gamestate. 
+
+\begin{DoxyAuthor}{Author}
+Luke Garrigan, Shane Sturgeon 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+17 March 2017 
+\end{DoxyDate}
