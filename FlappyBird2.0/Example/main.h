@@ -17,9 +17,17 @@
 #define _MAIN_H
 #include <stdbool.h>
 #include "Board_Touch.h"
+#include "stm32746g_discovery_sdram.h"
+#include "RTE_Components.h"
+#include "GUI.h"
+#include <stdlib.h>
+#include "Progbar.h"
+#include <math.h>
+#include "stm32f7xx_hal.h"
+#include "Board_Touch.h" 
+#include "cmsis_os.h" 
 
-
-
+#define __FI    1               /* Font index 16x24 */
 /**
  * @brief Models a prectangle
  *
@@ -150,4 +158,7 @@ void updateBirdy(void);
 void drawEverything(GUI_RECT Rect);
 void createPipeQueue(void);
 void setDifficulty(int choice);
+
+
+
 #endif /* _MAIN_H */

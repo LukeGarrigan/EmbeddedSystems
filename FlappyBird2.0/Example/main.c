@@ -14,23 +14,25 @@
  * @brief File containing all setup methods to get the game initialised
  */
  
-#include "stm32f7xx_hal.h"
-#include "stm32746g_discovery_sdram.h"
-#include "RTE_Components.h"
-#include "GUI.h"
-#include <stdlib.h>
 #include "main.h"
-#include "Board_Touch.h" 
 
 FILE *file;
-
+GUI_RECT	Rect = {0, 0, 602,272};
 #ifdef RTE_CMSIS_RTOS_RTX
 extern uint32_t os_time;
 
-//Points Coin
-Coin coin;
 
-Difficulty difficulty;
+//Points Coin
+
+
+//void Thread_Coin (void const *argument);                 // thread function
+//osThreadId tid_Thread_Coin;                              // thread id
+//osThreadDef(Thread_Coin, osPriorityNormal, 1, 0);           // thread object
+
+
+/* Declare Task IDS*/
+
+
 uint32_t HAL_GetTick(void) { 
   return os_time; 
 }
@@ -115,6 +117,77 @@ void initGame(){
 		initPipes();
 	  initCoin();		
 }
+/*
+int Init_Thread_Coin (void) {
+
+  tid_Thread_Coin = osThreadCreate(osThread(Thread_Coin), NULL);
+  if (!tid_Thread_Coin) return(-1);
+  return(0);
+}
+
+void Thread_Coin (void const *argument) {
+  while (1) {
+		osSignalWait(1U, osWaitForever);
+		updateCoin();  
+  }
+}
+*/
+
+
+
+
+/* Thread for the coins! */
+void taskCoin(void const *argument){
+	
+	for (;;) {
+		osSignalWait(0x0001, osWaitForever);
+		updateCoin();  
+	}
+}
+
+
+osThreadId tid_taskCoin;  /* id of thread: taskGreq */
+osThreadDef(taskCoin, osPriorityAboveNormal, __FI, 0);
+
+
+/* Thread for the coins! */
+void taskPipes(void const *argument){
+	
+	for (;;) {
+		osSignalWait(2U, osWaitForever);
+		updateAllPipes();
+	}
+}
+
+osThreadId tid_taskPipes;  /* id of thread: taskGreq */
+osThreadDef(taskPipes, osPriorityRealtime, __FI, 0);
+
+
+
+/* Thread for the coins! */
+void taskBirdy(void const *argument){
+	
+	for (;;) {
+		osSignalWait(0x0001, osWaitForever);
+		updateBirdy();
+	}
+}
+
+osThreadId tid_taskBirdy;  /* id of thread: taskGreq */
+osThreadDef(taskBirdy, osPriorityAboveNormal, __FI, 0);
+
+/* Thread for the coins! */
+void taskGUI(void const *argument){
+	
+	for (;;) {
+		osSignalWait(0x0001, osWaitForever);
+		drawEverything(Rect);
+	}
+}
+osThreadId tid_taskGUI;  /* id of thread: taskGreq */
+osThreadDef(taskGUI, osPriorityAboveNormal, __FI, 0);
+
+
 
 /**
  * @brief Task container
@@ -127,25 +200,30 @@ void initGame(){
  * on screen whilst the bird is alive
  */
 void MainTask(void) {
-
-	GUI_RECT Rect = {0, 0, 602,272};
 	TOUCH_STATE  tsc_state;
-	
+
+	osKernelStart();
+	tid_taskGUI = osThreadCreate(osThread(taskGUI), NULL);
+	tid_taskCoin = osThreadCreate(osThread(taskCoin), NULL);
+	tid_taskPipes = osThreadCreate(osThread(taskPipes), NULL);
+	tid_taskBirdy = osThreadCreate(osThread(taskBirdy), NULL);
 	while(1){	
-	createPipeQueue();	
+	createPipeQueue();	   
 	displayLeaderboard(tsc_state,Rect);
 	Touch_GetState(&tsc_state);
 	GUI_Delay(500);
 	tsc_state.pressed=false;
-
 	initGame();
 	initPregame(tsc_state,Rect);	
+	//tid_taskGUI = osThreadCreate(osThread(taskGUI), NULL);	
+	//tid_taskBirdy = osThreadCreate(osThread(taskBirdy), NULL);
 	// loop while the bird is still alive
-  while (isbirdAlive()) {	
-		drawEverything(Rect);
-		updateCoin();
-		updateAllPipes();
-		updateBirdy();
+  while(isbirdAlive()) {	
+		osSignalSet(tid_taskGUI, 0x0001);
+		osSignalSet(tid_taskPipes, 2U);
+		osSignalSet(tid_taskBirdy, 0x0001);
+		osSignalSet(tid_taskCoin, 0x0001); 	
+		 	
 	}
 }
 } 
@@ -165,7 +243,9 @@ int main (void) {
   SystemClock_Config();                     /* Configure the System Clock     */
   GUI_Init();
   Touch_Initialize();
+	osKernelInitialize();
   MainTask();
+
   for (;;);
 }
 

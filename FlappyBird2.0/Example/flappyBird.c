@@ -13,18 +13,11 @@
  * @date 17 March 2017
  * @brief File containing all methods to update the gamestate 
  */
-#include "stm32f7xx_hal.h"
-#include "stm32746g_discovery_sdram.h"
-#include "RTE_Components.h"
-#include "GUI.h"
-#include <stdlib.h>
 #include "main.h"
-#include "Progbar.h"
-#include <math.h>
-//All images within the game
 /** @defgroup Flappy_Bird
 * @{
 */ 
+//All images within the game
 extern GUI_CONST_STORAGE GUI_BITMAP bmCowboyBirdy;
 extern GUI_CONST_STORAGE GUI_BITMAP bmBlueBird;
 extern GUI_CONST_STORAGE GUI_BITMAP bmKingBirdy;
@@ -104,7 +97,6 @@ void setDifficulty(int choice){
  * achieved on 
  */
 void updateScores(){
-		int arraySize;
 	  int i;
 	  gameInfo.alive = false;
 		queueDestroy(gameInfo.que);
@@ -167,7 +159,7 @@ void createPipeQueue(){
  */
 bool hits(Pipe * p){
 	if(gameInfo.birdy->y < p->topY || gameInfo.birdy->y > p->bottomY){
-		if(gameInfo.birdy->x > p->x && gameInfo.birdy->x < p->x + 70){
+		if(gameInfo.birdy->x > p->x && gameInfo.birdy->x < p->x + 110){
 			return true;
 		}
 	}
@@ -209,8 +201,6 @@ void initPipes(){
  * as well as calling @b hits to see if bird is still alive
  */
 void updateAllPipes(){
-	int i=0;
-	int arraySize;
 	Pipe *currentPipe;
 	if(gameInfo.que->head->x <-50){
 		deq(gameInfo.que);
